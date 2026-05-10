@@ -16,6 +16,128 @@ PROJECT_ROOT = SLIDES_DIR.parent
 TEMPLATES_DIR = SLIDES_DIR / "templates"
 PLACEHOLDER_RE = re.compile(r"{{[A-Za-z0-9_]+}}")
 
+CAROUSEL_SCRIPT = """<script>
+    (function () {
+        if (window.__tplRevealCarouselInit) {
+            return;
+        }
+        window.__tplRevealCarouselInit = true;
+
+        function getCarousel(carousel) {
+            return carousel && carousel.querySelectorAll('.tpl-carousel-item').length ? carousel : null;
+        }
+
+        function itemIndex(carousel, item) {
+            var items = Array.from(carousel.querySelectorAll('.tpl-carousel-item'));
+            var idx = items.indexOf(item);
+            return idx < 0 ? 0 : idx;
+        }
+
+        function getActiveIndex(carousel) {
+            var currentFragment = carousel.querySelector('.tpl-carousel-item.fragment.current-fragment');
+            if (!currentFragment) {
+                var visibleFragments = carousel.querySelectorAll('.tpl-carousel-item.fragment.visible');
+                if (!visibleFragments.length) {
+                    return 0;
+                }
+                var lastVisible = visibleFragments[visibleFragments.length - 1];
+                return itemIndex(carousel, lastVisible);
+            }
+            return itemIndex(carousel, currentFragment);
+        }
+
+        function syncDots(scope) {
+            (scope || document).querySelectorAll('.tpl-carousel[data-carousel]').forEach(function (carousel) {
+                var activeIndex = getActiveIndex(carousel);
+                carousel.querySelectorAll('[data-carousel-dot]').forEach(function (dot) {
+                    dot.classList.toggle('is-active', Number(dot.getAttribute('data-carousel-dot')) === activeIndex);
+                });
+            });
+        }
+
+        function moveCarousel(carousel, direction) {
+            carousel = getCarousel(carousel);
+            if (!carousel) {
+                return;
+            }
+
+            var items = carousel.querySelectorAll('.tpl-carousel-item');
+            var currentIndex = getActiveIndex(carousel);
+            var newIndex = currentIndex;
+
+            if (direction === 'prev') {
+                newIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
+            }
+            else if (direction === 'next') {
+                newIndex = currentIndex === items.length - 1 ? 0 : currentIndex + 1;
+            }
+
+            for (var i = 0; i < items.length; i++) {
+                items[i].classList.toggle('is-initial', i === 0 && newIndex === 0);
+                items[i].classList.toggle('visible', i <= newIndex);
+                items[i].classList.toggle('current-fragment', i === newIndex);
+            }
+
+            carousel.querySelectorAll('.tpl-carousel-caption').forEach(function (caption, index) {
+                caption.classList.toggle('is-initial', index === 0 && newIndex === 0);
+                caption.classList.toggle('visible', index <= newIndex);
+                caption.classList.toggle('current-fragment', index === newIndex);
+            });
+
+            carousel.querySelectorAll('.tpl-carousel-dot').forEach(function (dot, index) {
+                dot.classList.toggle('is-active', index === newIndex);
+            });
+        }
+
+        function registerKeyboardBindings() {
+            if (typeof Reveal === 'undefined' || typeof Reveal.addKeyBinding !== 'function') {
+                return;
+            }
+
+            Reveal.addKeyBinding({ keyCode: 37, key: 'Left', description: 'Previous carousel image' }, function () {
+                var currentSlide = Reveal.getCurrentSlide();
+                moveCarousel(currentSlide ? currentSlide.querySelector('.tpl-carousel') : null, 'prev');
+            });
+
+            Reveal.addKeyBinding({ keyCode: 39, key: 'Right', description: 'Next carousel image' }, function () {
+                var currentSlide = Reveal.getCurrentSlide();
+                moveCarousel(currentSlide ? currentSlide.querySelector('.tpl-carousel') : null, 'next');
+            });
+        }
+
+        document.addEventListener('click', function (event) {
+            var button = event.target.closest('[data-carousel-nav]');
+            if (!button || typeof Reveal === 'undefined') {
+                return;
+            }
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            if (button.getAttribute('data-carousel-nav') === 'prev') {
+                moveCarousel(button.closest('.tpl-carousel'), 'prev');
+                return;
+            }
+
+            moveCarousel(button.closest('.tpl-carousel'), 'next');
+        });
+
+        document.addEventListener('slidechanged', function (event) {
+            syncDots(event.currentSlide || document);
+        });
+        document.addEventListener('fragmentshown', function (event) {
+            syncDots(event.fragment ? event.fragment.closest('section') || document : document);
+        });
+        document.addEventListener('fragmenthidden', function (event) {
+            syncDots(event.fragment ? event.fragment.closest('section') || document : document);
+        });
+
+        window.addEventListener('load', registerKeyboardBindings, { once: true });
+
+        syncDots(document);
+    })();
+</script>"""
+
 
 def read_text_file(path: Path) -> str:
     if not path.exists():
@@ -158,6 +280,22 @@ def build_imagem_ampla_images(attrs: dict[str, str]) -> str:
     return build_fragment_images(images)
 
 
+def build_carousel_script(attrs: dict[str, str]) -> str:
+    if not parse_bool(attrs.get("carousel", "")):
+        return ""
+    return CAROUSEL_SCRIPT
+
+
+def build_texto_carrossel_values(attrs: dict[str, str], content: list[pf.Element]) -> dict[str, str]:
+    return {
+        "title": attrs.get("title", ""),
+        "subtitle": attrs.get("subtitle", ""),
+        "body_html": blocks_to_html(content),
+        "images_html": build_imagem_ampla_images(attrs),
+        "carousel_script": build_carousel_script(attrs),
+    }
+
+
 def load_template(name: str) -> str:
     return read_text_file(TEMPLATES_DIR / name)
 
@@ -224,7 +362,14 @@ def action(el: pf.Element, doc: pf.Doc) -> pf.Element | None:
             {
                 "title": attrs.get("title", ""),
                 "images_html": build_imagem_ampla_images(attrs),
+                "carousel_script": build_carousel_script(attrs),
             },
+        )
+
+    if "tpl-texto-carrossel" in el.classes:
+        return render_div(
+            "tpl-texto-carrossel.html",
+            build_texto_carrossel_values(attrs, list(el.content)),
         )
 
     if "tpl-texto-tabela" in el.classes:

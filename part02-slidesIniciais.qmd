@@ -26,13 +26,24 @@ Prof. Remo Magalhães de Souza, Eng. Civil, M.Sc., Ph.D.
 
 ---
 
-::: {.tpl-imagem-ampla title="Sequencia visual de campo" img="ppt/media/image4.jpeg" alt="Equipamento 1" caption="Etapa 1: verificacao de superficie e posicionamento" img2="ppt/media/image5.png" alt2="Equipamento 2" caption2="Etapa 2: aquisicao e conferencia de leituras" carousel="true"}
+::: {.tpl-imagem-ampla title="Sequencia visual de campo" img="ppt/media/image4.jpeg" alt="Equipamento 1" caption="Etapa 1: verificacao de superficie e posicionamento" img2="ppt/media/image5.png" alt2="Equipamento 2" caption2="Etapa 2: aquisicao e conferencia de leituras" img3="ppt/media/image8.jpg" alt3="Imagem 3" caption3="Legenda 3" img4="ppt/media/image9.jpeg" alt4="Imagem 4" caption4="Legenda 4" carousel="true" }
 :::
 
 
 ---
 
 
+::: {.tpl-texto-carrossel title="Titulo do slide" subtitle="Subtitulo opcional" img="ppt/media/image6.jpeg" alt="Imagem 1" caption="Legenda 1" img2="ppt/media/image7.jpeg" alt2="Imagem 2" caption2="Legenda 2" img3="ppt/media/image8.jpg" alt3="Imagem 3" caption3="Legenda 3" carousel="true"}
+::: {.incremental}
+- Ponto 1
+- Ponto 2
+- Ponto 3
+:::
+
+---
+
+
+:::
 
 ## Principais Ensaios Não Destrutivos (END) para avaliação de estruturas de concreto:
 
