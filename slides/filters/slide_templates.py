@@ -42,26 +42,6 @@ def substitute(template: str, values: dict[str, str]) -> str:
     return PLACEHOLDER_RE.sub("", output)
 
 
-def build_extra_images(attrs: dict[str, str]) -> str:
-    html_parts: list[str] = []
-    for i in (2, 3):
-        img = attrs.get(f"img{i}", "")
-        if img:
-            alt = attrs.get(f"alt{i}", "")
-            caption = attrs.get(f"caption{i}", "")
-            html_parts.append(
-                "\n".join(
-                    [
-                        '<figure class="fragment">',
-                        f'  <img src="{img}" alt="{alt}" style="width: 92%;" />',
-                        f"  <figcaption>{caption}</figcaption>",
-                        "</figure>",
-                    ]
-                )
-            )
-    return "\n".join(html_parts)
-
-
 def parse_bool(value: str) -> bool:
     return str(value or "").strip().lower() in {"1", "true", "yes", "on"}
 
@@ -86,33 +66,64 @@ def collect_images(attrs: dict[str, str]) -> list[tuple[str, str, str]]:
     return images
 
 
+def render_image_figure(img: str, alt: str, classes: str, width: str, extra_attrs: str = "") -> str:
+    attrs = f' class="{classes}"' if classes else ""
+    return "\n".join(
+        [
+            f"    <figure{attrs}{extra_attrs}>",
+            f'      <img src="{img}" alt="{alt}" style="width: {width};" />',
+            "    </figure>",
+        ]
+    )
+
+
 def build_image_carousel(images: list[tuple[str, str, str]]) -> str:
     if not images:
         return ""
 
-    html_parts: list[str] = ['<div class="tpl-carousel" data-carousel>']
-    html_parts.append('  <button type="button" class="tpl-carousel-arrow tpl-carousel-prev" aria-label="Previous image">&#10094;</button>')
+    has_multiple = len(images) > 1
+    html_parts: list[str] = ['<div class="tpl-carousel tpl-carousel-reveal" data-carousel>']
+    if has_multiple:
+        html_parts.append('  <button type="button" class="tpl-carousel-nav tpl-carousel-prev" data-carousel-nav="prev" aria-label="Previous image">&#10094;</button>')
+        html_parts.append('  <button type="button" class="tpl-carousel-nav tpl-carousel-next" data-carousel-nav="next" aria-label="Next image">&#10095;</button>')
     html_parts.append('  <div class="tpl-carousel-viewport">')
 
     for idx, (img, alt, caption) in enumerate(images):
-        active_class = " is-active" if idx == 0 else ""
-        safe_caption = html.escape(caption or "", quote=True)
-        html_parts.extend(
-            [
-                f'    <figure class="tpl-carousel-item{active_class}" data-caption="{safe_caption}">',
-                f'      <img src="{img}" alt="{alt}" style="width: 100%;" />',
-                "    </figure>",
-            ]
+        if idx == 0:
+            html_parts.append(render_image_figure(img, alt, "tpl-carousel-item is-initial", "100%"))
+            continue
+
+        html_parts.append(
+            render_image_figure(
+                img,
+                alt,
+                "tpl-carousel-item fragment current-visible",
+                "100%",
+                f' data-fragment-index="{idx}"',
+            )
         )
 
     html_parts.append("  </div>")
-    html_parts.append('  <button type="button" class="tpl-carousel-arrow tpl-carousel-next" aria-label="Next image">&#10095;</button>')
-    html_parts.append('  <div class="tpl-carousel-caption" data-carousel-caption></div>')
+    html_parts.append('  <div class="tpl-carousel-caption-zone">')
+
+    for idx, (_img, _alt, caption) in enumerate(images):
+        safe_caption = html.escape(caption or "")
+        if idx == 0:
+            html_parts.append(
+                f'    <p class="tpl-carousel-caption is-initial">{safe_caption}</p>'
+            )
+            continue
+
+        html_parts.append(
+            f'    <p class="tpl-carousel-caption fragment current-visible" data-fragment-index="{idx}">{safe_caption}</p>'
+        )
+
+    html_parts.append("  </div>")
     html_parts.append('  <div class="tpl-carousel-dots" aria-hidden="true">')
     for idx in range(len(images)):
         active_class = " is-active" if idx == 0 else ""
         html_parts.append(
-            f'    <span class="tpl-carousel-dot{active_class}"></span>'
+            f'    <span class="tpl-carousel-dot{active_class}" data-carousel-dot="{idx}"></span>'
         )
     html_parts.append("  </div>")
     html_parts.append("</div>")
@@ -123,14 +134,14 @@ def build_image_carousel(images: list[tuple[str, str, str]]) -> str:
 def build_fragment_images(images: list[tuple[str, str, str]]) -> str:
     html_parts: list[str] = []
     for img, alt, caption in images:
+        figure_html = render_image_figure(img, alt, "fragment", "92%").replace("    <figure", "<figure", 1)
+        figure_html = figure_html.replace("      <img", "  <img", 1)
+        figure_html = figure_html.replace("    </figure>", "</figure>", 1)
         html_parts.append(
-            "\n".join(
-                [
-                    '<figure class="fragment">',
-                    f'  <img src="{img}" alt="{alt}" style="width: 92%;" />',
-                f"    <figcaption>{caption}</figcaption>",
-                    "</figure>",
-                ]
+            figure_html.replace(
+                "</figure>",
+                f"  <figcaption>{caption}</figcaption>\n</figure>",
+                1,
             )
         )
     return "\n".join(html_parts)

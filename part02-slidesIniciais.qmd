@@ -23,6 +23,17 @@ Prof. Remo Magalhães de Souza, Eng. Civil, M.Sc., Ph.D.
 
 12 de Maio de 2026
 
+
+---
+
+::: {.tpl-imagem-ampla title="Sequencia visual de campo" img="ppt/media/image4.jpeg" alt="Equipamento 1" caption="Etapa 1: verificacao de superficie e posicionamento" img2="ppt/media/image5.png" alt2="Equipamento 2" caption2="Etapa 2: aquisicao e conferencia de leituras" carousel="true"}
+:::
+
+
+---
+
+
+
 ## Principais Ensaios Não Destrutivos (END) para avaliação de estruturas de concreto:
 
 
@@ -78,13 +89,6 @@ Esclerômetro Proceq -- SilverSchmidt .
 :::
 
 
----
-
-::: {.tpl-imagem-ampla title="Sequencia visual de campo" img="ppt/media/image4.jpeg" alt="Equipamento 1" caption="Etapa 1: verificacao de superficie e posicionamento" img2="ppt/media/image5.png" alt2="Equipamento 2" caption2="Etapa 2: aquisicao e conferencia de leituras" carousel="true"}
-:::
-
-
----
 
 ## Últimas referências normativas nacionais
 
