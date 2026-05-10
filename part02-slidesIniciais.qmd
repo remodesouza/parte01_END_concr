@@ -3,8 +3,8 @@ title: "Ensaios Não Destrutivos para Avaliação de Estruturas e Fundações em
 author: "Prof. Remo Magalhães de Souza, Eng. Civil, M.Sc , Ph.D."
 format:
   revealjs:
-    theme: dracula
-    transition: slide
+    theme: dracula 
+    transition: convex
     width: 1600
     height: 900
     margin: 0.02
