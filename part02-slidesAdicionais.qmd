@@ -1,0 +1,47 @@
+---
+title: "Slides Adicionais - END em Estruturas de Concreto"
+author: "Prof. Remo Magalhaes de Souza, Eng. Civil, M.Sc , Ph.D."
+format:
+  revealjs:
+    theme: dracula
+    transition: slide
+    width: 1600
+    height: 900
+    margin: 0.02
+    css: slides/includes/slides-layout.scss
+    filters:
+      - slides/filters/slide_templates.py
+---
+
+::: {.tpl-divisor title="Roteiro Complementar" subtitle="Apoio a tomada de decisao" text="Slides adicionais para detalhar criterios tecnicos e plano de campanha de END."}
+:::
+
+::: {.tpl-texto title="Estrategia de combinacao de END" subtitle="Reducao de incerteza"}
+::: {.incremental}
+- Nenhum ensaio isolado responde todas as perguntas de diagnostico.
+- A combinacao de metodos melhora confiabilidade e rastreabilidade.
+- O planejamento deve considerar objetivo, acesso, prazo e custo.
+- Ensaios semi-destrutivos entram como validacao pontual.
+:::
+
+Equacao de erro combinado (conceitual): sigma_comb = sqrt(sigma_1^2 + sigma_2^2 + ... + sigma_n^2)
+:::
+
+::: {.tpl-texto-imagem title="Leitura integrada de resultados" img="ppt/media/image4.jpeg" alt="Equipamento de esclerometria" caption="Exemplo de equipamento para ensaio in-situ"}
+- Interpretar os resultados por zonas da estrutura (nao por pontos isolados).
+- Correlacionar valores de esclerometria com ultrassom e cobrimento.
+- Destacar discrepancias para investigacao complementar.
+- Registrar condicoes de ensaio para repetibilidade futura.
+:::
+
+::: {.tpl-imagem-ampla title="Sequencia visual de campo" img="ppt/media/image4.jpeg" alt="Equipamento 1" caption="Etapa 1: verificacao de superficie e posicionamento" img2="ppt/media/image5.png" alt2="Equipamento 2" caption2="Etapa 2: aquisicao e conferencia de leituras" carousel="true"}
+:::
+
+::: {.tpl-texto-tabela title="Matriz rapida para selecao de END" caption="Tabela 1 - Comparacao objetiva entre metodos" table_file="slides/templates/tabela-criterios-end.md"}
+- Use a matriz para escolher o metodo principal conforme o objetivo.
+- Em estruturas criticas, priorize combinacao de tecnicas.
+- Inclua ensaio confirmatorio quando houver alta variabilidade.
+:::
+
+::: {.tpl-tabela-ampla title="Plano recomendado de inspecao" caption="Tabela 2 - Sequencia sugerida de campanha" table_file="slides/templates/tabela-plano-inspecao.md"}
+:::

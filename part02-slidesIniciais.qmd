@@ -1,0 +1,151 @@
+---
+title: "Ensaios Não Destrutivos para Avaliação de Estruturas e Fundações em Concreto"
+author: "Prof. Remo Magalhães de Souza, Eng. Civil, M.Sc , Ph.D."
+format:
+  revealjs:
+    theme: dracula
+    transition: slide
+    width: 1600
+    height: 900
+    margin: 0.02
+    css: slides/includes/slides-layout.scss
+    filters:
+      - slides/filters/slide_templates.py
+
+---
+
+::: {.tpl-divisor title="Ensaios Não Destrutivos" subtitle= "Estruturas e fundações em concreto" text="Principais tipos de ensaios não destrutivos para avaliação de estruturas e fundações em concreto."}
+:::
+
+## Ensaios Não Destrutivos para Avaliação de Estruturas e Fundações em Concreto
+
+Prof. Remo Magalhães de Souza, Eng. Civil, M.Sc., Ph.D.
+
+12 de Maio de 2026
+
+## Principais Ensaios Não Destrutivos (END) para avaliação de estruturas de concreto:
+
+
+::: {.incremental}
+- **Ensaio com esclerômetro** -- para estimativa da resistência do concreto à compressão *in-situ*, por meio da avaliação da dureza superficial do concreto
+- **Ensaios com ultrassom** -- para verificação da integridade do concreto e avaliação da resistência a compressão e módulo de elasticidade
+- **Ensaio com pacômetro** -- para detecção e determinação do diâmetro de armaduras e espessura de cobrimento
+- **Ensaios de potencial de corrosão** -- para identificação de áreas com maior probabilidade de ocorrência de corrosão nas armaduras dos elementos estruturais em concreto armado
+- **Ensaios de frente de carbonatação** -- para verificação da carbonatação do concreto
+- **Ensaios de extensometria (ET)** -- este ensaio consiste na instalação de  extensômetros elétricos de resistência (*strain-gages*) em uma estrutura, visando a medição em tempo real de deformações e tensões reais decorrentes de um determinado carregamento. Quando são instalados vários sensores em uma mesma seção de um elemento estrutural, também é possível se determinar os esforços internos nesta seção
+:::
+
+## Ensaios semi-destrutivos para avaliação do material
+
+- Extração de testemunhos
+- Ensaios de resistência à compressão
+- Ensaio de módulo de elasticidade
+
+## Ensaios não-destrutivos para avaliação de estacas
+
+- PIT -- Pile Integrity Test -- Teste de integridade em estacas
+- Outros\...
+
+
+## Ensaio com esclerômetro para determinação da dureza superficial do concreto
+
+::: {.incremental}
+- O esclerômetro consiste em uma massa-martelo que, impulsionada por uma mola, se choca com a área de ensaio através de uma haste;
+- **Norma NBR 7584:2012 Concreto endurecido** -- Avaliação da dureza superficial pelo esclerômetro de reflexão -- Método de Ensaio;
+:::
+
+::: {.fragment}
+
+![](ppt/media/image4.jpeg "Imagem 8")
+
+Esclerômetro Proceq -- SilverSchmidt .
+:::
+
+::: {.fragment}
+![](ppt/media/image5.png "Imagem 10")
+Esclerômetro Proceq -- SilverSchmidt .
+:::
+
+---
+
+::: {.tpl-texto-imagem title="Ensaio com esclerômetro para determinação da dureza superficial do concreto" img="ppt/media/image4.jpeg" alt="Equipamento de esclerometria" caption="Exemplo de equipamento para ensaio in-situ"}
+::: {.incremental}
+- O esclerômetro consiste em uma massa-martelo que, impulsionada por uma mola, se choca com a área de ensaio através de uma haste;
+- **Norma NBR 7584:2012 Concreto endurecido** -- Avaliação da dureza superficial pelo esclerômetro de reflexão -- Método de Ensaio;
+- A dureza superficial do concreto é um indicador indireto da resistência à compressão, mas pode ser influenciada por diversos fatores, como tipo de agregado, umidade, idade do concreto e condições de cura.
+- A correlação entre os valores de dureza superficial e a resistência à compressão deve ser estabelecida para cada estrutura, preferencialmente por meio de ensaios complementares, como a extração de testemunhos.
+:::
+:::
+
+
+---
+
+::: {.tpl-imagem-ampla title="Sequencia visual de campo" img="ppt/media/image4.jpeg" alt="Equipamento 1" caption="Etapa 1: verificacao de superficie e posicionamento" img2="ppt/media/image5.png" alt2="Equipamento 2" caption2="Etapa 2: aquisicao e conferencia de leituras" carousel="true"}
+:::
+
+
+---
+
+## Últimas referências normativas nacionais
+
+NBR  5739:2018 --  Concreto -- Ensaios de compressão de corpos-de-prova cilíndricos
+
+NBR  7584:2012 --  Concreto endurecido -- Avaliação da dureza superficial pelo esclerômetro de reflexão
+
+NBR  7680-1:2015 --  Concreto -- Extração, preparo, ensaio e análise de testemunhos de estruturas de concreto. Parte 1: Resistência a compressão axial
+
+NBR  7680-2:2015 --  Concreto -- Extração, preparo, ensaio e análise de testemunhos de estruturas de concreto. Parte 2: Resistência à tração na flexão
+
+NBR  8522-1:2021 --  Concreto endurecido -- Determinação dos módulos de elasticidade e de deformação. Parte 1: Módulos estáticos à compressão
+
+NBR  8522-2:2021 --  Concreto endurecido -- Determinação dos módulos de elasticidade e de deformação. Parte 2: Módulo de elasticidade dinâmico pelo método das frequências naturais de vibração
+
+NBR  8802:2019 --  Concreto endurecido -- Determinação da velocidade de propagação de onda ultrassônica
+
+## Referências normativas internacionais
+
+Norma Britânica  BS1881-201 --  Testing concrete. Guide to the use of non- destructive methods of test for hardened concrete
+
+Norma Alemã DIN EN 14630 --  Products and systems for the protection and repair of concrete structures -- Test methods -- Determination of carbonation depth in hardened concrete by the phenolphthalein method " 
+
+Norma Chinesa JGJ/T 23-2001 -- Technical specification for inspection of concrete compressive strength by rebound method .
+
+Norma Americana ACI 228.2R-13 - Report on Nondestructive Test Methods for Evaluation of Concrete in Structures
+
+Norma Americana ASTM C 876 -- Standard test method for corrosion potentials of uncoated steel in concrete
+
+Norma Americana ASTM -- D5882 -- 16 --  Standard Test Method for Low Strain Impact Integrity Testing of Deep Foundations " (Método de teste padrão para ensaio de integridade de estaca com baixa deformação)
+
+---
+
+
+
+::: {.tpl-texto title="Estrategia de combinacao de END" subtitle="Reducao de incerteza"}
+::: {.incremental}
+- Nenhum ensaio isolado responde todas as perguntas de diagnostico.
+- A combinacao de metodos melhora confiabilidade e rastreabilidade.
+- O planejamento deve considerar objetivo, acesso, prazo e custo.
+- Ensaios semi-destrutivos entram como validacao pontual.
+:::
+
+Equacao de erro combinado (conceitual): sigma_comb = sqrt(sigma_1^2 + sigma_2^2 + ... + sigma_n^2)
+:::
+
+::: {.tpl-texto-imagem title="Leitura integrada de resultados" img="ppt/media/image4.jpeg" alt="Equipamento de esclerometria" caption="Exemplo de equipamento para ensaio in-situ"}
+- Interpretar os resultados por zonas da estrutura (nao por pontos isolados).
+- Correlacionar valores de esclerometria com ultrassom e cobrimento.
+- Destacar discrepancias para investigacao complementar.
+- Registrar condicoes de ensaio para repetibilidade futura.
+:::
+
+
+
+::: {.tpl-texto-tabela title="Matriz rapida para selecao de END" caption="Tabela 1 - Comparacao objetiva entre metodos" table_file="slides/templates/tabela-criterios-end.md"}
+- Use a matriz para escolher o metodo principal conforme o objetivo.
+- Em estruturas criticas, priorize combinacao de tecnicas.
+- Inclua ensaio confirmatorio quando houver alta variabilidade.
+:::
+
+::: {.tpl-tabela-ampla title="Plano recomendado de inspecao" caption="Tabela 2 - Sequencia sugerida de campanha" table_file="slides/templates/tabela-plano-inspecao.md"}
+:::
+

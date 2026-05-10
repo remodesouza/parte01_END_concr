@@ -1,0 +1,4 @@
+.venv/
+.quarto/
+*_files/
+*.html
