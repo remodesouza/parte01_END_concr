@@ -1,55 +1,105 @@
-.tpl-texto-imagem .tpl-texto-imagem-body {
+/* Global typography scale for Reveal */
+.reveal {
+  --r-main-font-size: 30px;   /* regular text */
+  --r-heading1-size: 1.95em;  /* h1 */
+  --r-heading2-size: 1.56em;  /* slide title (h2 in your templates) */
+  --r-heading3-size: 1.25em;  /* subtitle (h3 in tpl-text-carousel) */
+  --r-heading4-size: 1.00em;
+  --r-heading5-size: 0.8em;
+
+}
+
+/* Optional fine-tuning for body/list density */
+.reveal .slides section p,
+.reveal .slides section li {
+  line-height: 1.35;
+}
+
+
+
+
+/* ============================================================
+   tpl-text-image: two-column layout with text left, image right
+   ============================================================ */
+
+.tpl-text-image .tpl-text-image-body {
   width: 58%;
 }
 
-.tpl-texto-imagem .tpl-texto-imagem-media {
+.tpl-text-image .tpl-text-image-media {
   width: 42%;
 }
 
-.tpl-texto-imagem .tpl-texto-imagem-figure-img {
+/* Image fills the full width of its column */
+.tpl-text-image .tpl-text-image-figure-img {
   width: 100%;
 }
 
-.tpl-texto-tabela .tpl-texto-tabela-body {
+/* ============================================================
+   tpl-text-table: two-column layout with text left, table right
+   ============================================================ */
+
+.tpl-text-table .tpl-text-table-body {
   width: 60%;
 }
 
-.tpl-texto-tabela .tpl-texto-tabela-side {
+.tpl-text-table .tpl-text-table-side {
   width: 40%;
 }
 
-.tpl-slide.tpl-imagem-ampla {
+/* ============================================================
+   tpl-wide-image: full-slide carousel template
+   ============================================================ */
+
+.tpl-slide.tpl-wide-image {
   position: relative;
   min-height: 680px;
 }
 
-.tpl-slide.tpl-texto-carrossel {
+/* ============================================================
+   tpl-text-carousel: two-column layout with text left, carousel right
+   ============================================================ */
+
+.tpl-slide.tpl-text-carousel {
   min-height: 680px;
 }
 
-.tpl-texto-carrossel .tpl-texto-carrossel-body {
-  width: 54%;
+/* Column widths for text and carousel areas */
+.tpl-text-carousel .tpl-text-carousel-body {
+  width: 48%;
 }
 
-.tpl-texto-carrossel .tpl-texto-carrossel-media {
-  width: 46%;
+.tpl-text-carousel .tpl-text-carousel-media {
+  width: 48%;
+  margin-left: 3%;
 }
 
-.tpl-texto-carrossel .tpl-texto-carrossel-media .tpl-carousel {
+/* Horizontal gap between columns */
+.tpl-text-carousel .columns {
+  width: 95%;
+}
+
+/* Default carousel sizing inside the right column (overridden below for maximized variant) */
+.tpl-text-carousel .tpl-text-carousel-media .tpl-carousel {
   width: 100%;
   max-width: none;
   margin-top: 12px;
   padding: 0 44px 56px;
 }
 
-.tpl-texto-carrossel .tpl-texto-carrossel-media .tpl-carousel-viewport {
+.tpl-text-carousel .tpl-text-carousel-media .tpl-carousel-viewport {
   min-height: 340px;
 }
 
-.tpl-texto-carrossel .tpl-texto-carrossel-media .tpl-carousel-item img {
+.tpl-text-carousel .tpl-text-carousel-media .tpl-carousel-item img {
   max-height: 340px;
 }
 
+/* ============================================================
+   Carousel base styles (shared by all templates with .tpl-has-carousel)
+   ============================================================ */
+
+/* Carousel container: centered, with perspective for 3-D flip transition */
 .tpl-has-carousel .tpl-carousel {
   position: relative;
   width: 92%;
@@ -59,6 +109,7 @@
   perspective: 1200px;
 }
 
+/* Previous / Next arrow buttons */
 .tpl-has-carousel .tpl-carousel-nav {
   position: absolute;
   top: calc(50% - 24px);
@@ -76,6 +127,7 @@
   box-shadow: none;
 }
 
+/* Remove all button visual feedback (hover, focus, active) */
 .tpl-has-carousel .tpl-carousel-nav:hover {
   background: transparent;
 }
@@ -88,19 +140,22 @@
   background: transparent;
 }
 
+/* Arrow positions: inset from edges to avoid overlapping images */
 .tpl-has-carousel .tpl-carousel-prev {
-  left: 4px;
+  left: -24px;
 }
 
 .tpl-has-carousel .tpl-carousel-next {
-  right: 4px;
+  right: -24px;
 }
 
+/* Viewport: stacking context for absolutely-positioned carousel items */
 .tpl-has-carousel .tpl-carousel-viewport {
   position: relative;
   min-height: 420px;
 }
 
+/* Each carousel item: initially invisible and rotated, transitions to active state */
 .tpl-has-carousel .tpl-carousel-item {
   margin: 0;
   opacity: 0;
@@ -114,39 +169,44 @@
   transition: transform 320ms ease, opacity 240ms ease;
 }
 
+/* Active item: fully visible, no rotation */
 .tpl-has-carousel .tpl-carousel-item.is-active {
   opacity: 1;
   z-index: 1;
   transform: rotateY(0deg) scale(1);
 }
 
+/* Hidden item: invisible, rotated out */
 .tpl-has-carousel .tpl-carousel-item.is-hidden {
   opacity: 0;
   z-index: 0;
   transform: rotateY(-70deg) scale(0.94);
 }
 
+/* Image within each item: constrained height, proportional scaling */
 .tpl-has-carousel .tpl-carousel-item img {
   display: block;
   max-height: 420px;
   object-fit: contain;
 }
 
+/* Caption zone: absolutely positioned below the viewport */
 .tpl-has-carousel .tpl-carousel-caption-zone {
   position: absolute;
   left: 50%;
-  bottom: 10px;
+  bottom: -30px;
   transform: translateX(-50%);
-  width: min(820px, calc(100% - 140px));
+  width: min(1640px, calc(100% - 140px));
   min-height: 1.2em;
 }
 
+/* Individual caption: stacked in the same zone, only the active one is visible */
 .tpl-has-carousel .tpl-carousel-caption {
   margin: 0;
   position: absolute;
   inset: 0;
   text-align: center;
-  font-size: 0.74em;
+  font-size: 0.8em;
   line-height: 1.35;
   color: inherit;
   opacity: 0;
@@ -161,13 +221,15 @@
   opacity: 0;
 }
 
+/* Dot indicators row: centered below the viewport */
 .tpl-has-carousel .tpl-carousel-dots {
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-top: 14px;
+  margin-top: 32px;
 }
 
+/* Individual dot */
 .tpl-has-carousel .tpl-carousel-dot {
   width: 9px;
   height: 9px;
@@ -175,12 +237,64 @@
   background: rgba(255, 255, 255, 0.35);
 }
 
+/* Active dot: highlighted */
 .tpl-has-carousel .tpl-carousel-dot.is-active {
   background: rgba(255, 255, 255, 0.9);
 }
 
+/* ============================================================
+   Carousel sizing overrides for tpl-wide-image
+   Maximizes carousel to fill the full slide area
+   ============================================================ */
+
+.tpl-wide-image .tpl-carousel {
+  width: 98%;
+  max-width: none;
+  margin: 16px auto 0;
+  padding: 0 16px 28px;
+}
+
+.tpl-wide-image .tpl-carousel-viewport {
+  min-height: 808px;
+  max-height: 808px;
+}
+
+.tpl-wide-image .tpl-carousel-item img {
+  max-height: 808px;
+  max-width: 98%;
+}
+
+/* ============================================================
+   Carousel sizing overrides for tpl-text-carousel
+   Maximizes carousel to fill the right column
+   ============================================================ */
+
+.tpl-text-carousel .tpl-text-carousel-media .tpl-carousel {
+  width: 100%;
+  max-width: none;
+  margin-top: 64px;
+  padding: 0 12px 28px;
+}
+
+.tpl-text-carousel .tpl-text-carousel-media .tpl-carousel-viewport {
+  min-height: 808px;
+  max-height: 808px;
+}
+
+.tpl-text-carousel .tpl-text-carousel-media .tpl-carousel-item img {
+  max-height: 808px;
+  max-width: 98%;
+}
+
+
+
+/* ============================================================
+   Responsive breakpoint: narrow screens (≤ 1200px)
+   Collapses two-column layouts and reduces carousel sizes
+   ============================================================ */
+
 @media (max-width: 1200px) {
-  .tpl-slide.tpl-imagem-ampla {
+  .tpl-slide.tpl-wide-image {
     min-height: 600px;
   }
 
@@ -206,20 +320,21 @@
     width: calc(100% - 108px);
   }
 
-  .tpl-slide.tpl-texto-carrossel {
+  .tpl-slide.tpl-text-carousel {
     min-height: 620px;
   }
 
-  .tpl-texto-carrossel .columns {
+  /* Stack columns vertically on narrow screens */
+  .tpl-text-carousel .columns {
     display: block;
   }
 
-  .tpl-texto-carrossel .tpl-texto-carrossel-body,
-  .tpl-texto-carrossel .tpl-texto-carrossel-media {
+  .tpl-text-carousel .tpl-text-carousel-body,
+  .tpl-text-carousel .tpl-text-carousel-media {
     width: 100%;
   }
 
-  .tpl-texto-carrossel .tpl-texto-carrossel-media .tpl-carousel {
+  .tpl-text-carousel .tpl-text-carousel-media .tpl-carousel {
     width: 92%;
     max-width: 980px;
     margin-top: 20px;

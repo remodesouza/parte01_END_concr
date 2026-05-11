@@ -165,12 +165,19 @@ def parse_bool(value: str) -> bool:
     return str(value or "").strip().lower() in {"1", "true", "yes", "on"}
 
 
+def normalize_alt_and_caption(alt: str, caption: str) -> tuple[str, str]:
+    alt = alt or caption or ""
+    caption = caption or alt or ""
+    return alt, caption
+
+
 def collect_images(attrs: dict[str, str]) -> list[tuple[str, str, str]]:
     images: list[tuple[str, str, str]] = []
 
     img1 = attrs.get("img", "")
     if img1:
-        images.append((img1, attrs.get("alt", ""), attrs.get("caption", "")))
+        alt, caption = normalize_alt_and_caption(attrs.get("alt", ""), attrs.get("caption", ""))
+        images.append((img1, alt, caption))
 
     indexed: list[int] = []
     for key in attrs:
@@ -180,17 +187,21 @@ def collect_images(attrs: dict[str, str]) -> list[tuple[str, str, str]]:
     for idx in sorted(set(indexed)):
         img = attrs.get(f"img{idx}", "")
         if img:
-            images.append((img, attrs.get(f"alt{idx}", ""), attrs.get(f"caption{idx}", "")))
+            alt, caption = normalize_alt_and_caption(attrs.get(f"alt{idx}", ""), attrs.get(f"caption{idx}", ""))
+            images.append((img, alt, caption))
 
     return images
 
 
 def render_image_figure(img: str, alt: str, classes: str, width: str, extra_attrs: str = "") -> str:
     attrs = f' class="{classes}"' if classes else ""
+    safe_img = html.escape(img, quote=True)
+    safe_alt = html.escape(alt, quote=True)
+    safe_width = html.escape(width, quote=True)
     return "\n".join(
         [
             f"    <figure{attrs}{extra_attrs}>",
-            f'      <img src="{img}" alt="{alt}" style="width: {width};" />',
+            f'      <img src="{safe_img}" alt="{safe_alt}" style="width: {safe_width};" />',
             "    </figure>",
         ]
     )
@@ -248,10 +259,11 @@ def build_fragment_images(images: list[tuple[str, str, str]]) -> str:
         figure_html = render_image_figure(img, alt, "fragment", "92%").replace("    <figure", "<figure", 1)
         figure_html = figure_html.replace("      <img", "  <img", 1)
         figure_html = figure_html.replace("    </figure>", "</figure>", 1)
+        safe_caption = html.escape(caption or "")
         html_parts.append(
             figure_html.replace(
                 "</figure>",
-                f"  <figcaption>{caption}</figcaption>\n</figure>",
+                f"  <figcaption>{safe_caption}</figcaption>\n</figure>",
                 1,
             )
         )
@@ -313,9 +325,9 @@ def action(el: pf.Element, doc: pf.Doc) -> pf.Element | None:
 
     attrs = {k: v for k, v in el.attributes.items()}
 
-    if "tpl-divisor" in el.classes:
+    if "tpl-divider" in el.classes:
         return render_div(
-            "tpl-divisor.html",
+            "tpl-divider.html",
             {
                 "title": attrs.get("title", ""),
                 "subtitle": attrs.get("subtitle", ""),
@@ -323,9 +335,9 @@ def action(el: pf.Element, doc: pf.Doc) -> pf.Element | None:
             },
         )
 
-    if "tpl-texto" in el.classes:
+    if "tpl-text" in el.classes:
         return render_div(
-            "tpl-texto.html",
+            "tpl-text.html",
             {
                 "title": attrs.get("title", ""),
                 "subtitle": attrs.get("subtitle", ""),
@@ -333,9 +345,9 @@ def action(el: pf.Element, doc: pf.Doc) -> pf.Element | None:
             },
         )
 
-    if "tpl-texto-imagem" in el.classes:
+    if "tpl-text-image" in el.classes:
         return render_div(
-            "tpl-texto-imagem.html",
+            "tpl-text-image.html",
             {
                 "title": attrs.get("title", ""),
                 "img": attrs.get("img", ""),
@@ -345,9 +357,9 @@ def action(el: pf.Element, doc: pf.Doc) -> pf.Element | None:
             },
         )
 
-    if "tpl-imagem-ampla" in el.classes:
+    if "tpl-wide-image" in el.classes:
         return render_div(
-            "tpl-imagem-ampla.html",
+            "tpl-wide-image.html",
             {
                 "title": attrs.get("title", ""),
                 "images_html": build_imagem_ampla_images(attrs),
@@ -355,16 +367,16 @@ def action(el: pf.Element, doc: pf.Doc) -> pf.Element | None:
             },
         )
 
-    if "tpl-texto-carrossel" in el.classes:
+    if "tpl-text-carousel" in el.classes:
         return render_div(
-            "tpl-texto-carrossel.html",
+            "tpl-text-carousel.html",
             build_texto_carrossel_values(attrs, list(el.content)),
         )
 
-    if "tpl-texto-tabela" in el.classes:
+    if "tpl-text-table" in el.classes:
         table_html = md_to_html(read_table_source(attrs))
         return render_div(
-            "tpl-texto-tabela.html",
+            "tpl-text-table.html",
             {
                 "title": attrs.get("title", ""),
                 "caption": attrs.get("caption", ""),
@@ -373,10 +385,10 @@ def action(el: pf.Element, doc: pf.Doc) -> pf.Element | None:
             },
         )
 
-    if "tpl-tabela-ampla" in el.classes:
+    if "tpl-wide-table" in el.classes:
         table_html = md_to_html(read_table_source(attrs))
         return render_div(
-            "tpl-tabela-ampla.html",
+            "tpl-wide-table.html",
             {
                 "title": attrs.get("title", ""),
                 "caption": attrs.get("caption", ""),

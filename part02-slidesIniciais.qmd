@@ -5,8 +5,8 @@ format:
   revealjs:
     theme: dracula 
     transition: convex
-    width: 1600
-    height: 900
+    width: 2000
+    height: 1125
     margin: 0.02
     css: slides/includes/slides-layout.scss
     filters:
@@ -14,7 +14,7 @@ format:
 
 ---
 
-::: {.tpl-divisor title="Ensaios Não Destrutivos" subtitle= "Estruturas e fundações em concreto" text="Principais tipos de ensaios não destrutivos para avaliação de estruturas e fundações em concreto."}
+::: {.tpl-divider title="Ensaios Não Destrutivos" subtitle= "Estruturas e fundações em concreto" text="Principais tipos de ensaios não destrutivos para avaliação de estruturas e fundações em concreto."}
 :::
 
 ## Ensaios Não Destrutivos para Avaliação de Estruturas e Fundações em Concreto
@@ -26,31 +26,48 @@ Prof. Remo Magalhães de Souza, Eng. Civil, M.Sc., Ph.D.
 
 ---
 
-::: {.tpl-imagem-ampla title="Sequencia visual de campo" img="ppt/media/image4.jpeg" alt="Equipamento 1" caption="Etapa 1: verificacao de superficie e posicionamento" img2="ppt/media/image5.png" alt2="Equipamento 2" caption2="Etapa 2: aquisicao e conferencia de leituras" img3="ppt/media/image8.jpg" alt3="Imagem 3" caption3="Legenda 3" img4="ppt/media/image9.jpeg" alt4="Imagem 4" caption4="Legenda 4" carousel="true" }
-:::
 
 
----
+::: {.tpl-text-carousel title="Ensaio de Esclerometria para estimativa da resistência do concreto" subtitle="Equipamento e etapas do ensaio"
+        img="ppt/media/image4.jpeg" 
+          alt="Esclerômetro digital marca Proceq" 
+        img2="ppt/media/esclerometria/NBR-7584-2012-Figura02-Area-de-ensaio.png" 
+          alt2="Área de ensaio e pontos de impacto. Ref.: Figura 2, NBR 7584:2012"   
+        img3="ppt/media/esclerometria/NBR-7584_2012_Figura03-locais-recomendaveis.png" 
+          alt3="Locais recomendáveis para aplicação do esclerômetro. Ref.: Figura 3, NBR 7584:2012"      
+        img4="ppt/media/esclerometria/190909-MRS-PonteParaibaII-Esclerometria01.jpeg" 
+          alt4="Execução do ensaio, pela empresa Dynamis Techne, em uma ponte ferroviária em concreto armado, localizada em Cruzeiro-SP." 
+        img5="ppt/media/image9.jpeg" 
+          alt5="Execuçãdo do ensaio em uma viga de concreto"  
+        carousel="true" }
+- **Esclerômetro** - Esclerômetro digital marca Proceq
 
-
-::: {.tpl-texto-carrossel title="Titulo do slide" subtitle="Subtitulo opcional" img="ppt/media/image6.jpeg" alt="Imagem 1" caption="Legenda 1" img2="ppt/media/image7.jpeg" alt2="Imagem 2" caption2="Legenda 2" img3="ppt/media/image8.jpg" alt3="Imagem 3" caption3="Legenda 3" carousel="true"}
 ::: {.incremental}
-- Ponto 1
-- Ponto 2
-- Ponto 3
-- Ponto 4
-- Ponto 5
-- Ponto 6
-- Ponto 7
-- Ponto 8
-- Ponto 9
-- Ponto 10
+- **Área de ensaio** - Em cada área de ensaio, devem ser efetuados 16 impactos, formando um grid 4x4, com espaçamento de 30mm
+- **Locais recomendáveis para ensaio** - Sempre que possível, o ensaio deve ser realizado na posição de maior momento de inércia do elemento estrutural
+- **Exemplo de ensaio** - Execução do ensaio em uma ponte ferroviária em concreto armado, localizada em Cruzeiro-SP
+- **Exemplo de ensaio** - Execução do ensaio em uma viga de concreto
+:::
+
 :::
 
 ---
 
 
+::: {.tpl-wide-image title="Ensaio de Esclerometria para Determinação da Dureza Superficial do Concreto" subtitle="Equipamento e etapas do ensaio veja como isso ficou legal"
+        img="ppt/media/image4.jpeg" 
+          alt="Esclerômetro digital marca Proceq" 
+        img2="ppt/media/esclerometria/NBR-7584-2012-Figura02-Area-de-ensaio.png" 
+          alt2="Área de ensaio e pontos de impacto. Ref.: Figura 2, NBR 7584:2012"        
+        img3="ppt/media/esclerometria/190909-MRS-PonteParaibaII-Esclerometria01.jpeg" 
+          alt3="Execução do ensaio, pela empresa Dynamis Techne, em uma ponte ferroviária em concreto armado, localizada em Cruzeiro-SP." 
+        img4="ppt/media/image9.jpeg" 
+          alt4="Execuçãdo do ensaio em uma viga de concreto"  
+        carousel="true" }
 :::
+
+
+---
 
 ## Principais Ensaios Não Destrutivos (END) para avaliação de estruturas de concreto:
 
@@ -97,7 +114,7 @@ Esclerômetro Proceq -- SilverSchmidt .
 
 ---
 
-::: {.tpl-texto-imagem title="Ensaio com esclerômetro para determinação da dureza superficial do concreto" img="ppt/media/image4.jpeg" alt="Equipamento de esclerometria" caption="Exemplo de equipamento para ensaio in-situ"}
+::: {.tpl-text-image title="Ensaio com esclerômetro para determinação da dureza superficial do concreto" img="ppt/media/image4.jpeg" alt="Equipamento de esclerometria" caption="Exemplo de equipamento para ensaio in-situ"}
 ::: {.incremental}
 - O esclerômetro consiste em uma massa-martelo que, impulsionada por uma mola, se choca com a área de ensaio através de uma haste;
 - **Norma NBR 7584:2012 Concreto endurecido** -- Avaliação da dureza superficial pelo esclerômetro de reflexão -- Método de Ensaio;
@@ -142,7 +159,7 @@ Norma Americana ASTM -- D5882 -- 16 --  Standard Test Method for Low Strain Imp
 
 
 
-::: {.tpl-texto title="Estrategia de combinacao de END" subtitle="Reducao de incerteza"}
+::: {.tpl-text title="Estrategia de combinacao de END" subtitle="Reducao de incerteza"}
 ::: {.incremental}
 - Nenhum ensaio isolado responde todas as perguntas de diagnostico.
 - A combinacao de metodos melhora confiabilidade e rastreabilidade.
@@ -153,7 +170,7 @@ Norma Americana ASTM -- D5882 -- 16 --  Standard Test Method for Low Strain Imp
 Equacao de erro combinado (conceitual): sigma_comb = sqrt(sigma_1^2 + sigma_2^2 + ... + sigma_n^2)
 :::
 
-::: {.tpl-texto-imagem title="Leitura integrada de resultados" img="ppt/media/image4.jpeg" alt="Equipamento de esclerometria" caption="Exemplo de equipamento para ensaio in-situ"}
+::: {.tpl-text-image title="Leitura integrada de resultados" img="ppt/media/image4.jpeg" alt="Equipamento de esclerometria" caption="Exemplo de equipamento para ensaio in-situ"}
 - Interpretar os resultados por zonas da estrutura (nao por pontos isolados).
 - Correlacionar valores de esclerometria com ultrassom e cobrimento.
 - Destacar discrepancias para investigacao complementar.
@@ -162,12 +179,12 @@ Equacao de erro combinado (conceitual): sigma_comb = sqrt(sigma_1^2 + sigma_2^2 
 
 
 
-::: {.tpl-texto-tabela title="Matriz rapida para selecao de END" caption="Tabela 1 - Comparacao objetiva entre metodos" table_file="slides/templates/tabela-criterios-end.md"}
+::: {.tpl-text-table title="Matriz rapida para selecao de END" caption="Tabela 1 - Comparacao objetiva entre metodos" table_file="slides/templates/table-ndt-criteria.md"}
 - Use a matriz para escolher o metodo principal conforme o objetivo.
 - Em estruturas criticas, priorize combinacao de tecnicas.
 - Inclua ensaio confirmatorio quando houver alta variabilidade.
 :::
 
-::: {.tpl-tabela-ampla title="Plano recomendado de inspecao" caption="Tabela 2 - Sequencia sugerida de campanha" table_file="slides/templates/tabela-plano-inspecao.md"}
+::: {.tpl-wide-table title="Plano recomendado de inspecao" caption="Tabela 2 - Sequencia sugerida de campanha" table_file="slides/templates/table-inspection-plan.md"}
 :::
 
