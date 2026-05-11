@@ -27,38 +27,48 @@ CAROUSEL_SCRIPT = """<script>
             return carousel && carousel.querySelectorAll('.tpl-carousel-item').length ? carousel : null;
         }
 
-        function itemIndex(carousel, item) {
-            var items = Array.from(carousel.querySelectorAll('.tpl-carousel-item'));
-            var idx = items.indexOf(item);
-            return idx < 0 ? 0 : idx;
-        }
-
         function getActiveIndex(carousel) {
-            var currentFragment = carousel.querySelector('.tpl-carousel-item.fragment.current-fragment');
-            if (!currentFragment) {
-                var visibleFragments = carousel.querySelectorAll('.tpl-carousel-item.fragment.visible');
-                if (!visibleFragments.length) {
-                    return 0;
-                }
-                var lastVisible = visibleFragments[visibleFragments.length - 1];
-                return itemIndex(carousel, lastVisible);
+            var activeItem = carousel.querySelector('.tpl-carousel-item.is-active');
+            if (!activeItem) {
+                return 0;
             }
-            return itemIndex(carousel, currentFragment);
+
+            var items = Array.from(carousel.querySelectorAll('.tpl-carousel-item'));
+            var index = items.indexOf(activeItem);
+            return index < 0 ? 0 : index;
         }
 
-        function syncDots(scope) {
-            (scope || document).querySelectorAll('.tpl-carousel[data-carousel]').forEach(function (carousel) {
-                var activeIndex = getActiveIndex(carousel);
-                carousel.querySelectorAll('[data-carousel-dot]').forEach(function (dot) {
-                    dot.classList.toggle('is-active', Number(dot.getAttribute('data-carousel-dot')) === activeIndex);
-                });
-            });
+        function setActiveIndex(carousel, newIndex) {
+            carousel = getCarousel(carousel);
+            if (!carousel) {
+                return;
+            }
+
+            var items = carousel.querySelectorAll('.tpl-carousel-item');
+            var captions = carousel.querySelectorAll('.tpl-carousel-caption');
+            var dots = carousel.querySelectorAll('.tpl-carousel-dot');
+
+            for (var i = 0; i < items.length; i++) {
+                var active = i === newIndex;
+                items[i].classList.toggle('is-active', active);
+                items[i].classList.toggle('is-hidden', !active);
+            }
+
+            for (var j = 0; j < captions.length; j++) {
+                var captionActive = j === newIndex;
+                captions[j].classList.toggle('is-active', captionActive);
+                captions[j].classList.toggle('is-hidden', !captionActive);
+            }
+
+            for (var k = 0; k < dots.length; k++) {
+                dots[k].classList.toggle('is-active', k === newIndex);
+            }
         }
 
         function moveCarousel(carousel, direction) {
             carousel = getCarousel(carousel);
             if (!carousel) {
-                return;
+                return false;
             }
 
             var items = carousel.querySelectorAll('.tpl-carousel-item');
@@ -72,69 +82,56 @@ CAROUSEL_SCRIPT = """<script>
                 newIndex = currentIndex === items.length - 1 ? 0 : currentIndex + 1;
             }
 
-            for (var i = 0; i < items.length; i++) {
-                items[i].classList.toggle('is-initial', i === 0 && newIndex === 0);
-                items[i].classList.toggle('visible', i <= newIndex);
-                items[i].classList.toggle('current-fragment', i === newIndex);
-            }
-
-            carousel.querySelectorAll('.tpl-carousel-caption').forEach(function (caption, index) {
-                caption.classList.toggle('is-initial', index === 0 && newIndex === 0);
-                caption.classList.toggle('visible', index <= newIndex);
-                caption.classList.toggle('current-fragment', index === newIndex);
-            });
-
-            carousel.querySelectorAll('.tpl-carousel-dot').forEach(function (dot, index) {
-                dot.classList.toggle('is-active', index === newIndex);
-            });
+            setActiveIndex(carousel, newIndex);
+            return true;
         }
 
-        function registerKeyboardBindings() {
+        function bindKeyboardBindings() {
             if (typeof Reveal === 'undefined' || typeof Reveal.addKeyBinding !== 'function') {
                 return;
             }
 
             Reveal.addKeyBinding({ keyCode: 37, key: 'Left', description: 'Previous carousel image' }, function () {
                 var currentSlide = Reveal.getCurrentSlide();
-                moveCarousel(currentSlide ? currentSlide.querySelector('.tpl-carousel') : null, 'prev');
+                var carousel = currentSlide ? currentSlide.querySelector('.tpl-carousel') : null;
+                if (!moveCarousel(carousel, 'prev') && typeof Reveal.prev === 'function') {
+                    Reveal.prev();
+                }
             });
 
             Reveal.addKeyBinding({ keyCode: 39, key: 'Right', description: 'Next carousel image' }, function () {
                 var currentSlide = Reveal.getCurrentSlide();
-                moveCarousel(currentSlide ? currentSlide.querySelector('.tpl-carousel') : null, 'next');
+                var carousel = currentSlide ? currentSlide.querySelector('.tpl-carousel') : null;
+                if (!moveCarousel(carousel, 'next') && typeof Reveal.next === 'function') {
+                    Reveal.next();
+                }
             });
         }
 
         document.addEventListener('click', function (event) {
             var button = event.target.closest('[data-carousel-nav]');
-            if (!button || typeof Reveal === 'undefined') {
+            if (!button) {
                 return;
             }
 
             event.preventDefault();
             event.stopPropagation();
 
-            if (button.getAttribute('data-carousel-nav') === 'prev') {
-                moveCarousel(button.closest('.tpl-carousel'), 'prev');
-                return;
-            }
-
-            moveCarousel(button.closest('.tpl-carousel'), 'next');
+            moveCarousel(button.closest('.tpl-carousel'), button.getAttribute('data-carousel-nav'));
         });
 
         document.addEventListener('slidechanged', function (event) {
-            syncDots(event.currentSlide || document);
-        });
-        document.addEventListener('fragmentshown', function (event) {
-            syncDots(event.fragment ? event.fragment.closest('section') || document : document);
-        });
-        document.addEventListener('fragmenthidden', function (event) {
-            syncDots(event.fragment ? event.fragment.closest('section') || document : document);
+            var slide = event.currentSlide || document;
+            slide.querySelectorAll('.tpl-carousel[data-carousel]').forEach(function (carousel) {
+                setActiveIndex(carousel, 0);
+            });
         });
 
-        window.addEventListener('load', registerKeyboardBindings, { once: true });
+        window.addEventListener('load', bindKeyboardBindings, { once: true });
 
-        syncDots(document);
+        document.querySelectorAll('.tpl-carousel[data-carousel]').forEach(function (carousel) {
+            setActiveIndex(carousel, 0);
+        });
     })();
 </script>"""
 
@@ -211,17 +208,14 @@ def build_image_carousel(images: list[tuple[str, str, str]]) -> str:
     html_parts.append('  <div class="tpl-carousel-viewport">')
 
     for idx, (img, alt, caption) in enumerate(images):
-        if idx == 0:
-            html_parts.append(render_image_figure(img, alt, "tpl-carousel-item is-initial", "100%"))
-            continue
-
+        visibility_class = "is-active" if idx == 0 else "is-hidden"
         html_parts.append(
             render_image_figure(
                 img,
                 alt,
-                "tpl-carousel-item fragment current-visible",
+                f"tpl-carousel-item {visibility_class}",
                 "100%",
-                f' data-fragment-index="{idx}"',
+                f' data-carousel-index="{idx}"',
             )
         )
 
@@ -230,14 +224,9 @@ def build_image_carousel(images: list[tuple[str, str, str]]) -> str:
 
     for idx, (_img, _alt, caption) in enumerate(images):
         safe_caption = html.escape(caption or "")
-        if idx == 0:
-            html_parts.append(
-                f'    <p class="tpl-carousel-caption is-initial">{safe_caption}</p>'
-            )
-            continue
-
+        visibility_class = "is-active" if idx == 0 else "is-hidden"
         html_parts.append(
-            f'    <p class="tpl-carousel-caption fragment current-visible" data-fragment-index="{idx}">{safe_caption}</p>'
+            f'    <p class="tpl-carousel-caption {visibility_class}" data-carousel-index="{idx}">{safe_caption}</p>'
         )
 
     html_parts.append("  </div>")

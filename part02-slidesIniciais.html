@@ -164,24 +164,24 @@ Prof.&nbsp;Remo Magalhães de Souza, Eng. Civil, M.Sc , Ph.D.
   <button type="button" class="tpl-carousel-nav tpl-carousel-prev" data-carousel-nav="prev" aria-label="Previous image">❮</button>
   <button type="button" class="tpl-carousel-nav tpl-carousel-next" data-carousel-nav="next" aria-label="Next image">❯</button>
   <div class="tpl-carousel-viewport">
-    <figure class="tpl-carousel-item is-initial">
+    <figure class="tpl-carousel-item is-active" data-carousel-index="0">
       <img src="ppt/media/image4.jpeg" alt="Equipamento 1" style="width: 100%;">
     </figure>
-    <figure class="tpl-carousel-item fragment current-visible" data-fragment-index="1">
+    <figure class="tpl-carousel-item is-hidden" data-carousel-index="1">
       <img src="ppt/media/image5.png" alt="Equipamento 2" style="width: 100%;">
     </figure>
-    <figure class="tpl-carousel-item fragment current-visible" data-fragment-index="2">
+    <figure class="tpl-carousel-item is-hidden" data-carousel-index="2">
       <img src="ppt/media/image8.jpg" alt="Imagem 3" style="width: 100%;">
     </figure>
-    <figure class="tpl-carousel-item fragment current-visible" data-fragment-index="3">
+    <figure class="tpl-carousel-item is-hidden" data-carousel-index="3">
       <img src="ppt/media/image9.jpeg" alt="Imagem 4" style="width: 100%;">
     </figure>
   </div>
   <div class="tpl-carousel-caption-zone">
-    <p class="tpl-carousel-caption is-initial">Etapa 1: verificacao de superficie e posicionamento</p>
-    <p class="tpl-carousel-caption fragment current-visible" data-fragment-index="1">Etapa 2: aquisicao e conferencia de leituras</p>
-    <p class="tpl-carousel-caption fragment current-visible" data-fragment-index="2">Legenda 3</p>
-    <p class="tpl-carousel-caption fragment current-visible" data-fragment-index="3">Legenda 4</p>
+    <p class="tpl-carousel-caption is-active" data-carousel-index="0">Etapa 1: verificacao de superficie e posicionamento</p>
+    <p class="tpl-carousel-caption is-hidden" data-carousel-index="1">Etapa 2: aquisicao e conferencia de leituras</p>
+    <p class="tpl-carousel-caption is-hidden" data-carousel-index="2">Legenda 3</p>
+    <p class="tpl-carousel-caption is-hidden" data-carousel-index="3">Legenda 4</p>
   </div>
   <div class="tpl-carousel-dots" aria-hidden="true">
     <span class="tpl-carousel-dot is-active" data-carousel-dot="0"></span>
@@ -202,38 +202,48 @@ Prof.&nbsp;Remo Magalhães de Souza, Eng. Civil, M.Sc , Ph.D.
             return carousel && carousel.querySelectorAll('.tpl-carousel-item').length ? carousel : null;
         }
 
-        function itemIndex(carousel, item) {
-            var items = Array.from(carousel.querySelectorAll('.tpl-carousel-item'));
-            var idx = items.indexOf(item);
-            return idx < 0 ? 0 : idx;
-        }
-
         function getActiveIndex(carousel) {
-            var currentFragment = carousel.querySelector('.tpl-carousel-item.fragment.current-fragment');
-            if (!currentFragment) {
-                var visibleFragments = carousel.querySelectorAll('.tpl-carousel-item.fragment.visible');
-                if (!visibleFragments.length) {
-                    return 0;
-                }
-                var lastVisible = visibleFragments[visibleFragments.length - 1];
-                return itemIndex(carousel, lastVisible);
+            var activeItem = carousel.querySelector('.tpl-carousel-item.is-active');
+            if (!activeItem) {
+                return 0;
             }
-            return itemIndex(carousel, currentFragment);
+
+            var items = Array.from(carousel.querySelectorAll('.tpl-carousel-item'));
+            var index = items.indexOf(activeItem);
+            return index < 0 ? 0 : index;
         }
 
-        function syncDots(scope) {
-            (scope || document).querySelectorAll('.tpl-carousel[data-carousel]').forEach(function (carousel) {
-                var activeIndex = getActiveIndex(carousel);
-                carousel.querySelectorAll('[data-carousel-dot]').forEach(function (dot) {
-                    dot.classList.toggle('is-active', Number(dot.getAttribute('data-carousel-dot')) === activeIndex);
-                });
-            });
+        function setActiveIndex(carousel, newIndex) {
+            carousel = getCarousel(carousel);
+            if (!carousel) {
+                return;
+            }
+
+            var items = carousel.querySelectorAll('.tpl-carousel-item');
+            var captions = carousel.querySelectorAll('.tpl-carousel-caption');
+            var dots = carousel.querySelectorAll('.tpl-carousel-dot');
+
+            for (var i = 0; i < items.length; i++) {
+                var active = i === newIndex;
+                items[i].classList.toggle('is-active', active);
+                items[i].classList.toggle('is-hidden', !active);
+            }
+
+            for (var j = 0; j < captions.length; j++) {
+                var captionActive = j === newIndex;
+                captions[j].classList.toggle('is-active', captionActive);
+                captions[j].classList.toggle('is-hidden', !captionActive);
+            }
+
+            for (var k = 0; k < dots.length; k++) {
+                dots[k].classList.toggle('is-active', k === newIndex);
+            }
         }
 
         function moveCarousel(carousel, direction) {
             carousel = getCarousel(carousel);
             if (!carousel) {
-                return;
+                return false;
             }
 
             var items = carousel.querySelectorAll('.tpl-carousel-item');
@@ -247,69 +257,56 @@ Prof.&nbsp;Remo Magalhães de Souza, Eng. Civil, M.Sc , Ph.D.
                 newIndex = currentIndex === items.length - 1 ? 0 : currentIndex + 1;
             }
 
-            for (var i = 0; i < items.length; i++) {
-                items[i].classList.toggle('is-initial', i === 0 && newIndex === 0);
-                items[i].classList.toggle('visible', i <= newIndex);
-                items[i].classList.toggle('current-fragment', i === newIndex);
-            }
-
-            carousel.querySelectorAll('.tpl-carousel-caption').forEach(function (caption, index) {
-                caption.classList.toggle('is-initial', index === 0 && newIndex === 0);
-                caption.classList.toggle('visible', index <= newIndex);
-                caption.classList.toggle('current-fragment', index === newIndex);
-            });
-
-            carousel.querySelectorAll('.tpl-carousel-dot').forEach(function (dot, index) {
-                dot.classList.toggle('is-active', index === newIndex);
-            });
+            setActiveIndex(carousel, newIndex);
+            return true;
         }
 
-        function registerKeyboardBindings() {
+        function bindKeyboardBindings() {
             if (typeof Reveal === 'undefined' || typeof Reveal.addKeyBinding !== 'function') {
                 return;
             }
 
             Reveal.addKeyBinding({ keyCode: 37, key: 'Left', description: 'Previous carousel image' }, function () {
                 var currentSlide = Reveal.getCurrentSlide();
-                moveCarousel(currentSlide ? currentSlide.querySelector('.tpl-carousel') : null, 'prev');
+                var carousel = currentSlide ? currentSlide.querySelector('.tpl-carousel') : null;
+                if (!moveCarousel(carousel, 'prev') && typeof Reveal.prev === 'function') {
+                    Reveal.prev();
+                }
             });
 
             Reveal.addKeyBinding({ keyCode: 39, key: 'Right', description: 'Next carousel image' }, function () {
                 var currentSlide = Reveal.getCurrentSlide();
-                moveCarousel(currentSlide ? currentSlide.querySelector('.tpl-carousel') : null, 'next');
+                var carousel = currentSlide ? currentSlide.querySelector('.tpl-carousel') : null;
+                if (!moveCarousel(carousel, 'next') && typeof Reveal.next === 'function') {
+                    Reveal.next();
+                }
             });
         }
 
         document.addEventListener('click', function (event) {
             var button = event.target.closest('[data-carousel-nav]');
-            if (!button || typeof Reveal === 'undefined') {
+            if (!button) {
                 return;
             }
 
             event.preventDefault();
             event.stopPropagation();
 
-            if (button.getAttribute('data-carousel-nav') === 'prev') {
-                moveCarousel(button.closest('.tpl-carousel'), 'prev');
-                return;
-            }
-
-            moveCarousel(button.closest('.tpl-carousel'), 'next');
+            moveCarousel(button.closest('.tpl-carousel'), button.getAttribute('data-carousel-nav'));
         });
 
         document.addEventListener('slidechanged', function (event) {
-            syncDots(event.currentSlide || document);
-        });
-        document.addEventListener('fragmentshown', function (event) {
-            syncDots(event.fragment ? event.fragment.closest('section') || document : document);
-        });
-        document.addEventListener('fragmenthidden', function (event) {
-            syncDots(event.fragment ? event.fragment.closest('section') || document : document);
+            var slide = event.currentSlide || document;
+            slide.querySelectorAll('.tpl-carousel[data-carousel]').forEach(function (carousel) {
+                setActiveIndex(carousel, 0);
+            });
         });
 
-        window.addEventListener('load', registerKeyboardBindings, { once: true });
+        window.addEventListener('load', bindKeyboardBindings, { once: true });
 
-        syncDots(document);
+        document.querySelectorAll('.tpl-carousel[data-carousel]').forEach(function (carousel) {
+            setActiveIndex(carousel, 0);
+        });
     })();
 </script>
 
@@ -327,6 +324,13 @@ Prof.&nbsp;Remo Magalhães de Souza, Eng. Civil, M.Sc , Ph.D.
 <li class="fragment">Ponto 1</li>
 <li class="fragment">Ponto 2</li>
 <li class="fragment">Ponto 3</li>
+<li class="fragment">Ponto 4</li>
+<li class="fragment">Ponto 5</li>
+<li class="fragment">Ponto 6</li>
+<li class="fragment">Ponto 7</li>
+<li class="fragment">Ponto 8</li>
+<li class="fragment">Ponto 9</li>
+<li class="fragment">Ponto 10</li>
 </ul>
 </section>
 <section class="slide level6">
@@ -337,20 +341,20 @@ Prof.&nbsp;Remo Magalhães de Souza, Eng. Civil, M.Sc , Ph.D.
   <button type="button" class="tpl-carousel-nav tpl-carousel-prev" data-carousel-nav="prev" aria-label="Previous image">❮</button>
   <button type="button" class="tpl-carousel-nav tpl-carousel-next" data-carousel-nav="next" aria-label="Next image">❯</button>
   <div class="tpl-carousel-viewport">
-    <figure class="tpl-carousel-item is-initial">
+    <figure class="tpl-carousel-item is-active" data-carousel-index="0">
       <img src="ppt/media/image6.jpeg" alt="Imagem 1" style="width: 100%;">
     </figure>
-    <figure class="tpl-carousel-item fragment current-visible" data-fragment-index="1">
+    <figure class="tpl-carousel-item is-hidden" data-carousel-index="1">
       <img src="ppt/media/image7.jpeg" alt="Imagem 2" style="width: 100%;">
     </figure>
-    <figure class="tpl-carousel-item fragment current-visible" data-fragment-index="2">
+    <figure class="tpl-carousel-item is-hidden" data-carousel-index="2">
       <img src="ppt/media/image8.jpg" alt="Imagem 3" style="width: 100%;">
     </figure>
   </div>
   <div class="tpl-carousel-caption-zone">
-    <p class="tpl-carousel-caption is-initial">Legenda 1</p>
-    <p class="tpl-carousel-caption fragment current-visible" data-fragment-index="1">Legenda 2</p>
-    <p class="tpl-carousel-caption fragment current-visible" data-fragment-index="2">Legenda 3</p>
+    <p class="tpl-carousel-caption is-active" data-carousel-index="0">Legenda 1</p>
+    <p class="tpl-carousel-caption is-hidden" data-carousel-index="1">Legenda 2</p>
+    <p class="tpl-carousel-caption is-hidden" data-carousel-index="2">Legenda 3</p>
   </div>
   <div class="tpl-carousel-dots" aria-hidden="true">
     <span class="tpl-carousel-dot is-active" data-carousel-dot="0"></span>
@@ -371,38 +375,48 @@ Prof.&nbsp;Remo Magalhães de Souza, Eng. Civil, M.Sc , Ph.D.
             return carousel && carousel.querySelectorAll('.tpl-carousel-item').length ? carousel : null;
         }
 
-        function itemIndex(carousel, item) {
-            var items = Array.from(carousel.querySelectorAll('.tpl-carousel-item'));
-            var idx = items.indexOf(item);
-            return idx < 0 ? 0 : idx;
-        }
-
         function getActiveIndex(carousel) {
-            var currentFragment = carousel.querySelector('.tpl-carousel-item.fragment.current-fragment');
-            if (!currentFragment) {
-                var visibleFragments = carousel.querySelectorAll('.tpl-carousel-item.fragment.visible');
-                if (!visibleFragments.length) {
-                    return 0;
-                }
-                var lastVisible = visibleFragments[visibleFragments.length - 1];
-                return itemIndex(carousel, lastVisible);
+            var activeItem = carousel.querySelector('.tpl-carousel-item.is-active');
+            if (!activeItem) {
+                return 0;
             }
-            return itemIndex(carousel, currentFragment);
+
+            var items = Array.from(carousel.querySelectorAll('.tpl-carousel-item'));
+            var index = items.indexOf(activeItem);
+            return index < 0 ? 0 : index;
         }
 
-        function syncDots(scope) {
-            (scope || document).querySelectorAll('.tpl-carousel[data-carousel]').forEach(function (carousel) {
-                var activeIndex = getActiveIndex(carousel);
-                carousel.querySelectorAll('[data-carousel-dot]').forEach(function (dot) {
-                    dot.classList.toggle('is-active', Number(dot.getAttribute('data-carousel-dot')) === activeIndex);
-                });
-            });
+        function setActiveIndex(carousel, newIndex) {
+            carousel = getCarousel(carousel);
+            if (!carousel) {
+                return;
+            }
+
+            var items = carousel.querySelectorAll('.tpl-carousel-item');
+            var captions = carousel.querySelectorAll('.tpl-carousel-caption');
+            var dots = carousel.querySelectorAll('.tpl-carousel-dot');
+
+            for (var i = 0; i < items.length; i++) {
+                var active = i === newIndex;
+                items[i].classList.toggle('is-active', active);
+                items[i].classList.toggle('is-hidden', !active);
+            }
+
+            for (var j = 0; j < captions.length; j++) {
+                var captionActive = j === newIndex;
+                captions[j].classList.toggle('is-active', captionActive);
+                captions[j].classList.toggle('is-hidden', !captionActive);
+            }
+
+            for (var k = 0; k < dots.length; k++) {
+                dots[k].classList.toggle('is-active', k === newIndex);
+            }
         }
 
         function moveCarousel(carousel, direction) {
             carousel = getCarousel(carousel);
             if (!carousel) {
-                return;
+                return false;
             }
 
             var items = carousel.querySelectorAll('.tpl-carousel-item');
@@ -416,69 +430,56 @@ Prof.&nbsp;Remo Magalhães de Souza, Eng. Civil, M.Sc , Ph.D.
                 newIndex = currentIndex === items.length - 1 ? 0 : currentIndex + 1;
             }
 
-            for (var i = 0; i < items.length; i++) {
-                items[i].classList.toggle('is-initial', i === 0 && newIndex === 0);
-                items[i].classList.toggle('visible', i <= newIndex);
-                items[i].classList.toggle('current-fragment', i === newIndex);
-            }
-
-            carousel.querySelectorAll('.tpl-carousel-caption').forEach(function (caption, index) {
-                caption.classList.toggle('is-initial', index === 0 && newIndex === 0);
-                caption.classList.toggle('visible', index <= newIndex);
-                caption.classList.toggle('current-fragment', index === newIndex);
-            });
-
-            carousel.querySelectorAll('.tpl-carousel-dot').forEach(function (dot, index) {
-                dot.classList.toggle('is-active', index === newIndex);
-            });
+            setActiveIndex(carousel, newIndex);
+            return true;
         }
 
-        function registerKeyboardBindings() {
+        function bindKeyboardBindings() {
             if (typeof Reveal === 'undefined' || typeof Reveal.addKeyBinding !== 'function') {
                 return;
             }
 
             Reveal.addKeyBinding({ keyCode: 37, key: 'Left', description: 'Previous carousel image' }, function () {
                 var currentSlide = Reveal.getCurrentSlide();
-                moveCarousel(currentSlide ? currentSlide.querySelector('.tpl-carousel') : null, 'prev');
+                var carousel = currentSlide ? currentSlide.querySelector('.tpl-carousel') : null;
+                if (!moveCarousel(carousel, 'prev') && typeof Reveal.prev === 'function') {
+                    Reveal.prev();
+                }
             });
 
             Reveal.addKeyBinding({ keyCode: 39, key: 'Right', description: 'Next carousel image' }, function () {
                 var currentSlide = Reveal.getCurrentSlide();
-                moveCarousel(currentSlide ? currentSlide.querySelector('.tpl-carousel') : null, 'next');
+                var carousel = currentSlide ? currentSlide.querySelector('.tpl-carousel') : null;
+                if (!moveCarousel(carousel, 'next') && typeof Reveal.next === 'function') {
+                    Reveal.next();
+                }
             });
         }
 
         document.addEventListener('click', function (event) {
             var button = event.target.closest('[data-carousel-nav]');
-            if (!button || typeof Reveal === 'undefined') {
+            if (!button) {
                 return;
             }
 
             event.preventDefault();
             event.stopPropagation();
 
-            if (button.getAttribute('data-carousel-nav') === 'prev') {
-                moveCarousel(button.closest('.tpl-carousel'), 'prev');
-                return;
-            }
-
-            moveCarousel(button.closest('.tpl-carousel'), 'next');
+            moveCarousel(button.closest('.tpl-carousel'), button.getAttribute('data-carousel-nav'));
         });
 
         document.addEventListener('slidechanged', function (event) {
-            syncDots(event.currentSlide || document);
-        });
-        document.addEventListener('fragmentshown', function (event) {
-            syncDots(event.fragment ? event.fragment.closest('section') || document : document);
-        });
-        document.addEventListener('fragmenthidden', function (event) {
-            syncDots(event.fragment ? event.fragment.closest('section') || document : document);
+            var slide = event.currentSlide || document;
+            slide.querySelectorAll('.tpl-carousel[data-carousel]').forEach(function (carousel) {
+                setActiveIndex(carousel, 0);
+            });
         });
 
-        window.addEventListener('load', registerKeyboardBindings, { once: true });
+        window.addEventListener('load', bindKeyboardBindings, { once: true });
 
-        syncDots(document);
+        document.querySelectorAll('.tpl-carousel[data-carousel]').forEach(function (carousel) {
+            setActiveIndex(carousel, 0);
+        });
     })();
 </script>
 

@@ -114,18 +114,16 @@
   transition: transform 320ms ease, opacity 240ms ease;
 }
 
-.tpl-has-carousel .tpl-carousel-item.is-initial,
-.tpl-has-carousel .tpl-carousel-item.fragment.visible,
-.tpl-has-carousel .tpl-carousel-item.fragment.current-fragment {
+.tpl-has-carousel .tpl-carousel-item.is-active {
   opacity: 1;
   z-index: 1;
   transform: rotateY(0deg) scale(1);
 }
 
-.tpl-has-carousel .tpl-carousel-viewport:has(.tpl-carousel-item.fragment.current-fragment) .tpl-carousel-item.is-initial {
+.tpl-has-carousel .tpl-carousel-item.is-hidden {
   opacity: 0;
-  transform: rotateY(-70deg) scale(0.94);
   z-index: 0;
+  transform: rotateY(-70deg) scale(0.94);
 }
 
 .tpl-has-carousel .tpl-carousel-item img {
@@ -155,13 +153,11 @@
   transition: opacity 180ms ease;
 }
 
-.tpl-has-carousel .tpl-carousel-caption.is-initial,
-.tpl-has-carousel .tpl-carousel-caption.fragment.visible,
-.tpl-has-carousel .tpl-carousel-caption.fragment.current-fragment {
+.tpl-has-carousel .tpl-carousel-caption.is-active {
   opacity: 1;
 }
 
-.tpl-has-carousel .tpl-carousel-caption-zone:has(.tpl-carousel-caption.fragment.current-fragment) .tpl-carousel-caption.is-initial {
+.tpl-has-carousel .tpl-carousel-caption.is-hidden {
   opacity: 0;
 }
 
