@@ -344,6 +344,7 @@ def action(el: pf.Element, doc: pf.Doc) -> pf.Element | None:
             "tpl-text-image.html",
             {
                 "title": attrs.get("title", ""),
+                "subtitle": attrs.get("subtitle", ""),
                 "img": attrs.get("img", ""),
                 "alt": attrs.get("alt", ""),
                 "caption": attrs.get("caption", ""),
@@ -356,6 +357,7 @@ def action(el: pf.Element, doc: pf.Doc) -> pf.Element | None:
             "tpl-wide-image.html",
             {
                 "title": attrs.get("title", ""),
+                "subtitle": attrs.get("subtitle", ""),
                 "images_html": build_imagem_ampla_images(attrs),
                 "carousel_script": build_carousel_script(attrs),
             },
@@ -373,6 +375,7 @@ def action(el: pf.Element, doc: pf.Doc) -> pf.Element | None:
             "tpl-text-table.html",
             {
                 "title": attrs.get("title", ""),
+                "subtitle": attrs.get("subtitle", ""),
                 "caption": attrs.get("caption", ""),
                 "body_html": blocks_to_html(list(el.content)),
                 "table_html": table_html,
@@ -385,6 +388,7 @@ def action(el: pf.Element, doc: pf.Doc) -> pf.Element | None:
             "tpl-wide-table.html",
             {
                 "title": attrs.get("title", ""),
+                "subtitle": attrs.get("subtitle", ""),
                 "caption": attrs.get("caption", ""),
                 "table_html": table_html,
             },
