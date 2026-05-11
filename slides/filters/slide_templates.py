@@ -86,28 +86,6 @@ CAROUSEL_SCRIPT = """<script>
             return true;
         }
 
-        function bindKeyboardBindings() {
-            if (typeof Reveal === 'undefined' || typeof Reveal.addKeyBinding !== 'function') {
-                return;
-            }
-
-            Reveal.addKeyBinding({ keyCode: 37, key: 'Left', description: 'Previous carousel image' }, function () {
-                var currentSlide = Reveal.getCurrentSlide();
-                var carousel = currentSlide ? currentSlide.querySelector('.tpl-carousel') : null;
-                if (!moveCarousel(carousel, 'prev') && typeof Reveal.prev === 'function') {
-                    Reveal.prev();
-                }
-            });
-
-            Reveal.addKeyBinding({ keyCode: 39, key: 'Right', description: 'Next carousel image' }, function () {
-                var currentSlide = Reveal.getCurrentSlide();
-                var carousel = currentSlide ? currentSlide.querySelector('.tpl-carousel') : null;
-                if (!moveCarousel(carousel, 'next') && typeof Reveal.next === 'function') {
-                    Reveal.next();
-                }
-            });
-        }
-
         document.addEventListener('click', function (event) {
             var button = event.target.closest('[data-carousel-nav]');
             if (!button) {
@@ -126,8 +104,6 @@ CAROUSEL_SCRIPT = """<script>
                 setActiveIndex(carousel, 0);
             });
         });
-
-        window.addEventListener('load', bindKeyboardBindings, { once: true });
 
         document.querySelectorAll('.tpl-carousel[data-carousel]').forEach(function (carousel) {
             setActiveIndex(carousel, 0);
@@ -151,7 +127,25 @@ def md_to_html(markdown_text: str) -> str:
 def blocks_to_html(blocks: list[pf.Element]) -> str:
     if not blocks:
         return ""
-    return pf.convert_text(blocks, input_format="panflute", output_format="revealjs")
+    html_output = pf.convert_text(blocks, input_format="panflute", output_format="revealjs")
+    return unwrap_single_section(html_output)
+
+
+def unwrap_single_section(html_output: str) -> str:
+    """Remove one outer reveal section wrapper when content is embedded in templates.
+
+    Panflute -> revealjs conversion often wraps snippet content in
+    `<section class="slide ...">...</section>`. Injecting that inside custom
+    template sections can confuse Reveal's fragment/slide lifecycle.
+    """
+    if not html_output:
+        return ""
+
+    match = re.fullmatch(r"\s*<section[^>]*>\s*(.*?)\s*</section>\s*", html_output, flags=re.DOTALL)
+    if not match:
+        return html_output
+
+    return match.group(1)
 
 
 def substitute(template: str, values: dict[str, str]) -> str:

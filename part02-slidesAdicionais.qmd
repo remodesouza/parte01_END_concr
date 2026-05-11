@@ -10,6 +10,7 @@ format:
     margin: 0.02
     css: slides/includes/slides-layout.scss
     filters:
+      - slides/filters/normalize_carousel_attrs.lua
       - slides/filters/slide_templates.py
 ---
 
@@ -34,7 +35,7 @@ Equacao de erro combinado (conceitual): sigma_comb = sqrt(sigma_1^2 + sigma_2^2 
 - Registrar condicoes de ensaio para repetibilidade futura.
 :::
 
-::: {.tpl-wide-image title="Sequencia visual de campo" img="ppt/media/image4.jpeg" alt="Equipamento 1" caption="Etapa 1: verificacao de superficie e posicionamento" img2="ppt/media/image5.png" alt2="Equipamento 2" caption2="Etapa 2: aquisicao e conferencia de leituras" carousel="true"}
+::: {.tpl-wide-image title="Sequencia visual de campo" img="ppt/media/image4.jpeg" alt="Equipamento 1" caption="Etapa 1: verificacao de superficie e posicionamento" img_conferencia="ppt/media/image5.png" alt_conferencia="Equipamento 2" caption_conferencia="Etapa 2: aquisicao e conferencia de leituras" carousel="true"}
 :::
 
 ::: {.tpl-text-table title="Matriz rapida para selecao de END" caption="Tabela 1 - Comparacao objetiva entre metodos" table_file="slides/templates/table-ndt-criteria.md"}
