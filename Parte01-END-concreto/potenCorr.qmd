@@ -5,7 +5,7 @@ author: "Prof. Remo Magalhães de Souza, Eng. Civil, M.Sc , Ph.D."
 
 potenCorr:
   item: "5."
-  topic: "Ensaio de pontencial de corrosão"
+  topic: "Ensaio de potencial de corrosão"
   subtopic1: "1. Procedimento normativo e descrição do ensaio de potencial de corrosão"
   subtopic2: "2. Execução dos ensaios e resultados"
 
@@ -17,7 +17,7 @@ format:
     width: 2000
     height: 1125
     margin: 0.02
-    css: slides/includes/slides-layout.scss
+    css: slides/includes/slides-layout.css
     filters:
       - slides/filters/normalize_carousel_attrs.lua
       - slides/filters/slide_templates.py
