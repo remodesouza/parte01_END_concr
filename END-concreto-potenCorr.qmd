@@ -1,0 +1,84 @@
+---
+title: "Ensaios Não Destrutivos para Avaliação de Estruturas e Fundações em Concreto"
+author: "Prof. Remo Magalhães de Souza, Eng. Civil, M.Sc , Ph.D."
+
+potenCorr:
+  item: "5."
+  topic: "Ensaio de pontencial de corrosão"
+  subtopic1: "1. Procedimento normativo e descrição do ensaio de potencial de corrosão"
+  subtopic2: "2. Execução dos ensaios e resultados"
+
+format:
+  revealjs:
+    theme: dracula 
+    transition: slide
+    slide-level: 2
+    width: 2000
+    height: 1125
+    margin: 0.02
+    css: slides/includes/slides-layout.scss
+    filters:
+      - slides/filters/normalize_carousel_attrs.lua
+      - slides/filters/slide_templates.py
+
+
+---
+
+<!-- potenCorr - Slide 0 - divider -->
+# {{< meta potenCorr.item >}} {{< meta potenCorr.topic >}} {.title-slide}
+
+
+---
+
+<!-- potenCorr - Slide 1 -->
+
+::: {.tpl-text-carousel title="{{< meta potenCorr.item >}} {{< meta potenCorr.topic >}}" subtitle="{{< meta potenCorr.item >}}{{< meta potenCorr.subtopic1 >}}"
+  img="media/potenCorr/01canin.png" 
+    alt="Equipamento de potencial de corrosão Proceq Canin+." 
+  img_norma="media/potenCorr/02ASTM-C876-22b.png"
+    alt_norma="norma ASTM C876-22b - Standard Test Method for Corrosion Potentials of Uncoated Reinforcing Steel in Concrete"  
+  img_circuito="media/potenCorr/02b-equipamento.png"
+    alt_circuito="Circuito do eletrodo de referência" 
+  carousel="true" }
+
+- **Ensaio de potencial de Corrosão** -- O ensaio  visa a identificação de áreas com maior probabilidade de ocorrência de corrosão nas armaduras dos elementos estruturais em concreto armado. Ele consiste na utilização de um equipamento formado basicamente por um eletrodo de referência de Cu/CuSO4 (barra metálica de cobre imersa em solução saturada de sulfato de cobre), conectado por meio de um voltímetro de alta impedância à armadura da estrutura e movimentado acima da superfície do concreto. 
+
+::: {.incremental}
+- **Equipamento** -- Um exemplo de equipamento de Potencial de corrosão é o Canin+ da marca Proceq. 
+- **Norma de referência** -- ASTM C 876 - Standard test method for corrosion potentials of uncoated steel in concrete.
+
+
+
+:::
+
+:::
+
+
+---
+
+<!-- potenCorr - Slide 2 -->
+
+::: {.tpl-text-carousel title="{{< meta potenCorr.item >}} {{< meta potenCorr.topic >}}" subtitle="{{< meta potenCorr.item >}}{{< meta potenCorr.subtopic2 >}}"
+  img_prepPilar="media/potenCorr/03preparacaoPilar.jpeg"
+    alt_prepPilar="Preparação do pilar para ensaio de potencial de corrosão"
+  img_ensaio="media/potenCorr/04ensaioPIlar.jpeg"
+    alt_ensaio="Ensaio de potencial de corrosão em um pilar de concreto armado"
+  img_resultPilar="media/potenCorr/05mapaPilar.png"
+    alt_resultPilar="Resultados do ensaio de potencial de corrosão em um pilar em concreto armado"
+   img_resultLaje="media/potenCorr/06mapaLaje.png"
+    alt_resultPilar="Resultados do ensaio de potencial de corrosão em uma laje em concreto armado"  
+  carousel="true" }
+
+- **Princípio de funcionamento** -- baseia‑se na medição da diferença de potencial elétrico entre a armadura embutida no concreto e um eletrodo de referência colocado na superfície, formando uma célula eletroquímica cujo valor indica a tendência de corrosão: quando o aço perde sua passivação — por carbonatação ou presença de cloretos — seu potencial torna‑se mais negativo, e o voltímetro de alta impedância registra essa variação; assim, quanto mais negativo o potencial medido, maior a probabilidade de que a armadura esteja sofrendo corrosão ativa, permitindo avaliar o estado da estrutura de forma não destrutiva.
+
+::: {.incremental}
+
+- **Interpretação dos resultados** -- de acordo com a norma ASTM C876, os potenciais medidos podem ser interpretados da seguinte forma:
+  - Potenciais mais positivos que –200 mV indicam *alta probabilidade de que não haja corrosão* ativa na armadura.
+  - Potenciais entre –200 mV e –350 mV representam *uma zona incerta, onde a corrosão pode ou não estar ocorrendo*.
+  - Potenciais mais negativos que –350 mV indicam *alta probabilidade de corrosão ativa da armadura* no concreto.
+
+
+:::
+
+:::

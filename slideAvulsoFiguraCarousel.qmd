@@ -1,0 +1,9 @@
+
+
+<!-- Esclerometria - Slide 7 -->
+::: {.tpl-wide-image title="{{< meta esclerometria.item >}}{{< meta esclerometria.subtopic2 >}}" 
+  img="media/esclerometria/esclerometriaTabela.png" 
+    caption="Tabela com análise dos resultados do ensaio de esclerometria, incluindo os índices individuais, médias e valores espúrios." 
+  img_conferencia="media/image5.png" 
+    caption_conferencia="Etapa 2: aquisicao e conferencia de leituras" carousel="true"}
+:::

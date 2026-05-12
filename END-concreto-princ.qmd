@@ -17,7 +17,7 @@ esclerometria:
 format:
   revealjs:
     theme: dracula 
-    transition: slide
+    transition: convex
     slide-level: 2
     width: 2000
     height: 1125
@@ -33,19 +33,22 @@ format:
 ## Principais Ensaios Não Destrutivos (END) para avaliação de estruturas de concreto
 
 ::: {.incremental}
-1. **Ensaios de frente de carbonatação** -- para verificação da carbonatação do concreto.
+1. **Ensaios de frente de carbonatação** -- para verificação da carbonatação do concreto, e possível despassivação da armadura.
 2. **Ensaio com esclerômetro** -- para estimativa da resistência do concreto à compressão *in-situ*, por meio da avaliação da dureza superficial do concreto.
-3. **Ensaios com ultrassom** -- para verificação da integridade do concreto e avaliação da resistência a compressão e módulo de elasticidade.
+3. **Ensaios com ultrassom** -- para verificação da integridade do concreto e avaliação da resistência a compressão e módulo de elasticidade, a partir da velocidade de propagação de pulso ultrassônico.
 4. **Ensaio com pacômetro** -- para detecção e determinação do diâmetro de armaduras e espessura de cobrimento.
 5. **Ensaios de potencial de corrosão** -- para identificação de áreas com maior probabilidade de ocorrência de corrosão nas armaduras dos elementos estruturais em concreto armado.
 
 :::
 
----
 
 {{< include END-concreto-carbonatacao.qmd >}}
 
 {{< include END-concreto-esclerometria.qmd >}}
 
+{{< include END-concreto-ultrassom.qmd >}}
 
+{{< include END-concreto-pacometria.qmd >}}
+
+{{< include END-concreto-potenCorr.qmd >}}
 

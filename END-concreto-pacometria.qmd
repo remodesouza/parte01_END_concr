@@ -1,0 +1,92 @@
+---
+title: "Ensaios Não Destrutivos para Avaliação de Estruturas e Fundações em Concreto"
+author: "Prof. Remo Magalhães de Souza, Eng. Civil, M.Sc , Ph.D."
+
+pacometria:
+  item: "4."
+  topic: "Ensaio com pacômetro para identificação das armaduras e cobrimentos"
+  subtopic1: "1. Procedimento normativo e descrição do ensaio de pacometria"
+  subtopic2: "2. Execução dos ensaios e resultados"
+
+format:
+  revealjs:
+    theme: dracula 
+    transition: slide
+    slide-level: 2
+    width: 2000
+    height: 1125
+    margin: 0.02
+    css: slides/includes/slides-layout.scss
+    filters:
+      - slides/filters/normalize_carousel_attrs.lua
+      - slides/filters/slide_templates.py
+
+
+---
+
+<!-- pacometria - Slide 0 - divider -->
+# {{< meta pacometria.item >}} {{< meta pacometria.topic >}} {.title-slide}
+
+
+---
+
+<!-- pacometria - Slide 1 -->
+
+::: {.tpl-text-carousel title="{{< meta pacometria.item >}} {{< meta pacometria.topic >}}" subtitle="{{< meta pacometria.item >}}{{< meta pacometria.subtopic1 >}}"
+  img="media/pacometria/01-pacometro-profometer.jpg" 
+    alt="Equipamento de pacometria Proceq Profometer 630." 
+  img_norma="media/pacometria/01b-BS-1881-204-1988.png"
+    alt_norma="norma britânica BS 1881-204:1988 – Testing concrete. Recommendations on the use of electromagnetic covermeters"  
+  img_ensaioParede="media/pacometria/02-ensaio-viga-parede.jpg"
+    alt_ensaioParede="Ensaio de pacometria em uma viga parede em concreto armado" 
+  img_ensaioEstaca="media/pacometria/03-ensaio-estaca.jpeg"
+    alt_ensaioEstaca="Ensaio de pacometria em uma estaca em concreto armado"      
+  carousel="true" }
+
+- **Ensaio de pacometria** -- consiste na determinação da posição, diâmetro e cobrimento das armaduras em elementos de concreto armado, para fins de avaliação da integridade estrutural, planejamento de intervenções de reforço ou reparo, e verificação do cumprimento dos requisitos de projeto e normas técnicas.
+
+::: {.incremental}
+- **Equipamento** -- Equipamento de pacometria Proceq Profometer 630.
+- **Norma de referência** -- norma britânica BS 1881-204:1988 – *Testing
+concrete. Recommendations on the use of electromagnetic covermeters* (Ensaios em concreto. Recomendações sobre o uso de pacômetros eletromagnéticos).
+- **Princípio de funcionamento** -- o pacômetro utiliza o princípio de indução eletromagnética para detectar a presença de armaduras em elementos de concreto armado, e determinar a posição, diâmetro e cobrimento das armaduras. O equipamento é composto por um gerador de campo magnético, um sensor de detecção e um sistema de processamento de sinais. O campo magnético gerado pelo equipamento induz correntes parasitas nas armaduras de aço, as quais são detectadas pelo sensor, permitindo a determinação da posição e diâmetro das armaduras.
+- **Execução do ensaio** -- pode-se seguir a norma britânica BS 1881-204:1988, considerando o posicionamento do equipamento, e interpretação dos resultados.
+
+:::
+
+:::
+
+---
+
+<!-- pacometria - Slide 2 -->
+
+::: {.tpl-text-carousel title="{{< meta pacometria.item >}} {{< meta pacometria.topic >}}" subtitle="{{< meta pacometria.item >}}{{< meta pacometria.subtopic2 >}}"
+ img_resParVertical="media/pacometria/04-resultado-armadura-vertical-parede.png"
+    alt_resParVertical="Resultado do ensaio de pacometria referente à armadura vertical na parede em concreto armado"      
+  img_resParHorizontal="media/pacometria/05-resultado-armadura-horizontal-parede.png"
+    alt_resParHorizontal="Resultado do ensaio de pacometria referente à armadura horizontal na parede em concreto armado" 
+  img_resEstHorizontal="media/pacometria/06-resultado-armadura-horizontal-estaca.png"
+    alt_resEstHorizontal="Resultado do ensaio de pacometria referente à armadura horizontal na estaca em concreto armado"     
+  img_resEstVertical="media/pacometria/07-resultado-armadura-vertical-estaca.png"
+    alt_resEstVertical="Resultado do ensaio de pacometria referente à armadura vertical na estaca em concreto armado" 
+  img_posicaoArmaduraParede="media/pacometria/08-posicionamento-armadura-parede.jpeg"
+    alt_posicaoArmaduraParede="Posição das armaduras de aço em uma parede em concreto armado, determinada a partir do ensaio de pacometria"
+  img_posicaoArmaduraEstaca="media/pacometria/09-posicionamento-armadura-estaca.png.jpg"
+    alt_posicaoArmaduraEstaca="Posição das armaduras de aço em uma estaca em concreto armado, determinada a partir do ensaio de pacometria"
+  img_tabelaParede="media/pacometria/10-tabela-parede.png"
+    alt_tabelaParede="
+  carousel="true" }
+
+- **Resultados dos ensaios** -- os principais resultados obtidos a partir do ensaio de pacometria são o cobrimento de concreto, e a posição e diâmetro das armaduras de aço.
+
+::: {.incremental}  
+  - **Cobrimento de concreto** -- o cobrimento de concreto é a distância entre a superfície do concreto e a face externa da armadura de aço, e é um parâmetro fundamental para a durabilidade das estruturas de concreto armado, pois influencia diretamente a proteção das armaduras contra a corrosão. O ensaio de pacometria permite determinar o cobrimento de concreto, o que é essencial para avaliar a integridade estrutural e planejar intervenções de reforço ou reparo.
+  - **Posição e diâmetro das armaduras** -- o ensaio de pacometria também permite determinar a posição e diâmetro das armaduras de aço, o que é importante para verificar o cumprimento dos requisitos de projeto e normas técnicas, e para avaliar a capacidade de carga dos elementos estruturais de concreto armado.
+  - **"Grades" de armaduras** -- a partir dos resultados do ensaio de pacometria, é possível se mapear a posição das armaduras de aço em um elemento estrutural.
+   
+
+:::
+
+:::
+
+

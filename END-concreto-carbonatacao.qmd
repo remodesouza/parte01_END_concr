@@ -81,12 +81,12 @@ format:
 - **Amostragem** -- Ensaios *in situ* podem ser realizados por meio de talhagem (fratura) na estrutura em investigação, de modo a expor uma área adequada de concreto recém-fraturado. O ensaio é normalmente realizado *in situ*.
 
 ::: {.incremental}
-- **Execução do ensaio** -- a substância de fenolftaleína é aspergida usando um borrifador sobre a superfície do concreto recém-fraturado.
-- **Reação da fenolftaleína** -- em valores de pH acima de aproximadamente 9, o indicador colore o concreto de vermelho‑arroxeado. Somente o concreto que apresenta essa coloração possui alcalinidade suficiente para manter a passividade do aço da armadura.
+- **Execução do ensaio** -- a substância de fenolftaleína é aspergida sobre a superfície do concreto recém-fraturado.
+- **Reação da fenolftaleína** -- em valores de pH acima de aproximadamente 9, o indicador colore o concreto de vermelho‑arroxeado. 
 - **Profundidade da frente de carbonatação** -- a profundidade da frente de carbonatação é medida a partir da linha de fratura, podendo-se utilizar uma régua metálica e trena.
-- **Resultados** -- a profundidade da frente de carbonatação é determinada a partir da linha de fratura, sendo esta a distância entre a superfície exposta e a superfície do concreto que apresenta coloração vermelho‑arroxeada.
+- **Resultados** -- a profundidade da frente de carbonatação é determinada a partir da linha de fratura.
 - **Cobrimento e proteção do concreto** -- a profundidade da frente de carbonatação deve ser inferior à espessura do cobrimento do concreto (a qual pode ser medida com pacômetro).
-- **Efeito da carbonatação na dureza superficial do concreto** -- a carbonatação pode causar um aumento da dureza superficial do concreto, o que pode levar a resultados de ensaios de esclerometria com valores *mais elevados do que os reais*, caso o ensaio seja realizado sobre uma superfície carbonatada.
+- **Efeito da carbonatação na dureza superficial do concreto** -- a carbonatação pode causar um aumento da dureza superficial do concreto, o que pode levar a resultados de ensaios de esclerometria com valores *mais elevados do que os reais*. 
 
 :::
 

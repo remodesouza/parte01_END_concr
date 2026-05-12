@@ -1,0 +1,116 @@
+---
+title: "Ensaios Não Destrutivos para Avaliação de Estruturas e Fundações em Concreto"
+author: "Prof. Remo Magalhães de Souza, Eng. Civil, M.Sc , Ph.D."
+
+ultrassom:
+  item: "3."
+  topic: "Ensaio de ultrassom para avaliação da integridade e resistência do concreto"
+  subtopic1: "1. Procedimento normativo e descrição do ensaio de ultrassom"
+  subtopic2: "2. Arranjos e execução dos ensaios"
+  subtopic3: "2. Análise dos resultados"
+
+format:
+  revealjs:
+    theme: dracula 
+    transition: slide
+    slide-level: 2
+    width: 2000
+    height: 1125
+    margin: 0.02
+    css: slides/includes/slides-layout.scss
+    filters:
+      - slides/filters/normalize_carousel_attrs.lua
+      - slides/filters/slide_templates.py
+
+
+---
+
+<!-- Ultrassom - Slide 0 - divider -->
+# {{< meta ultrassom.item >}} {{< meta ultrassom.topic >}} {.title-slide}
+
+
+---
+
+<!-- ultrassom - Slide 1 -->
+
+::: {.tpl-text-carousel title="{{< meta ultrassom.item >}} {{< meta ultrassom.topic >}}" subtitle="{{< meta ultrassom.item >}}{{< meta ultrassom.subtopic1 >}}"
+  img_05b="media/ultrassom/01-equipamento-ultrassom-pundit.jpeg" 
+    alt_05b="Equipamento de ultrassom PUNDIT (Portable Ultrasonic Non Destructive Indicating Tester) PL-200, com transdutores de onda P com frequência de 54kHz e comprimento de onda de 68,5mm." 
+  img_norma="media/ultrassom/02-ABNT-NBR-8802-2013.png"
+    alt_norma="Norma ABNT NBR 8802:2013 - Concreto endurecido - Determinação da velocidade de propagação de onda ultrassônica"          
+  carousel="true" }
+
+- **Ensaio de ultrassom** -- consiste na determinação da velocidade de onda ultrassônica, para avaliação da integridade do concreto, permitindo se estimar o módulo de elasticidade e, consequentemente, a resistência à compressão do concreto.
+
+::: {.incremental}
+- **Equipamento** -- um exemplo de equipamento de ultrassom muito utilizado para ensaios em concreto é o PUNDIT (Portable Ultrasonic Non Destructive Indicating Tester) PL-200.
+- **Norma de referência** -- ABNT NBR 8802:2013 - Concreto endurecido - Determinação da velocidade de propagação de onda ultrassônica.
+- **Princípio de funcionamento** -- a velocidade de pulso ultrassônico é determinada a partir da medição do tempo gasto para a propagação de um pulso ultrassônico entre um transdutor emissor e um transdutor receptor, os quais são acoplados à superfície do concreto.
+
+
+:::
+
+:::
+
+---
+
+<!-- ultrassom - Slide 2 -->
+
+::: {.tpl-text-carousel title="{{< meta ultrassom.item >}} {{< meta ultrassom.topic >}}" subtitle="{{< meta ultrassom.item >}}{{< meta ultrassom.subtopic2 >}}"
+  img_direta="media/ultrassom/03-transmissao-direta.png"
+    alt_direta="Arranjo de ensaio de ultrassom em transmissão direta, com transdutores posicionados em lados opostos do elemento estrutural" 
+  img_indireta="media/ultrassom/04-transmissao-indireta.png"
+    alt_indireta="Arranjo de ensaio de ultrassom em transmissão indireta, com transdutores posicionados do mesmo lado do elemento estrutural"  
+  img_semidireta="media/ultrassom/05-transmissao-semidireta.png"
+    alt_semidireta="Arranjo de ensaio de ultrassom em transmissão semi-direta, com transdutores posicionados em lado adjacentes do elemento estrutural" 
+  img_ensaioDireta="media/ultrassom/06-ensaio-direto.jpg"
+    alt_ensaioDireta="Ensaio de ultrassom em transmissão direta, com transdutores posicionados em lados opostos do elemento estrutural" 
+  img_ensaioIndireta="media/ultrassom/07-ensaio-indireto.jpg"
+    alt_ensaioIndireta="Ensaio de ultrassom em transmissão indireta, com transdutores posicionados do mesmo lado do elemento estrutural"  
+  img_ensaioSemidireta="media/ultrassom/08-ensaio-semi-direto.jpg"
+    alt_ensaioSemidireta="Ensaio de ultrassom em transmissão semi-direta, com transdutores posicionados em lado adjacentes do elemento estrutural"            
+  carousel="true" }
+
+- **Arranjos de ensaio** -- o ensaio de ultrassom pode ser realizado com diferentes arranjos, dependendo do acesso à estrutura e da geometria do elemento estrutural. 
+
+::: {.incremental}
+   - **Transmissão direta**: Os transdutores são posicionados em faces opostas do elemento de concreto. Este arranjo é o mais recomendado na determinação da velocidade de propagação de ondas por um material, pois desta forma as ondas são recebidas com maior intensidade. 
+   - **Transmissão indireta**: os transdutores são posicionados do mesmo lado do elemento estrutural. Este arranjo é utilizado quando se tem acesso a apenas uma face do elemento estrutural, ou quando a distância entre faces opostas é superior ao comprimento dos cabos. Este método é mais impreciso do que o método direto, sendo que a amplitude do sinal é aproximadamente 3% da amplitude do sinal em comparação com a transmissão direta.
+   - **Transmissão semi-direta**: os transdutores são posicionados em lados adjacentes do elemento estrutural. Neste arranjo, a sensibilidade do equipamento está em um nível intermediário em relação aos outros dois métodos. A extensão do percurso é medida de centro a centro dos transdutores
+
+:::
+
+:::
+
+---
+
+<!-- ultrassom - Slide 2 -->
+
+::: {.tpl-text-carousel title="{{< meta ultrassom.item >}} {{< meta ultrassom.topic >}}" subtitle="{{< meta ultrassom.item >}}{{< meta ultrassom.subtopic3 >}}"
+  img_direta="media/ultrassom/09-resultados-ultrassom-direto.png"
+    alt_direta="Resultados do ensaio de ultrassom em transmissão direta" 
+  img_indireta="media/ultrassom/10-resultados-ultrassom-indireto.jpg"
+    alt_indireta="Resultados do ensaio de ultrassom em transmissão indireta"  
+  img_semidireta="media/ultrassom/11-resultados-ultrassom-semidireto.png"
+    alt_semidireta="Resultados do ensaio de ultrassom em transmissão semi-direta" 
+  img_tabelaQualid="media/ultrassom/12-tabelaQualidade.png"
+    alt_tabelaQualid="Classificação de qualidade do concreto a partir da velocidade de pulso (adaptado da norma IS 13311-1:1992)"  
+  img_tabelaModulo="media/ultrassom/13-tabela-Modulo-Elast.png"
+    alt_tabelaModulo="Relação empírica entre os módulos de elasticidade estático e dinâmico e velocidade de pulso (adaptado da Tabela 4 da norma BS-1881-Part 203:1986)" 
+  img_tabelaModulo="media/ultrassom/14-curva-velocidade-modulo-elasticidade.png"
+    alt_tabelaModulo="Curva referente à relação empírica entre o módulos de elasticidade estático e velocidade de pulso (adaptado da Tabela 4 da norma BS-1881-Part 203:1986)"  
+  img_tabelaModulo="media/ultrassom/15-resultados-finais-ultrassom.png"
+    alt_tabelaModulo="Resultados finais de resistência e módulo de elasticidade do concreto, considerando a velocidade de pulso ultrassônica, de acordo com as normas IS 13311-1:1992 e BS-1881-Part 203:1986"  
+  carousel="true" }
+
+- **Resultados dos ensaios** -- basicamente o resultado principal consiste na velocidade de onda ultrassônica, a qual é calculada considerando a distância entre os transdutores, e o tempo de ida e volta da onda ultrassônica.  
+
+::: {.incremental}
+   - **Relação entre qualidade do concreto e velocidade de pulso** -- a norma IS 13311: 1992 (*Non-Destructive Testing of Concrete – Methods of test – Part 1 – Ultrasonic Pulse Velocity*) apresenta uma relação entre a qualidade do concreto e a velocidade de pulso, para determinadas faixas de velocidade.
+   - **Relação entre resistência e módulo de elasticidade do concreto e velocidade de pulso** -- Embora seja possível estabelecer correlações entre a velocidade de pulso e a resistência à compressão do concreto e o módulo de elasticidade, esta correlação deve ser preferencialmente aferida para o tipo de concreto utilizado, levando em conta os tipos de materiais e o traço empregado.
+   - **Módulos de elasticidade estático e dinâmico** --A norma britânica BS-1881-Part-203-1986 propõe uma relação empírica entre os módulos de elasticidade estático e dinâmico e velocidade de pulso. De acordo com esta norma, as estimativas de módulo de elasticidade usando esta tabela tem uma precisão melhor do que ±10%.
+   
+
+:::
+
+:::
