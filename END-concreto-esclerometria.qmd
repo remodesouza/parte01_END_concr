@@ -12,7 +12,6 @@ esclerometria:
   subtopic5: "5. Efeito da carbonatação na dureza superficial do concreto"
   
 
-
 format:
   revealjs:
     theme: dracula 
@@ -125,15 +124,14 @@ format:
     alt_curveQR="Fator de forma dos testemunhos utilizados para correção da resistências, en função da forma e dimensões dos testemunhos, de acordo com manual da Proceq"       
   carousel="true" }
 
-- **Curva de conversão** -- gráfico que relaciona o índice esclerométrico médio final com a resistência à compressão do concreto, permitindo a estimativa da resistência do concreto *in situ* a partir dos resultados do ensaio de esclerometria.
+- **Curva de conversão** -- relaciona o índice esclerométrico médio final com a resistência à compressão, permitindo a estimativa da resistência do concreto *in situ* a partir dos resultados de esclerometria.
 
 ::: {.incremental}
 - **Posição do esclerômetro e direção do impacto** -- de acordo com a seção 5 da ABNT NBR 7584:2012, "Corrigir, se necessário, o valor médio do índice esclerométrico obtido de uma área de ensaio para um índice correspondente à posição horizontal. Os coeﬁcientes de correção devem ser fornecidos pelo fabricante do esclerômetro".
-- **Fator de forma dos testemunhos** -- deve-se utilizar um fator de forma para correção da resistência estimada, levando em conta as dimensões e forma dos corpos de prova utilizados para a determinação da curva de conversão.
+- **Fator de forma dos testemunhos** -- utilizado para correção da resistência, levando em conta as dimensões e forma dos corpos de prova considerados na curva de conversão.
 - **Energia de impacto** 
   - De acordo com a seção A.2 da ABNT NBR 7584:2012, "O princípio do método consiste basicamente em determinar a energia de impactos da massa-martelo sobre uma superfície de concreto".
-  - A energia de impacto é, em parte, utilizada na deformação permanente provocada na área de ensaio e, em parte conservada elasticamente, propiciando, ao ﬁm do impacto, o retorno do martelo. 
-  - Quanto maior a dureza da superfície ensaiada, menor a parcela de energia que se converte em deformação permanente e, por conseguinte, maior deve ser o recuo ou reﬂexão do martelo.
+  - A energia de impacto é, em parte, utilizada na deformação permanente provocada na área de ensaio e, em parte conservada elasticamente, propiciando, ao ﬁm do impacto, o retorno do martelo. Quanto maior a dureza da superfície ensaiada, menor a parcela de energia que se converte em deformação permanente e, por conseguinte, maior deve ser o recuo ou reﬂexão do martelo.
 
 
 
@@ -167,9 +165,6 @@ format:
 
 :::
 
----
-
-
 
 ---
 
@@ -190,9 +185,9 @@ format:
     alt_tabResumo="Tabela com análise dos resultados do ensaio de esclerometria, incluindo os índices individuais, médias e valores espúrios."  
   img_curvaCorr="media/esclerometria/curvaCorrigidaRemo.png" 
     alt_curvaCorr="Curva de correção corrigida do índice esclerométrico R, levando em conta o efeito da carbonatação, para o esclerômetro Proceq"  
-  img_sobrepos="media/esclerometria/curvas-sobreposicao.bmp" 
+  img_sobrepos="media/esclerometria/curvas-sobreposicao.png" 
     alt_sobrepos="Sobreposição da curva equivocada da Proceq e da curva corrigida, obtida pela Dynamis Techne, levando em conta o efeito da carbonatação, para o esclerômetro Proceq"  
-  img_resultFinais="media/esclerometria/resultados-finais.bmp" 
+  img_resultFinais="media/esclerometria/resultados-finais.png" 
     alt_resultFinais="Resultados finais de resistência considerando o efeito da carbonatação na dureza superficial do concreto, de acordo com a Norma JGJ/T 23-2011" 
   carousel="true" }
 
@@ -203,16 +198,6 @@ format:
 - **Curvas de Resistência vs índice esclerométrico R** -- Com base na Norma JGJ/T 23-2011 pode-se obter as curvas de correção do índice esclerométrico R, levando em conta o efeito da carbonatação, para diferentes espessuras da camada carbonatada (dm).
 - **Coeficiente de redução da resistência** -- com base na nessa norma, também é possível se obter curvas de coeficiente de redução da resistência em função da resistência do concreto, para diferentes espessuras da camada carbonatada (dm).
 - **Resultados finais** -- os resultados finais do estudo de caso, com frentes de carbonatação maiores que 6mm, mostram reduções na resistência do concreto iguais ou maiores do que 60%.
-
-
-::: {#id .class1 key=value}
-
-
-
-:::
- para dm>=6mm.
-
-
 
 :::
 
