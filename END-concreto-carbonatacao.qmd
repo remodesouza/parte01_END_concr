@@ -5,8 +5,8 @@ author: "Prof. Remo Magalhães de Souza, Eng. Civil, M.Sc , Ph.D."
 carbonatacao:
   item: "1."
   topic: "Ensaio de carbonatação do concreto"
-  subtopic1: "1. Materiais, procedimento normativo e execução do ensaio"
-  subtopic2: "2. Tratamento dos resultados"
+  subtopic1: "1. Procedimento normativo e materiais necessários"
+  subtopic2: "2. Etapas do ensaio de carbonatação"
 
 
 format:
@@ -34,39 +34,22 @@ format:
 <!-- Carbonatacao - Slide 1.1 -->
 
 ::: {.tpl-text-carousel title="{{< meta carbonatacao.item >}} {{< meta carbonatacao.topic >}}" subtitle="{{< meta carbonatacao.item >}}{{< meta carbonatacao.subtopic1 >}}"
-        img="media/esclerometria/esclerometro-MetroTokyo.png" 
-          alt="Esclerômetro anlógico marca MetroTokyo"   
-        img_esclerometro="media/esclerometria/esclerometro-Proceq.jpeg" 
-          alt_esclerometro="Esclerômetro digital marca Proceq"   
-        img_norma="media/esclerometria/ABNT-NBR-7584-2012.png" 
-          alt_norma="Norma ABNT NBR-7584-2012 - Concreto endurecido -- Avaliação da dureza superficial pelo esclerômetro de reflexão -- Método de Ensaio"     
-        img_mecanismo="media/esclerometria/esclerometroPortuguesRecorte.png" 
-          alt_mecanismo="Mecanismo de funcionamento do esclerômetro"   
-        img_bigorna="media/esclerometria/NBR-7584_2012_Figura01-bigorna.png" 
-          alt_bigorna="Bigorna de aço para calibração do esclerômetro. Ref.: Figura 1, NBR 7584:2012" 
-        img_calibracao="media/esclerometria/Calibracao-esclerometro-com-bigorna-01.jpeg" 
-          alt_calibracao="Calibração do esclerômetro com bigorna de aço, pela empresa Dynamis Techne"  
-        img_calibracao02="media/esclerometria/Calibracao-esclerometro-com-bigorna-02.jpeg" 
-          alt_calibracao02="Calibração do esclerômetro com bigorna de aço, pela empresa Dynamis Techne"                   
-        img_area="media/esclerometria/NBR-7584-2012-Figura02-Area-de-ensaio.png" 
-          alt_area="Área de ensaio e pontos de impacto. Ref.: Figura 2, NBR 7584:2012"   
-        img_locais="media/esclerometria/NBR-7584_2012_Figura03-locais-recomendaveis.png" 
-          alt_locais="Locais recomendáveis para aplicação do esclerômetro. Ref.: Figura 3, NBR 7584:2012"      
-        img_ponte="media/esclerometria/190909-MRS-PonteParaibaII-Carbonatacao01.jpeg" 
-          alt_ponte="Execução do ensaio, pela empresa Dynamis Techne, em uma ponte ferroviária em concreto armado, localizada em Cruzeiro-SP." 
-        img_estaca="media/esclerometria/250903-HydroOS14-Silo-Carbonatacao01.jpg" 
-          alt_estaca="Execução do ensaio, pela empresa Dynamis Techne, em uma estaca de concreto, em um silo em área portuária" 
-        carousel="true" }
+  img_norma="media/carbonatacao/BS-EN-14630-2006.png" 
+    alt_norma="Norma Britânica BS EN 14630-2006 – Products and systems for the protection and repair of concrete structures — Test methods — Determination of carbonation depth in hardened concrete by the phenolphthalein method" 
+  img_05b="media/carbonatacao/05b-Carbonation-front.png" 
+    alt_05b="Frente de carbonatação. Ref.: Figure 1, BS EN 14630-2006-5"
+  img_05="media/carbonatacao/05-indicacao-de-ph-fenolftaleina.png" 
+    alt_05="Faixa de pH obtido com o indicado de fenolftaleína, mostrando a coloração da superfície do concreto em função do pH."      
+  carousel="true" }
 
-- **Esclerômetro** -- Equipamento utilizado para a realização do ensaio de Carbonatacao, disponível em versões analógica e digital
+- **Ensaio de carbonatação** -- consiste na determinação da profundidade da frente de carbonatação no concreto, a partir da avaliação da faixa de pH do concreto, usando-se um indicador (usualmente solução de Fenolftaleína). 
 
 ::: {.incremental}
-- **Norma de referência** -- ABNT NBR 7584:2012 - Concreto endurecido -- Avaliação da dureza superficial pelo esclerômetro de reflexão -- Método de Ensaio
-- **Mecanismo de funcionamento** -- O esclerômetro consiste em uma massa-martelo que, impulsionada por uma mola, se choca com a área de ensaio através de uma haste e, a partir da energia de impacto e do deslocamento de retorno da haste, é possível se obter um valor de *dureza superficial* do concreto
-- **Calibração do equipamento** -- O esclerômetro deve ser aferido antes de sua utilização ou a cada 300 impactos realizados na mesma inspeção, por meio de ensaios em bigornas de aço
-- **Área de ensaio** -- Em cada área de ensaio, devem ser efetuados 16 impactos, formando um grid 4x4, com espaçamento de 30mm
-- **Locais recomendáveis para ensaio** -- Sempre que possível, o ensaio deve ser realizado na posição de maior momento de inércia do elemento estrutural
-- **Exemplos de ensaio** -- Execução do ensaio de Carbonatacao realizados pela empresa Dynamis Techne
+- **Norma de referência** -- norma britânica BS EN 14630-2006 – *Products and systems for the protection and repair of concrete structures — Test methods — Determination of carbonation depth in hardened concrete by the phenolphthalein method*;
+- **Carbonatação** -- a formação de carbonato de cálcio causa a redução do pH do concreto, possibilitando a despassivação da armadura, o que pode levar à sua corrosão.
+- **Preparação da substância de fenolftaleína** -- uma solução de indicador de fenolftaleína normalmente é preparada dissolvendo-se 1g de fenolftaleína em 70ml de álcool etílico e diluindo-se a solução para 100ml com água destilada ou deionizada (item 3 da BS EN14630-2006);
+- **Método de medição da carbonatação** -- utiliza-se o indicador fenolftaleína, que reage com o pH do concreto para revelar a profundidade da zona não carbonatada.
+
 
 :::
 
@@ -74,38 +57,38 @@ format:
 
 
 ---
+
 
 <!-- Carbonatacao - Slide 1.2 -->
-::: {.tpl-text title="{{< meta carbonatacao.item >}} {{< meta carbonatacao.topic >}}" subtitle="{{< meta carbonatacao.item >}}{{< meta carbonatacao.subtopic2 >}}"}
+
+::: {.tpl-text-carousel title="{{< meta carbonatacao.item >}} {{< meta carbonatacao.topic >}}" subtitle="{{< meta carbonatacao.item >}}{{< meta carbonatacao.subtopic2 >}}"
+  img_01="media/carbonatacao/01-abertura-janela.jpg" 
+    alt_01="Remoção do concreto de uma estaca para ensaio de carbonatação"   
+  img_02="media/carbonatacao/02-abertura-janela.jpeg" 
+    alt_02="Remoção do concreto do fundo de uma laje para ensaio de carbonatação"       
+  img_03="media/carbonatacao/03-aspersao-fenolfatleina.jpg" 
+    alt_03="Aspersão de fenolftaleína sobre a superfície do concreto"   
+  img_04="media/carbonatacao/04-ensaio-carbonatacao.jpg" 
+    alt_04="Execução do ensaio de carbonatação, pela empresa Dynamis Techne, na estrutura e fundação de uma estrutura em concreto armado e protendido" 
+  img_06="media/carbonatacao/06-medicao-profundidade.jpg" 
+    alt_06="Medição da profundidade da frente de carbonatação, utilizando uma régua metálica e trena"                   
+  img_07="media/carbonatacao/07-medicao-profundidade-02.jpg" 
+    alt_07="Medição da profundidade da frente de carbonatação, utilizando uma régua metálica e trena"   
+  img_08="media/carbonatacao/08-resultados.png" 
+    alt_08="Resultados dos ensaios de carbonatação realizados na estrutura"       
+  carousel="true" }
+
+- **Amostragem** -- Ensaios *in situ* podem ser realizados por meio de talhagem (fratura) na estrutura em investigação, de modo a expor uma área adequada de concreto recém-fraturado. O ensaio é normalmente realizado *in situ*.
+
 ::: {.incremental}
-
-- **Média inicial** - Calcular a média aritmética dos 16 valores individuais (impactos) dos índices esclerométricos
-  correspondentes a uma única área de ensaio;
-- **Resultados espúrios** - *Desprezar* todo índice esclerométrico individual que esteja afastado em *mais de 10%* do valor médio obtido e calcular a nova média aritmética;
-- **Índice esclerométrico médio final** 
-  - O índice ﬁnal deve ser obtido com no mínimo *cinco* valores individuais;
-  - Quando isso não for possível, o ensaio esclerométrico dessa área deve ser desconsiderado;
-  - *Nenhum* dos índices esclerométricos individuais restantes deve diferir em *mais de 10%* da média ﬁnal;
-  - Se isso ocorrer, o ensaio esclerométrico dessa área deve ser desconsiderado.
-:::
+- **Execução do ensaio** -- a substância de fenolftaleína é aspergida usando um borrifador sobre a superfície do concreto recém-fraturado.
+- **Reação da fenolftaleína** -- em valores de pH acima de aproximadamente 9, o indicador colore o concreto de vermelho‑arroxeado. Somente o concreto que apresenta essa coloração possui alcalinidade suficiente para manter a passividade do aço da armadura.
+- **Profundidade da frente de carbonatação** -- a profundidade da frente de carbonatação é medida a partir da linha de fratura, podendo-se utilizar uma régua metálica e trena.
+- **Resultados** -- a profundidade da frente de carbonatação é determinada a partir da linha de fratura, sendo esta a distância entre a superfície exposta e a superfície do concreto que apresenta coloração vermelho‑arroxeada.
+- **Cobrimento e proteção do concreto** -- a profundidade da frente de carbonatação deve ser inferior à espessura do cobrimento do concreto (a qual pode ser medida com pacômetro).
+- **Efeito da carbonatação na dureza superficial do concreto** -- a carbonatação pode causar um aumento da dureza superficial do concreto, o que pode levar a resultados de ensaios de esclerometria com valores *mais elevados do que os reais*, caso o ensaio seja realizado sobre uma superfície carbonatada.
 
 :::
 
----
-
-<!-- Carbonatacao - Slide 1.3 -->
-::: {.tpl-wide-image title="{{< meta carbonatacao.item >}}{{< meta carbonatacao.topic >}}" subtitle="{{< meta carbonatacao.item >}}{{< meta carbonatacao.subtopic2 >}}"
-  img="media/esclerometria/CarbonatacaoTabela.png" 
-    caption="Tabela com análise dos resultados do ensaio de Carbonatacao, incluindo os índices individuais, médias e valores espúrios." }
 :::
 
-
----
-
-<!-- Carbonatacao - Slide 1.3 -->
-::: {.tpl-wide-image title="{{< meta carbonatacao.item >}}{{< meta carbonatacao.subtopic2 >}}" 
-  img="media/esclerometria/CarbonatacaoTabela.png" 
-    caption="Tabela com análise dos resultados do ensaio de Carbonatacao, incluindo os índices individuais, médias e valores espúrios." 
-  img_conferencia="media/image5.png" 
-    caption_conferencia="Etapa 2: aquisicao e conferencia de leituras" carousel="true"}
-:::

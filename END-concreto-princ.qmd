@@ -33,12 +33,12 @@ format:
 ## Principais Ensaios Não Destrutivos (END) para avaliação de estruturas de concreto
 
 ::: {.incremental}
-1. **Ensaio com esclerômetro** -- para estimativa da resistência do concreto à compressão *in-situ*, por meio da avaliação da dureza superficial do concreto
-2. **Ensaios com ultrassom** -- para verificação da integridade do concreto e avaliação da resistência a compressão e módulo de elasticidade
-3. **Ensaio com pacômetro** -- para detecção e determinação do diâmetro de armaduras e espessura de cobrimento
-4. **Ensaios de potencial de corrosão** -- para identificação de áreas com maior probabilidade de ocorrência de corrosão nas armaduras dos elementos estruturais em concreto armado
-5. **Ensaios de frente de carbonatação** -- para verificação da carbonatação do concreto
-6. **Ensaios de extensometria (ET)** -- este ensaio consiste na instalação de  extensômetros elétricos de resistência (*strain-gages*) em uma estrutura, visando a medição em tempo real de deformações e tensões reais decorrentes de um determinado carregamento. Quando são instalados vários sensores em uma mesma seção de um elemento estrutural, também é possível se determinar os esforços internos nesta seção
+1. **Ensaios de frente de carbonatação** -- para verificação da carbonatação do concreto.
+2. **Ensaio com esclerômetro** -- para estimativa da resistência do concreto à compressão *in-situ*, por meio da avaliação da dureza superficial do concreto.
+3. **Ensaios com ultrassom** -- para verificação da integridade do concreto e avaliação da resistência a compressão e módulo de elasticidade.
+4. **Ensaio com pacômetro** -- para detecção e determinação do diâmetro de armaduras e espessura de cobrimento.
+5. **Ensaios de potencial de corrosão** -- para identificação de áreas com maior probabilidade de ocorrência de corrosão nas armaduras dos elementos estruturais em concreto armado.
+
 :::
 
 ---

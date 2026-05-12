@@ -7,6 +7,10 @@ esclerometria:
   topic: "Ensaio de esclerometria para estimativa da resistência do concreto"
   subtopic1: "1. Equipamento, procedimento normativo e execução do ensaio"
   subtopic2: "2. Tratamento estatístico dos resultados"
+  subtopic3: "3. Curva de conversão entre índice esclerométrico e resistência à compressão do concreto"
+  subtopic4: "4. Fatores que influenciam os resultados do ensaio de esclerometria (Anexo C - ABNt NBR 7584:2012)"  
+  subtopic5: "5. Efeito da carbonatação na dureza superficial do concreto"
+  
 
 
 format:
@@ -24,17 +28,21 @@ format:
 
 ---
 
-<!-- Esclerometria - Slide 1.0 - divider -->
+<!-- Esclerometria - Slide 0 - divider -->
 # {{< meta esclerometria.item >}} {{< meta esclerometria.topic >}} {.title-slide}
 
 
 ---
 
-<!-- Esclerometria - Slide 1.1 -->
+<!-- Esclerometria - Slide 1 -->
 
 ::: {.tpl-text-carousel title="{{< meta esclerometria.item >}} {{< meta esclerometria.topic >}}" subtitle="{{< meta esclerometria.item >}}{{< meta esclerometria.subtopic1 >}}"
-        img="media/esclerometria/esclerometro-MetroTokyo.png" 
-          alt="Esclerômetro anlógico marca MetroTokyo"   
+        img_Schimdt="media/esclerometria/esclerometro-Original-Schmidt.png" 
+          alt_Schimdt="Esclerômetro analógico original Schmidt"  
+        img_Registrador="media/esclerometria/esclerometro-Proceq-com-registrador.png" 
+          alt_Registrador="Esclerômetro analógico com registrador Schmidt/Proceq"            
+        img_MetroTokyo="media/esclerometria/esclerometro-MetroTokyo.png" 
+          alt_MetroTokyo="Esclerômetro anlógico marca MetroTokyo"   
         img_esclerometro="media/esclerometria/esclerometro-Proceq.jpeg" 
           alt_esclerometro="Esclerômetro digital marca Proceq"   
         img_norma="media/esclerometria/ABNT-NBR-7584-2012.png" 
@@ -61,7 +69,7 @@ format:
 
 ::: {.incremental}
 - **Norma de referência** -- ABNT NBR 7584:2012 - Concreto endurecido -- Avaliação da dureza superficial pelo esclerômetro de reflexão -- Método de Ensaio
-- **Mecanismo de funcionamento** -- O esclerômetro consiste em uma massa-martelo que, impulsionada por uma mola, se choca com a área de ensaio através de uma haste e, a partir da energia de impacto e do deslocamento de retorno da haste, é possível se obter um valor de *dureza superficial* do concreto
+- **Mecanismo de funcionamento** -- O esclerômetro consiste em uma massa-martelo que, impulsionada por uma mola, se choca com a área de ensaio através de uma haste e, a partir da energia de impacto e do deslocamento de retorno da haste, é possível se obter uma medida de *dureza superficial* do concreto, denominado índice esclerométrico.
 - **Calibração do equipamento** -- O esclerômetro deve ser aferido antes de sua utilização ou a cada 300 impactos realizados na mesma inspeção, por meio de ensaios em bigornas de aço
 - **Área de ensaio** -- Em cada área de ensaio, devem ser efetuados 16 impactos, formando um grid 4x4, com espaçamento de 30mm
 - **Locais recomendáveis para ensaio** -- Sempre que possível, o ensaio deve ser realizado na posição de maior momento de inércia do elemento estrutural
@@ -74,7 +82,7 @@ format:
 
 ---
 
-<!-- Esclerometria - Slide 1.2 -->
+<!-- Esclerometria - Slide 2 -->
 ::: {.tpl-text title="{{< meta esclerometria.item >}} {{< meta esclerometria.topic >}}" subtitle="{{< meta esclerometria.item >}}{{< meta esclerometria.subtopic2 >}}"}
 ::: {.incremental}
 
@@ -86,13 +94,14 @@ format:
   - Quando isso não for possível, o ensaio esclerométrico dessa área deve ser desconsiderado;
   - *Nenhum* dos índices esclerométricos individuais restantes deve diferir em *mais de 10%* da média ﬁnal;
   - Se isso ocorrer, o ensaio esclerométrico dessa área deve ser desconsiderado.
+
 :::
 
 :::
 
 ---
 
-<!-- Esclerometria - Slide 1.3 -->
+<!-- Esclerometria - Slide 3 -->
 ::: {.tpl-wide-image title="{{< meta esclerometria.item >}}{{< meta esclerometria.topic >}}" subtitle="{{< meta esclerometria.item >}}{{< meta esclerometria.subtopic2 >}}"
   img="media/esclerometria/esclerometriaTabela.png" 
     caption="Tabela com análise dos resultados do ensaio de esclerometria, incluindo os índices individuais, médias e valores espúrios." }
@@ -101,7 +110,119 @@ format:
 
 ---
 
-<!-- Esclerometria - Slide 1.3 -->
+<!-- Esclerometria - Slide 4 -->
+
+::: {.tpl-text-carousel title="{{< meta esclerometria.item >}} {{< meta esclerometria.topic >}}" subtitle="{{< meta esclerometria.item >}}{{< meta esclerometria.subtopic3 >}}"
+  img="media/esclerometria/rebound-hammer-concrete-strength.png" 
+    alt="Curva de conversão baseado na média de resistências à compressão do concreto, e o índice esclerométrico R, para o esclerômetro original Schimdt"   
+  img_esclerometro="media/esclerometria/curva-conversao-esclerometro-Metro-Tokyo.png" 
+    alt_esclerometro="Curva de conversão resistências à compressão vs índice esclerométrico R, para o esclerômetro Metro-Tokyo" 
+  img_curve="media/esclerometria/strength-vs-Qvalue.png" 
+    alt_curve="Curva de conversão resistências à compressão vs índice esclerométrico Q, para o esclerômetro Proceq"    
+  img_curveQR="media/esclerometria/conversion-curve-Qvalue-Rvalue.png" 
+    alt_curveQR="Curva de conversão índice esclerométrico Q vs índice esclerométrico R, para o esclerômetro Proceq"  
+  img_curveQR="media/esclerometria/fator-de-forma-dos-testemunhos.png" 
+    alt_curveQR="Fator de forma dos testemunhos utilizados para correção da resistências, en função da forma e dimensões dos testemunhos, de acordo com manual da Proceq"       
+  carousel="true" }
+
+- **Curva de conversão** -- gráfico que relaciona o índice esclerométrico médio final com a resistência à compressão do concreto, permitindo a estimativa da resistência do concreto *in situ* a partir dos resultados do ensaio de esclerometria.
+
+::: {.incremental}
+- **Posição do esclerômetro e direção do impacto** -- de acordo com a seção 5 da ABNT NBR 7584:2012, "Corrigir, se necessário, o valor médio do índice esclerométrico obtido de uma área de ensaio para um índice correspondente à posição horizontal. Os coeﬁcientes de correção devem ser fornecidos pelo fabricante do esclerômetro".
+- **Fator de forma dos testemunhos** -- deve-se utilizar um fator de forma para correção da resistência estimada, levando em conta as dimensões e forma dos corpos de prova utilizados para a determinação da curva de conversão.
+- **Energia de impacto** 
+  - De acordo com a seção A.2 da ABNT NBR 7584:2012, "O princípio do método consiste basicamente em determinar a energia de impactos da massa-martelo sobre uma superfície de concreto".
+  - A energia de impacto é, em parte, utilizada na deformação permanente provocada na área de ensaio e, em parte conservada elasticamente, propiciando, ao ﬁm do impacto, o retorno do martelo. 
+  - Quanto maior a dureza da superfície ensaiada, menor a parcela de energia que se converte em deformação permanente e, por conseguinte, maior deve ser o recuo ou reﬂexão do martelo.
+
+
+
+:::
+
+:::
+
+
+
+---
+
+<!-- Esclerometria - Slide 5 -->
+::: {.tpl-text title="{{< meta esclerometria.item >}} {{< meta esclerometria.topic >}}" subtitle="{{< meta esclerometria.item >}}{{< meta esclerometria.subtopic4 >}}"}
+::: {.incremental}
+
+- **Tipo de cimento** -- A inﬂuência do tipo de cimento é signiﬁcativa na obtenção do índice esclerométrico, sendo necessário proceder a novas correlações sempre que houver mudança do tipo do cimento.
+- **Tipo do agregado** -- Diferentes tipos de agregados podem fornecer concretos com a mesma qualidade, porém com diferentes índices esclerométricos. 
+- **Tipo de superfície** -- O estado da superfície a ser ensaiada é normalmente o que mais acarreta variabilidade dos resultados.
+- **Condições de umidade da superfície** -- Superfícies úmidas podem provocar subestimativa da qualidade do concreto.
+  - **NOTA** -- No concreto estrutural, o índice esclerométrico pode indicar valores de resistência até *20% inferiores* àqueles indicados para o concreto seco equivalente e, em alguns tipos de concreto, podem ocorrer discrepâncias ainda maiores.
+- **Influência da carbonatação** -- A inﬂuência da carbonatação na dureza da superfície do concreto é signiﬁcativa e promove a superestimação da resistência. Devem ser deﬁnidos coeﬁcientes corretivos, a ﬁm de minimizar o efeito da carbonatação.
+  - **NOTA** -- Em casos extremos, os valores estimados para a resistência do concreto, quando há carbonatação, podem superar os valores reais *em mais de 50%*, em função da espessura da camada carbonatada.
+- **Influência da idade** 
+  - A inﬂuência da idade na dureza superﬁcial do concreto, em relação à dureza obtida nas condições normalizada (28 dias), ocorre devido a fatores, como a diferença de cura, carbonatação e outros. 
+  - Este fato distorce a correlação com a resistência estabelecida para as condições normalizadas. Portanto, estas correlações não são automaticamente válidas para idades superiores a 60 dias ou inferiores a 14 dias. 
+  - Fatores especíﬁcos devem ser considerados para cada concreto em questão, corrigindo-se quando necessário.
+
+
+
+:::
+
+:::
+
+---
+
+
+
+---
+
+<!-- Esclerometria - Slide 6 -->
+
+::: {.tpl-text-carousel title="{{< meta esclerometria.item >}} {{< meta esclerometria.topic >}}" subtitle="{{< meta esclerometria.item >}}{{< meta esclerometria.subtopic5 >}}"
+  img="media/esclerometria/curva-Proceq-correcao-carbonatacao.png" 
+    alt="Curva de correção do índice esclerométrico R, levando em conta o efeito da carbonatação, para o esclerômetro Proceq"   
+  img_normaChinesa="media/esclerometria/standard-JGJ-T-23-2011.png" 
+    alt_normaChinesa="Norma chinesa JGJ/T 23-2011, Technical specification for inspecting of concrete compressive strength by rebound method"  
+  img_AnexoA="media/esclerometria/standard-JGT-T-23-2011-AnnexA.png" 
+    alt_AnexoA="Norma chinesa JGJ/T 23-2011, Technical specification for inspecting of concrete compressive strength by rebound method, Annex A"  
+  img_efeito="media/esclerometria/efeito-carbonacao-resistencia.png" 
+    alt_efeito="Efeito da carbonatação na dureza superficial do concreto, de acordo com a Norma chinesa JGJ/T 23-2011"   
+  img_carb6mm="media/esclerometria/carbonatacao6mm.png" 
+    alt_carb6mm="Coeficiente de redução da resistência em função da resistência para dm>= 6mm, de acordo com a Norma chinesa JGJ/T 23-2011"   
+  img_tabResumo="media/esclerometria/tabela-resumo-efeito-carbonatacao-resistencia.png" 
+    alt_tabResumo="Tabela com análise dos resultados do ensaio de esclerometria, incluindo os índices individuais, médias e valores espúrios."  
+  img_curvaCorr="media/esclerometria/curvaCorrigidaRemo.png" 
+    alt_curvaCorr="Curva de correção corrigida do índice esclerométrico R, levando em conta o efeito da carbonatação, para o esclerômetro Proceq"  
+  img_sobrepos="media/esclerometria/curvas-sobreposicao.bmp" 
+    alt_sobrepos="Sobreposição da curva equivocada da Proceq e da curva corrigida, obtida pela Dynamis Techne, levando em conta o efeito da carbonatação, para o esclerômetro Proceq"  
+  img_resultFinais="media/esclerometria/resultados-finais.bmp" 
+    alt_resultFinais="Resultados finais de resistência considerando o efeito da carbonatação na dureza superficial do concreto, de acordo com a Norma JGJ/T 23-2011" 
+  carousel="true" }
+
+- **Curva de correção para carbonatação** -- é necessário quantificar a influência da carbonatação na resistência do concreto. A proceq recomenda uma série de curvas com base na Norma JGJ/T 23-2011. Os resultados aparentemente são extremamente *conservadores*.
+
+::: {.incremental}
+- **Referência normativa** -- Norma chinesa JGJ/T 23-2011, *Technical specification for inspecting of concrete compressive strength by rebound method* (Especificação Técnica para inspeção da resistência à compressão do concreto pelo método esclerométrico).
+- **Curvas de Resistência vs índice esclerométrico R** -- Com base na Norma JGJ/T 23-2011 pode-se obter as curvas de correção do índice esclerométrico R, levando em conta o efeito da carbonatação, para diferentes espessuras da camada carbonatada (dm).
+- **Coeficiente de redução da resistência** -- com base na nessa norma, também é possível se obter curvas de coeficiente de redução da resistência em função da resistência do concreto, para diferentes espessuras da camada carbonatada (dm).
+- **Resultados finais** -- os resultados finais do estudo de caso, com frentes de carbonatação maiores que 6mm, mostram reduções na resistência do concreto iguais ou maiores do que 60%.
+
+
+::: {#id .class1 key=value}
+
+
+
+:::
+ para dm>=6mm.
+
+
+
+:::
+
+:::
+
+---
+
+
+
+<!-- Esclerometria - Slide 7 -->
 ::: {.tpl-wide-image title="{{< meta esclerometria.item >}}{{< meta esclerometria.subtopic2 >}}" 
   img="media/esclerometria/esclerometriaTabela.png" 
     caption="Tabela com análise dos resultados do ensaio de esclerometria, incluindo os índices individuais, médias e valores espúrios." 
