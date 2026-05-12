@@ -1,5 +1,6 @@
 ---
-title: "Ensaios Não Destrutivos para Avaliação de Estruturas e Fundações em Concreto"
+title: Curso de Especialização em Engenharia Ferroviária - Módulo 8 - Infraestrutura ferroviária
+subtitle: "Ensaios Não Destrutivos para Avaliação de Estruturas e Fundações em Concreto"
 author: "Prof. Remo Magalhães de Souza, Eng. Civil, M.Sc , Ph.D."
 
 potenCorr:
@@ -74,9 +75,9 @@ format:
 ::: {.incremental}
 
 - **Interpretação dos resultados** -- de acordo com a norma ASTM C876, os potenciais medidos podem ser interpretados da seguinte forma:
-  - Potenciais mais positivos que –200 mV indicam *alta probabilidade de que não haja corrosão* ativa na armadura.
+  - Potenciais mais positivos que –200 mV indicam *probabilidade de 90% de que não haja corrosão* ativa na armadura.
   - Potenciais entre –200 mV e –350 mV representam *uma zona incerta, onde a corrosão pode ou não estar ocorrendo*.
-  - Potenciais mais negativos que –350 mV indicam *alta probabilidade de corrosão ativa da armadura* no concreto.
+  - Potenciais mais negativos que –350 mV indicam *probabilidade de 90% de corrosão ativa da armadura* no concreto.
 
 
 :::

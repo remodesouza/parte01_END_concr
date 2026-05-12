@@ -1,5 +1,6 @@
 ---
-title: "Slides Adicionais - END em Estruturas de Concreto"
+title: Curso de Especialização em Engenharia Ferroviária - Módulo 8 - Infraestrutura ferroviária
+subtitle: "Ensaios Não Destrutivos para Avaliação de Estruturas e Fundações em Concreto"
 author: "Prof. Remo Magalhaes de Souza, Eng. Civil, M.Sc , Ph.D."
 format:
   revealjs:
