@@ -7,6 +7,7 @@ on:
       - main
       - master
     paths:
+      - ".github/workflows/quarto-render.yml"
       - "Parte01-END-concreto/**/*.qmd"
       - "Parte01-END-concreto/_quarto.yml"
       - "Parte01-END-concreto/slides/**"
