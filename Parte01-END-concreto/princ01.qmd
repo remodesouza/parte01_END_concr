@@ -1,19 +1,7 @@
 ---
 title: Curso de Especialização em Engenharia Ferroviária - Módulo 8 - Infraestrutura ferroviária
 subtitle: "Ensaios Não Destrutivos para Avaliação de Estruturas e Fundações em Concreto"
-author: "Prof. Remo Magalhães de Souza, Eng. Civil, M.Sc , Ph.D."
-
-carbonatacao:
-  item: "1."
-  topic: "Ensaio de carbonatação do concreto"
-  subtopic1: "1. Materiais, procedimento normativo e execução do ensaio"
-  subtopic2: "2. Tratamento dos resultados"
-
-esclerometria:
-  item: "2."
-  topic: "Ensaio de esclerometria para estimativa da resistência do concreto"
-  subtopic1: "1. Equipamento, procedimento normativo e execução do ensaio"
-  subtopic2: "2. Tratamento estatístico dos resultados"
+author: "Prof. Remo Magalhães de Souza, Eng. Civil, M.Sc., Ph.D."
 
 format:
   revealjs:

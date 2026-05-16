@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="part02-slidesAdicionais_files/libs/clipboard/clipboard.min.js"></script>
-<script src="part02-slidesAdicionais_files/libs/quarto-html/tabby.min.js"></script>
-<script src="part02-slidesAdicionais_files/libs/quarto-html/popper.min.js"></script>
-<script src="part02-slidesAdicionais_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="part02-slidesAdicionais_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="part02-slidesAdicionais_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="part02-slidesAdicionais_files/libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="acelerometros_files/libs/clipboard/clipboard.min.js"></script>
+<script src="acelerometros_files/libs/quarto-html/tabby.min.js"></script>
+<script src="acelerometros_files/libs/quarto-html/popper.min.js"></script>
+<script src="acelerometros_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="acelerometros_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="acelerometros_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="acelerometros_files/libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.37">
 
-  <meta name="author" content="Prof.&nbsp;Remo Magalhaes de Souza, Eng. Civil, M.Sc , Ph.D.">
-  <title>Slides Adicionais - END em Estruturas de Concreto</title>
+  <meta name="author" content="Prof.&nbsp;Remo Magalhães de Souza, Eng. Civil, M.Sc., Ph.D.">
+  <title>Curso de Especialização em Engenharia Ferroviária - Módulo 8 - Infraestrutura ferroviária</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="part02-slidesAdicionais_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="part02-slidesAdicionais_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="acelerometros_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="acelerometros_files/libs/revealjs/dist/reveal.css">
   <style>
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -32,12 +32,12 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="part02-slidesAdicionais_files/libs/revealjs/dist/theme/quarto-fdc93494f2580a7e050003a96af38920.css">
+  <link rel="stylesheet" href="acelerometros_files/libs/revealjs/dist/theme/quarto-fdc93494f2580a7e050003a96af38920.css">
   <link rel="stylesheet" href="slides/includes/slides-layout.css">
-  <link href="part02-slidesAdicionais_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="part02-slidesAdicionais_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="part02-slidesAdicionais_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="part02-slidesAdicionais_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link href="acelerometros_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="acelerometros_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="acelerometros_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="acelerometros_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -125,18 +125,30 @@
       margin-right: 0; 
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      GLightbox({
+        selector: 'img.zoomable, .tpl-text-carousel img',
+        openEffect: 'zoom',
+        closeEffect: 'zoom'
+      });
+    });
+  </script>
 </head>
 <body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Slides Adicionais - END em Estruturas de Concreto</h1>
+  <h1 class="title">Curso de Especialização em Engenharia Ferroviária - Módulo 8 - Infraestrutura ferroviária</h1>
+  <p class="subtitle">Instrumentação e Monitoração de Estruturas e Fundações</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Prof.&nbsp;Remo Magalhaes de Souza, Eng. Civil, M.Sc , Ph.D. 
+Prof.&nbsp;Remo Magalhães de Souza, Eng. Civil, M.Sc., Ph.D. 
 </div>
 </div>
 </div>
@@ -144,356 +156,340 @@ Prof.&nbsp;Remo Magalhaes de Souza, Eng. Civil, M.Sc , Ph.D.
 </section>
 <section class="slide level2">
 
-<section class="tpl-slide tpl-divisor">
-  <h2>Roteiro Complementar</h2>
-  <h3>Apoio a tomada de decisao</h3>
-  <p>Slides adicionais para detalhar criterios tecnicos e plano de campanha de END.</p>
+<!-- Acelerômetros - Slide 0 - divider -->
 </section>
+<section>
+<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206d657461206163656c65726f6d6574726f732e6974656d203e7d7d-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206d657461206163656c65726f6d6574726f732e746f706963203e7d7d" class="title-slide slide level1 center">
+<h1>3. Acelerômetros piezoelétricos para medição de vibrações em estruturas</h1>
 
-<section class="tpl-slide tpl-texto">
-  <h2>Estrategia de combinacao de END</h2>
-  <h3>Reducao de incerteza</h3>
-  <div class="tpl-texto-body">
-    <section class="slide level6">
-
-<ul>
-<li class="fragment">Nenhum ensaio isolado responde todas as perguntas
-de diagnostico.</li>
-<li class="fragment">A combinacao de metodos melhora confiabilidade e
-rastreabilidade.</li>
-<li class="fragment">O planejamento deve considerar objetivo, acesso,
-prazo e custo.</li>
-<li class="fragment">Ensaios semi-destrutivos entram como validacao
-pontual.</li>
-</ul>
-<p>Equacao de erro combinado (conceitual): sigma_comb = sqrt(sigma_1^2 +
-sigma_2^2 + … + sigma_n^2)</p>
 </section>
-  </div>
-</section>
+<section class="slide level2">
 
-<section class="tpl-slide tpl-texto-imagem">
-  <h2>Leitura integrada de resultados</h2>
+<!-- Acelerômetros - Slide 1 -->
+<div class="tpl-slide tpl-text-carousel tpl-has-carousel">
+  <h2>3. Acelerômetros piezoelétricos para medição de vibrações em estruturas</h2>
+  <h3>3.1. Princípio de funcionamento</h3>
   <div class="columns">
-    <div class="column" style="width: 58%;">
-      <section class="slide level6">
-
+    <div class="column tpl-text-carousel-body">
+      <ul>
+<li class="fragment"><strong>Efeito piezoelétrico</strong> – o
+funcionamento de um acelerômetro deste tipo baseia-se no seguinte
+efeito: certos materiais cristalinos (quartzo, cerâmica PZT) geram uma
+carga elétrica proporcional à força mecânica aplicada.
 <ul>
-<li>Interpretar os resultados por zonas da estrutura (nao por pontos
-isolados).</li>
-<li>Correlacionar valores de esclerometria com ultrassom e
-cobrimento.</li>
-<li>Destacar discrepancias para investigacao complementar.</li>
-<li>Registrar condicoes de ensaio para repetibilidade futura.</li>
+<li class="fragment">No interior do sensor, uma <em>massa sísmica</em>
+está acoplada ao elemento piezoelétrico.</li>
+<li class="fragment">Quando o sensor é submetido a uma aceleração, a
+força de inércia <span class="math inline"><em>F</em> = <em>m</em> ⋅ <em>a</em></span> comprime
+ou traciona o cristal, gerando uma carga elétrica proporcional à
+aceleração.</li>
+<li class="fragment">A carga gerada é convertida em tensão por um
+amplificador interno ou externo.</li>
+</ul></li>
+<li class="fragment"><strong>Sensibilidade</strong> – expressa em mV/g
+(milivolts por g, onde <span class="math inline"><em>g</em> = 9.81&nbsp;m/s<sup>2</sup></span>), é a
+constante que relaciona a saída elétrica do sensor à aceleração
+medida.</li>
+<li class="fragment"><strong>Faixa de frequência</strong> – os
+acelerômetros piezoelétricos tem faixa de frequência de 0,1 Hz a vários
+kHz, tornando-os adequados para monitoração de vibrações em pontes
+ferroviárias, edificações e fundações.</li>
 </ul>
-</section>
-    </div><div class="column" style="width: 42%;">
-      <figure>
-        <img src="ppt/media/image4.jpeg" alt="Equipamento de esclerometria" style="width: 100%;">
-        <figcaption>Exemplo de equipamento para ensaio in-situ</figcaption>
-      </figure>
-    </div></div>
-</section>
-
-<section class="tpl-slide tpl-imagem-ampla">
-  <h2>Sequencia visual de campo</h2>
-  <div class="tpl-carousel" data-carousel="">
-  <button type="button" class="tpl-carousel-arrow tpl-carousel-prev" aria-label="Previous image">❮</button>
+    </div><div class="column tpl-text-carousel-media">
+      <div class="tpl-carousel tpl-carousel-reveal" data-carousel="">
+  <button type="button" class="tpl-carousel-nav tpl-carousel-prev" data-carousel-nav="prev" aria-label="Previous image">❮</button>
+  <button type="button" class="tpl-carousel-nav tpl-carousel-next" data-carousel-nav="next" aria-label="Next image">❯</button>
   <div class="tpl-carousel-viewport">
-    <figure class="tpl-carousel-item is-active">
-      <img src="ppt/media/image4.jpeg" alt="Equipamento 1" style="width: 100%;">
-      <figcaption>Etapa 1: verificacao de superficie e posicionamento</figcaption>
+    <figure class="tpl-carousel-item is-active" data-carousel-index="0">
+      <img src="media/acelerometros/acelerometro-Wilcoxon-793L.png" alt="Acelerômetro piezoelétrico uniaxial marca Wilcoxon, modelo 793L." style="width: 100%;">
     </figure>
-    <figure class="tpl-carousel-item">
-      <img src="ppt/media/image5.png" alt="Equipamento 2" style="width: 100%;">
-      <figcaption>Etapa 2: aquisicao e conferencia de leituras</figcaption>
+    <figure class="tpl-carousel-item is-hidden" data-carousel-index="1">
+      <img src="media/acelerometros/Schematic-of-a-piezoelectric-accelerometer.png" alt="Esquema do efeito piezoelétrico: carga elétrica gerada pela deformação mecânica do cristal." style="width: 100%;">
     </figure>
   </div>
-  <button type="button" class="tpl-carousel-arrow tpl-carousel-next" aria-label="Next image">❯</button>
+  <div class="tpl-carousel-caption-zone">
+    <p class="tpl-carousel-caption is-active" data-carousel-index="0">Acelerômetro piezoelétrico uniaxial marca Wilcoxon, modelo 793L.</p>
+    <p class="tpl-carousel-caption is-hidden" data-carousel-index="1">Esquema do efeito piezoelétrico: carga elétrica gerada pela deformação mecânica do cristal.</p>
+  </div>
   <div class="tpl-carousel-dots" aria-hidden="true">
-    <span class="tpl-carousel-dot is-active"></span>
-    <span class="tpl-carousel-dot"></span>
+    <span class="tpl-carousel-dot is-active" data-carousel-dot="0"></span>
+    <span class="tpl-carousel-dot" data-carousel-dot="1"></span>
   </div>
 </div>
-</section>
-
-<style>
-  .tpl-imagem-ampla .tpl-carousel {
-    position: relative;
-    width: 92%;
-    margin: 0 auto;
-    max-width: 980px;
-    padding: 0 56px;
-  }
-
-  .tpl-imagem-ampla .tpl-carousel-viewport {
-    position: relative;
-    min-height: 420px;
-  }
-
-  .tpl-imagem-ampla .tpl-carousel-item {
-    margin: 0;
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-    inset: 0;
-    transition: opacity 220ms ease-in-out;
-  }
-
-  .tpl-imagem-ampla .tpl-carousel-item.is-active {
-    opacity: 1;
-    pointer-events: auto;
-    z-index: 1;
-  }
-
-  .tpl-imagem-ampla .tpl-carousel-item img {
-    display: block;
-    margin: 0 auto;
-    max-height: 420px;
-    object-fit: contain;
-  }
-
-  .tpl-imagem-ampla .tpl-carousel-arrow {
-    position: absolute;
-    top: calc(50% - 24px);
-    width: 40px;
-    height: 40px;
-    border: 0;
-    border-radius: 999px;
-    background: rgba(0, 0, 0, 0.65);
-    color: #fff;
-    font-size: 28px;
-    line-height: 1;
-    cursor: pointer;
-    z-index: 2;
-  }
-
-  .tpl-imagem-ampla .tpl-carousel-arrow:hover {
-    background: rgba(0, 0, 0, 0.82);
-  }
-
-  .tpl-imagem-ampla .tpl-carousel-prev {
-    left: 4px;
-  }
-
-  .tpl-imagem-ampla .tpl-carousel-next {
-    right: 4px;
-  }
-
-  .tpl-imagem-ampla .tpl-carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 12px;
-  }
-
-  .tpl-imagem-ampla .tpl-carousel-dot {
-    width: 9px;
-    height: 9px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.35);
-  }
-
-  .tpl-imagem-ampla .tpl-carousel-dot.is-active {
-    background: rgba(255, 255, 255, 0.9);
-  }
-
-  @media (max-width: 1200px) {
-    .tpl-imagem-ampla .tpl-carousel {
-      padding: 0 44px;
-    }
-
-    .tpl-imagem-ampla .tpl-carousel-viewport {
-      min-height: 360px;
-    }
-
-    .tpl-imagem-ampla .tpl-carousel-item img {
-      max-height: 360px;
-    }
-  }
-</style>
-
+    </div></div>
+</div>
 <script>
-  (function () {
-    if (window.__tplManualCarouselInit) {
-      return;
-    }
-    window.__tplManualCarouselInit = true;
+    (function () {
+        if (window.__tplRevealCarouselInit) {
+            return;
+        }
+        window.__tplRevealCarouselInit = true;
 
-    function setActive(carousel, nextIndex) {
-      var items = carousel.querySelectorAll('.tpl-carousel-item');
-      var dots = carousel.querySelectorAll('.tpl-carousel-dot');
-      if (!items.length) {
-        return;
-      }
+        function getCarousel(carousel) {
+            return carousel && carousel.querySelectorAll('.tpl-carousel-item').length ? carousel : null;
+        }
 
-      var index = ((nextIndex % items.length) + items.length) % items.length;
-      carousel.dataset.index = String(index);
+        function getActiveIndex(carousel) {
+            var activeItem = carousel.querySelector('.tpl-carousel-item.is-active');
+            if (!activeItem) {
+                return 0;
+            }
 
-      items.forEach(function (item, idx) {
-        item.classList.toggle('is-active', idx === index);
-      });
-      dots.forEach(function (dot, idx) {
-        dot.classList.toggle('is-active', idx === index);
-      });
-    }
+            var items = Array.from(carousel.querySelectorAll('.tpl-carousel-item'));
+            var index = items.indexOf(activeItem);
+            return index < 0 ? 0 : index;
+        }
 
-    document.querySelectorAll('.tpl-carousel[data-carousel]').forEach(function (carousel) {
-      if (carousel.dataset.bound === '1') {
-        return;
-      }
-      carousel.dataset.bound = '1';
+        function setActiveIndex(carousel, newIndex) {
+            carousel = getCarousel(carousel);
+            if (!carousel) {
+                return;
+            }
 
-      var prev = carousel.querySelector('.tpl-carousel-prev');
-      var next = carousel.querySelector('.tpl-carousel-next');
-      var current = Number(carousel.dataset.index || '0');
-      setActive(carousel, current);
+            var items = carousel.querySelectorAll('.tpl-carousel-item');
+            var captions = carousel.querySelectorAll('.tpl-carousel-caption');
+            var dots = carousel.querySelectorAll('.tpl-carousel-dot');
 
-      if (prev) {
-        prev.addEventListener('click', function () {
-          var idx = Number(carousel.dataset.index || '0');
-          setActive(carousel, idx - 1);
+            for (var i = 0; i < items.length; i++) {
+                var active = i === newIndex;
+                items[i].classList.toggle('is-active', active);
+                items[i].classList.toggle('is-hidden', !active);
+            }
+
+            for (var j = 0; j < captions.length; j++) {
+                var captionActive = j === newIndex;
+                captions[j].classList.toggle('is-active', captionActive);
+                captions[j].classList.toggle('is-hidden', !captionActive);
+            }
+
+            for (var k = 0; k < dots.length; k++) {
+                dots[k].classList.toggle('is-active', k === newIndex);
+            }
+        }
+
+        function moveCarousel(carousel, direction) {
+            carousel = getCarousel(carousel);
+            if (!carousel) {
+                return false;
+            }
+
+            var items = carousel.querySelectorAll('.tpl-carousel-item');
+            var currentIndex = getActiveIndex(carousel);
+            var newIndex = currentIndex;
+
+            if (direction === 'prev') {
+                newIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
+            }
+            else if (direction === 'next') {
+                newIndex = currentIndex === items.length - 1 ? 0 : currentIndex + 1;
+            }
+
+            setActiveIndex(carousel, newIndex);
+            return true;
+        }
+
+        document.addEventListener('click', function (event) {
+            var target = event.target;
+            if (target && target.nodeType !== 1) {
+                target = target.parentElement;
+            }
+
+            var button = target ? target.closest('[data-carousel-nav]') : null;
+            if (!button) {
+                return;
+            }
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            moveCarousel(button.closest('.tpl-carousel'), button.getAttribute('data-carousel-nav'));
         });
-      }
 
-      if (next) {
-        next.addEventListener('click', function () {
-          var idx = Number(carousel.dataset.index || '0');
-          setActive(carousel, idx + 1);
+        document.addEventListener('slidechanged', function (event) {
+            var slide = event.currentSlide || document;
+            slide.querySelectorAll('.tpl-carousel[data-carousel]').forEach(function (carousel) {
+                setActiveIndex(carousel, 0);
+            });
         });
-      }
-    });
-  })();
+
+        document.querySelectorAll('.tpl-carousel[data-carousel]').forEach(function (carousel) {
+            setActiveIndex(carousel, 0);
+        });
+    })();
 </script>
 
-<section class="tpl-slide tpl-texto-tabela">
-  <h2>Matriz rapida para selecao de END</h2>
+</section>
+<section class="slide level2">
+
+<!-- Acelerômetros - Slide 3 -->
+<div class="tpl-slide tpl-text-carousel tpl-has-carousel">
+  <h2>3. Acelerômetros piezoelétricos para medição de vibrações em estruturas</h2>
+  <h3>3.2. Instalação dos sensores</h3>
   <div class="columns">
-    <div class="column" style="width: 60%;">
-      <section class="slide level6">
-
-<ul>
-<li>Use a matriz para escolher o metodo principal conforme o
-objetivo.</li>
-<li>Em estruturas criticas, priorize combinacao de tecnicas.</li>
-<li>Inclua ensaio confirmatorio quando houver alta variabilidade.</li>
+    <div class="column tpl-text-carousel-body">
+      <ul>
+<li class="fragment"><strong>Métodos de fixação</strong> – alguns
+métodos comuns para fixar os acelerômetros à estrutura incluem:
+<ol type="1">
+<li class="fragment"><strong>Parafuso roscado</strong> – fixação
+definitiva e de maior rigidez; preserva a faixa de frequência completa
+do sensor; requer superfície usinada ou plaqueta colada;</li>
+<li class="fragment"><strong>Base magnética</strong> – conveniente para
+medições temporárias em estruturas metálicas; limita a faixa de
+frequência utilizável;</li>
+<li class="fragment"><strong>Cera de abelha</strong> (<em>beeswax</em>)
+– usada para fixação rápida em laboratório ou campanhas de campo de
+curta duração;</li>
+</ol></li>
+<li class="fragment"><strong>Direção de medição</strong> – posicionar o
+eixo sensível na direção de maior interesse (vertical, transversal ou
+longitudinal)</li>
+<li class="fragment"><strong>Arranjo triaxial</strong> – sensores em
+arranjo triaxial medem as acelerações nas três direções <span class="math inline">(<em>x</em>, <em>y</em>, <em>z</em>)</span>
+simultaneamente;</li>
+<li class="fragment"><strong>Passagem e proteção de cabos</strong> –
+usar cabo coaxial blindado; evitar laços e fixar o cabo à estrutura a
+cada 30–50 cm para não introduzir ruído por vibração do próprio cabo
+(<em>cable noise</em>);</li>
+<li class="fragment"><strong>Proteção ambiental</strong> – proteger o
+sensor com capa de borracha ou invólucro estanque em ambientes sujeitos
+a chuva, umidade ou poeira.</li>
 </ul>
-</section>
-    </div><div class="column" style="width: 40%;">
-      <p class="tpl-table-caption">Tabela 1 - Comparacao objetiva entre metodos</p>
-      <table>
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr>
-<th>Criterio</th>
-<th>Esclerometro</th>
-<th>Ultrassom</th>
-<th>Pacometro</th>
-<th>Potencial de corrosao</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Custo relativo</td>
-<td>Baixo</td>
-<td>Medio</td>
-<td>Medio</td>
-<td>Medio</td>
-</tr>
-<tr>
-<td>Rapidez de campo</td>
-<td>Alta</td>
-<td>Alta</td>
-<td>Alta</td>
-<td>Media</td>
-</tr>
-<tr>
-<td>Avalia resistencia</td>
-<td>Indireta</td>
-<td>Indireta</td>
-<td>Nao</td>
-<td>Nao</td>
-</tr>
-<tr>
-<td>Detecta armadura</td>
-<td>Nao</td>
-<td>Parcial</td>
-<td>Sim</td>
-<td>Nao</td>
-</tr>
-<tr>
-<td>Diagnostica durabilidade</td>
-<td>Baixa</td>
-<td>Media</td>
-<td>Baixa</td>
-<td>Alta</td>
-</tr>
-</tbody>
-</table>
+    </div><div class="column tpl-text-carousel-media">
+      <div class="tpl-carousel tpl-carousel-reveal" data-carousel="">
+  <button type="button" class="tpl-carousel-nav tpl-carousel-prev" data-carousel-nav="prev" aria-label="Previous image">❮</button>
+  <button type="button" class="tpl-carousel-nav tpl-carousel-next" data-carousel-nav="next" aria-label="Next image">❯</button>
+  <div class="tpl-carousel-viewport">
+    <figure class="tpl-carousel-item is-active" data-carousel-index="0">
+      <img src="media/acelerometros/acelerometrowilcoxxon.jpg" alt="acelerômetro piezoelétrico em arranjo uniaxial" style="width: 100%;">
+    </figure>
+    <figure class="tpl-carousel-item is-hidden" data-carousel-index="1">
+      <img src="media/acelerometros/acelerometros-arranjo-triaxial.jpeg" alt="Acelerômetros piezoelétricos em arranjo triaxial instalados em uma ponte ferroviária." style="width: 100%;">
+    </figure>
+    <figure class="tpl-carousel-item is-hidden" data-carousel-index="2">
+      <img src="media/acelerometros/acel2.webp" alt="Acelerômetros piezoelétricos em arranjo triaxial instalados em uma ponte rodoviária." style="width: 100%;">
+    </figure>
+    <figure class="tpl-carousel-item is-hidden" data-carousel-index="3">
+      <img src="media/acelerometros/acelerometros.webp" alt="Acelerômetro piezoelétrico em arranjo uniaxial e acelerômetros sísmicos em uma ponte rodoviária." style="width: 100%;">
+    </figure>
+  </div>
+  <div class="tpl-carousel-caption-zone">
+    <p class="tpl-carousel-caption is-active" data-carousel-index="0">acelerômetro piezoelétrico em arranjo uniaxial</p>
+    <p class="tpl-carousel-caption is-hidden" data-carousel-index="1">Acelerômetros piezoelétricos em arranjo triaxial instalados em uma ponte ferroviária.</p>
+    <p class="tpl-carousel-caption is-hidden" data-carousel-index="2">Acelerômetros piezoelétricos em arranjo triaxial instalados em uma ponte rodoviária.</p>
+    <p class="tpl-carousel-caption is-hidden" data-carousel-index="3">Acelerômetro piezoelétrico em arranjo uniaxial e acelerômetros sísmicos em uma ponte rodoviária.</p>
+  </div>
+  <div class="tpl-carousel-dots" aria-hidden="true">
+    <span class="tpl-carousel-dot is-active" data-carousel-dot="0"></span>
+    <span class="tpl-carousel-dot" data-carousel-dot="1"></span>
+    <span class="tpl-carousel-dot" data-carousel-dot="2"></span>
+    <span class="tpl-carousel-dot" data-carousel-dot="3"></span>
+  </div>
+</div>
     </div></div>
-</section>
+</div>
+<script>
+    (function () {
+        if (window.__tplRevealCarouselInit) {
+            return;
+        }
+        window.__tplRevealCarouselInit = true;
 
-<section class="tpl-slide tpl-tabela-ampla">
-  <h2>Plano recomendado de inspecao</h2>
-  <p class="tpl-table-caption">Tabela 2 - Sequencia sugerida de campanha</p>
-  <table>
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr>
-<th>Etapa</th>
-<th>Objetivo</th>
-<th>END recomendado</th>
-<th>Produto</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1. Triagem</td>
-<td>Identificar anomalias visiveis</td>
-<td>Inspecao visual + pacometro</td>
-<td>Mapa preliminar</td>
-</tr>
-<tr>
-<td>2. Integridade</td>
-<td>Verificar homogeneidade do concreto</td>
-<td>Ultrassom</td>
-<td>Mapa de velocidade</td>
-</tr>
-<tr>
-<td>3. Resistencia</td>
-<td>Estimar desempenho mecanico</td>
-<td>Esclerometro + correlacao</td>
-<td>Faixa de fck estimado</td>
-</tr>
-<tr>
-<td>4. Durabilidade</td>
-<td>Avaliar risco de corrosao</td>
-<td>Potencial de corrosao + carbonatacao</td>
-<td>Mapa de risco</td>
-</tr>
-<tr>
-<td>5. Confirmacao</td>
-<td>Validar pontos criticos</td>
-<td>Testemunhos localizados</td>
-<td>Laudo conclusivo</td>
-</tr>
-</tbody>
-</table>
-</section>
+        function getCarousel(carousel) {
+            return carousel && carousel.querySelectorAll('.tpl-carousel-item').length ? carousel : null;
+        }
+
+        function getActiveIndex(carousel) {
+            var activeItem = carousel.querySelector('.tpl-carousel-item.is-active');
+            if (!activeItem) {
+                return 0;
+            }
+
+            var items = Array.from(carousel.querySelectorAll('.tpl-carousel-item'));
+            var index = items.indexOf(activeItem);
+            return index < 0 ? 0 : index;
+        }
+
+        function setActiveIndex(carousel, newIndex) {
+            carousel = getCarousel(carousel);
+            if (!carousel) {
+                return;
+            }
+
+            var items = carousel.querySelectorAll('.tpl-carousel-item');
+            var captions = carousel.querySelectorAll('.tpl-carousel-caption');
+            var dots = carousel.querySelectorAll('.tpl-carousel-dot');
+
+            for (var i = 0; i < items.length; i++) {
+                var active = i === newIndex;
+                items[i].classList.toggle('is-active', active);
+                items[i].classList.toggle('is-hidden', !active);
+            }
+
+            for (var j = 0; j < captions.length; j++) {
+                var captionActive = j === newIndex;
+                captions[j].classList.toggle('is-active', captionActive);
+                captions[j].classList.toggle('is-hidden', !captionActive);
+            }
+
+            for (var k = 0; k < dots.length; k++) {
+                dots[k].classList.toggle('is-active', k === newIndex);
+            }
+        }
+
+        function moveCarousel(carousel, direction) {
+            carousel = getCarousel(carousel);
+            if (!carousel) {
+                return false;
+            }
+
+            var items = carousel.querySelectorAll('.tpl-carousel-item');
+            var currentIndex = getActiveIndex(carousel);
+            var newIndex = currentIndex;
+
+            if (direction === 'prev') {
+                newIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
+            }
+            else if (direction === 'next') {
+                newIndex = currentIndex === items.length - 1 ? 0 : currentIndex + 1;
+            }
+
+            setActiveIndex(carousel, newIndex);
+            return true;
+        }
+
+        document.addEventListener('click', function (event) {
+            var target = event.target;
+            if (target && target.nodeType !== 1) {
+                target = target.parentElement;
+            }
+
+            var button = target ? target.closest('[data-carousel-nav]') : null;
+            if (!button) {
+                return;
+            }
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            moveCarousel(button.closest('.tpl-carousel'), button.getAttribute('data-carousel-nav'));
+        });
+
+        document.addEventListener('slidechanged', function (event) {
+            var slide = event.currentSlide || document;
+            slide.querySelectorAll('.tpl-carousel[data-carousel]').forEach(function (carousel) {
+                setActiveIndex(carousel, 0);
+            });
+        });
+
+        document.querySelectorAll('.tpl-carousel[data-carousel]').forEach(function (carousel) {
+            setActiveIndex(carousel, 0);
+        });
+    })();
+</script>
 
 
-</section>
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -502,19 +498,19 @@ objetivo.</li>
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="part02-slidesAdicionais_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="acelerometros_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="part02-slidesAdicionais_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="part02-slidesAdicionais_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="part02-slidesAdicionais_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="part02-slidesAdicionais_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="part02-slidesAdicionais_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="acelerometros_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="acelerometros_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="acelerometros_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="acelerometros_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="acelerometros_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="part02-slidesAdicionais_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="part02-slidesAdicionais_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="part02-slidesAdicionais_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="part02-slidesAdicionais_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="acelerometros_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="acelerometros_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="acelerometros_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="acelerometros_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -675,9 +671,9 @@ objetivo.</li>
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1600,
+        width: 2000,
 
-        height: 900,
+        height: 1125,
 
         // Factor of the display size that should remain empty around the content
         margin: 2.0e-2,

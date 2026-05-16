@@ -1,3 +1,5 @@
 .venv/
 .quarto/
 *_files/
+
+/.luarc.json

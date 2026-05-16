@@ -1,0 +1,25 @@
+---
+format:
+  revealjs:
+    theme: dracula
+    transition: convex
+
+
+---
+
+## Principais tipos de sensores utilizados na instrumentação e monitoração de estruturas e fundações
+
+::: {.incremental}
+1. **Extensômetros** -- também denominados extensômetros elétricos de resistência, ou simplesmente sensores de deformação (*strain gage*), são utilizados para medição de deformações (alongamento ou encurtamentos relativos).
+2. **Transdutores de deslocamento** -- para medição de deslocamentos (movimentos translacionais).
+3. **Acelerômetros** -- para medição de vibrações (movimentos com mudança de aceleração, velocidade e deslocamento).
+4. **Sensores de temperatura** -- para medição da temperatura.
+5. **Células de carga** -- para medição de forças aplicadas.
+
+:::
+
+
+{{< include extensometros.qmd >}}
+
+{{< include acelerometros.qmd >}}
+
