@@ -1,31 +1,12 @@
----
-acelerometros:
-  item: "3."
-  topic: "Acelerômetros piezoelétricos para medição de vibrações em estruturas"
-  subtopic1: "1. Princípio de funcionamento"
-  subtopic2: "2. Instalação dos sensores"
-
-format:
-  revealjs:
-    transition: slide
-    theme: dracula
-
----
-
 <!-- Acelerômetros - Slide 0 - divider -->
-# {{< meta acelerometros.item >}} {{< meta acelerometros.topic >}} {.title-slide}
+# 3. Acelerômetros piezoelétricos para medição de vibrações em estruturas {.title-slide}
 
 
----
+## 3.1 Princípio de funcionamento
 
 <!-- Acelerômetros - Slide 1 -->
 
-::: {.tpl-text-carousel title="{{< meta acelerometros.item >}} {{< meta acelerometros.topic >}}" subtitle="{{< meta acelerometros.item >}}{{< meta acelerometros.subtopic1 >}}"
-  img="media/acelerometros/acelerometro-Wilcoxon-793L.png"
-    alt="Acelerômetro piezoelétrico uniaxial marca Wilcoxon, modelo 793L."
- img="media/acelerometros/Schematic-of-a-piezoelectric-accelerometer.png"
-    alt="Esquema do efeito piezoelétrico: carga elétrica gerada pela deformação mecânica do cristal."
-  carousel="true" }
+::: {.tpl-text-carousel title="3. Acelerômetros piezoelétricos para medição de vibrações em estruturas" subtitle="1. Princípio de funcionamento" img1="media/acelerometros/acelerometro-Wilcoxon-793L.png" alt1="Acelerômetro piezoelétrico uniaxial marca Wilcoxon, modelo 793L." img2="media/acelerometros/Schematic-of-a-piezoelectric-accelerometer.png" alt2="Esquema do efeito piezoelétrico: carga elétrica gerada pela deformação mecânica do cristal." carousel="true" }
 
 ::: {.incremental}
 - **Efeito piezoelétrico** -- o funcionamento de um acelerômetro deste tipo baseia-se no seguinte efeito: certos materiais cristalinos (quartzo, cerâmica PZT) geram uma carga elétrica proporcional à força mecânica aplicada.
@@ -39,20 +20,11 @@ format:
 :::
 
 
----
+## 3.2 Instalação dos sensores
 
 <!-- Acelerômetros - Slide 3 -->
 
-::: {.tpl-text-carousel title="{{< meta acelerometros.item >}} {{< meta acelerometros.topic >}}" subtitle="{{< meta acelerometros.item >}}{{< meta acelerometros.subtopic2 >}}"
-img="media/acelerometros/acelerometrowilcoxxon.jpg"
-  alt="acelerômetro piezoelétrico em arranjo uniaxial"
-img="media/acelerometros/acelerometros-arranjo-triaxial.jpeg"
-  alt="Acelerômetros piezoelétricos em arranjo triaxial instalados em uma ponte ferroviária."
-img="media/acelerometros/acel2.webp"
-  alt="Acelerômetros piezoelétricos em arranjo triaxial instalados em uma ponte rodoviária."
-img="media/acelerometros/acelerometros.webp"
-  alt="Acelerômetro piezoelétrico em arranjo uniaxial e acelerômetros sísmicos em uma ponte rodoviária."  
-    carousel="true" }
+::: {.tpl-text-carousel title="3. Acelerômetros piezoelétricos para medição de vibrações em estruturas" subtitle="2. Instalação dos sensores" img1="media/acelerometros/acelerometrowilcoxxon.jpg" alt1="acelerômetro piezoelétrico em arranjo uniaxial" img2="media/acelerometros/acelerometros-arranjo-triaxial.jpeg" alt2="Acelerômetros piezoelétricos em arranjo triaxial instalados em uma ponte ferroviária." img3="media/acelerometros/acel2.webp" alt3="Acelerômetros piezoelétricos em arranjo triaxial instalados em uma ponte rodoviária." img4="media/acelerometros/acelerometros.webp" alt4="Acelerômetro piezoelétrico em arranjo uniaxial e acelerômetros sísmicos em uma ponte rodoviária." carousel="true" }
 
 ::: {.incremental}
 
