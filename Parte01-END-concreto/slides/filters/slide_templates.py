@@ -4,8 +4,10 @@
 from __future__ import annotations
 
 import html
+import os
 from pathlib import Path
 import re
+from shutil import which
 
 import panflute as pf
 
@@ -15,6 +17,7 @@ SLIDES_DIR = FILTER_DIR.parent
 PROJECT_ROOT = SLIDES_DIR.parent
 TEMPLATES_DIR = SLIDES_DIR / "templates"
 PLACEHOLDER_RE = re.compile(r"{{[A-Za-z0-9_]+}}")
+PANDOC_PATH = os.environ.get("PANDOC_PATH") or which("pandoc")
 
 CAROUSEL_SCRIPT = """<script>
     (function () {
@@ -126,13 +129,28 @@ def read_text_file(path: Path) -> str:
 def md_to_html(markdown_text: str) -> str:
     if not markdown_text:
         return ""
+    if PANDOC_PATH:
+        return pf.convert_text(
+            markdown_text,
+            input_format="markdown",
+            output_format="html",
+            pandoc_path=PANDOC_PATH,
+        )
     return pf.convert_text(markdown_text, input_format="markdown", output_format="html")
 
 
 def blocks_to_html(blocks: list[pf.Element]) -> str:
     if not blocks:
         return ""
-    html_output = pf.convert_text(blocks, input_format="panflute", output_format="revealjs")
+    if PANDOC_PATH:
+        html_output = pf.convert_text(
+            blocks,
+            input_format="panflute",
+            output_format="revealjs",
+            pandoc_path=PANDOC_PATH,
+        )
+    else:
+        html_output = pf.convert_text(blocks, input_format="panflute", output_format="revealjs")
     return unwrap_single_section(html_output)
 
 
