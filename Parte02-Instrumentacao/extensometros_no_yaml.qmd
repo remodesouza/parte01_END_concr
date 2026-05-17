@@ -1,0 +1,89 @@
+---
+extensometros:
+  item: "1."
+  topic: "Extensômetros elétricos de resistência para medição de deformações em estruturas e fundações"
+  subtopic1: "1. Princípio de funcionamento"
+  subtopic2: "2. Ponte de Wheatstone"
+  subtopic3: "3. Instalação dos sensores"
+
+
+format:
+  revealjs:
+    transition: slide
+    theme: dracula
+
+---
+
+<!-- Extensômetros - Slide 0 - divider -->
+# {{< meta extensometros.item >}} {{< meta extensometros.topic >}} {.title-slide}
+
+
+---
+
+<!-- Extensômetros - Slide 1 -->
+
+::: {.tpl-text-carousel title="{{< meta extensometros.item >}} {{< meta extensometros.topic >}}" subtitle="{{< meta extensometros.item >}}{{< meta extensometros.subtopic1 >}}" img1="media/extensometros/Strain_gauge_-.jpg" alt1="Extensômetro elétrico de resistência (strain gage) marca HBM instalado." img2="media/extensometros/01-strain-gage-kyowa.png" alt2="Extensômetro elétrico de resistência (strain gage) marca Kyowa, modelo KFG-10-120-C1." img3="media/extensometros/extensometros-tipos-original.png" alt3="Tipos básicos de extensômetros elétricos de resistência. Fonte: Andolfato, Camacho e de Brito (2004)" carousel="true" }
+
+::: {.incremental}
+- **Extensômetro elétrico de resistência** -- o funcionamento de um *strain gage* (extensômetro) baseia-se na propriedade física de que a resistência elétrica de um fio condutor muda quando ele é deformado. 
+  - O sensor, composto por uma grade metálica muito fina colada à superfície de um material, acompanha exatamente a deformação desse material: 
+      - quando ocorre alongamento, o condutor fica mais comprido e mais estreito, aumentando sua resistência; 
+      - quando ocorre compressão, o efeito é inverso. 
+  - Essa variação relativa de resistência é linearmente proporcional à deformação mecânica. 
+- **Resistência elétrica** - pode-se interpretar um *strain gage* como um resistor variável cuja resistência muda em resposta à deformação. A relação entre a variação de resistência e a deformação é expressa pelo fator de sensibilidade do sensor, que é uma constante específica do material e da geometria do *strain gage*.
+- **Valor típico de resistência elétrica** - os strain gages mais comuns disponíveis comercialmente têm resistências típicas de 120Ω ou 350Ω.
+
+
+
+:::
+
+:::
+
+
+---
+
+<!-- Extensômetros - Slide 2 -->
+
+::: {.tpl-text-carousel title="{{< meta extensometros.item >}} {{< meta extensometros.topic >}}" subtitle="{{< meta extensometros.item >}}{{< meta extensometros.subtopic2 >}}" img1="media/extensometros/ponteDeWheatstone.png" alt1="Circuito em Ponte de Wheatstone" img2="media/extensometros/extensometro-ponte.png" alt2="Extensômetro conectado em Ponte de Wheatstone. Fonte: Unifei EME505P" carousel="true" }
+
+
+
+::: {.incremental}
+- **Ponte de Wheatstone** - é um circuito elétrico utilizado para medir variações muito pequenas de resistência com elevada precisão. 
+  - Ela é composta por quatro resistores dispostos em forma de quadrilátero, formando dois ramos que são comparados entre si. 
+  - Quando a ponte está balanceada, a razão entre os resistores de um ramo é igual à razão do outro $R_1/R_2=R_3/R_4$, resultando em diferença de potencial nula no ponto de medição. 
+  - Qualquer alteração em um dos resistores -- como a variação causada por um *strain gage* -- causa um desequilíbrio, produzindo uma tensão mensurável que permite determinar a mudança de resistência e, consequentemente, a deformação associada.
+- **Amplificação do sinal** - devido à natureza da variação de resistência em um *strain gage* ser muito pequena, o sinal elétrico gerado é igualmente pequeno e precisa ser amplificado para ser útil. 
+  - Para isso, os sensores são geralmente conectados em uma configuração de ponte de Wheatstone, que permite medir a variação de resistência com alta precisão e sensibilidade. 
+  - A ponte é composta por quatro resistores, onde um ou mais são os *strain gages* instalados na estrutura. 
+  - Quando a estrutura se deforma, a resistência dos *strain gages* muda, desequilibrando a ponte e gerando um sinal elétrico proporcional à deformação.
+
+
+:::
+
+:::
+
+---
+<!-- Extensômetros - Slide 2 -->
+
+::: {.tpl-text-carousel title="{{< meta extensometros.item >}} {{< meta extensometros.topic >}}" subtitle="{{< meta extensometros.item >}}{{< meta extensometros.subtopic3 >}}" img1="media/extensometros/armadura.jpeg" alt1="Armadura de aço exposta em um pilar para instalação de extensômetros" img2="media/extensometros/armadura-com-strain-gage.jpeg" alt2="Armadura de aço com extensômetro instalado em pilar" img3="media/extensometros/armadura-com-strain-gage-zoom-brilho.jpeg" alt3="Armadura de aço com extensômetro instalado em um pilar" img4="media/extensometros/extensometro-laje-outeiro.jpeg" alt4="Armadura de aço com extensômetro instalado em uma laje" img5="media/extensometros/instalacao-pilar-ponte.jpeg" alt5="Extensômetro instalado na superfícide de um pilar de ponte" carousel="true" }
+
+- **Etapas de instalação de um sensor em armadura de aço** - a instalação de um extensômetro elétrico de resistência em uma barra de aço para medição de deformações envolve várias etapas
+
+::: {.incremental}
+  1.	Determinação da posição da barra de aço a ser instrumentada com pacômetro
+  2.	Remoção da camada de cobrimento de concreto com talhadeira ou martelete elétrico
+  3.	Lixamento da armadura para remoção das mossas, com lixadeira elétrica (retífica)
+  4.	Limpeza da armadura com álcool isopropílico
+  5.	Fixação do extensômetro elétrico de resistência, com adesivo a base de éster de cianoacrilato (super bonder)
+  6.	Soldagem dos cabos (cabo tipo manga, 2x26, AWG, blindados), com ligação a três fios
+  7.  Isolamento elétrico da fiação com fita isolante
+  8.	Proteção mecânica com adesivo a base de resina epóxi e poliamida (Araldite 10min)
+  9.	Verificação do funcionamento do extensômetro com multímetro e sistema de aquisição de dados
+  10.	Fechamento da abertura com utilização de graute;
+
+:::
+
+:::
+
+
