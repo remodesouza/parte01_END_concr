@@ -1,0 +1,80 @@
+/* Dracula Theme for Landing Page (slidejs-inspired)
+   Based on https://draculatheme.com/ and reveal.js dracula theme colors
+*/
+body {
+  font-family: 'Fira Mono', 'JetBrains Mono', 'Menlo', 'Consolas', 'monospace', Arial, sans-serif;
+  background: #282a36;
+  color: #f8f8f2;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 520px;
+  margin: 80px auto;
+  background: #44475a;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px #0005;
+  padding: 2.2em 2em 2em 2em;
+  text-align: center;
+}
+h1 {
+  margin-bottom: 1.5em;
+  font-size: 2em;
+  color: #bd93f9;
+  letter-spacing: 1px;
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+a {
+  display: block;
+  padding: 1em;
+  background: linear-gradient(90deg, #6272a4 60%, #bd93f9 100%);
+  color: #f8f8f2;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 6px #0002;
+}
+a:hover {
+  background: linear-gradient(90deg, #bd93f9 60%, #6272a4 100%);
+  color: #282a36;
+  box-shadow: 0 2px 12px #0004;
+}
+.note {
+  margin-top: 2em;
+  color: #8be9fd;
+  font-size: 0.97em;
+}
+section.instructions {
+  max-width: 600px;
+  margin: 2em auto;
+  padding: 1.2em 1em 1em 1em;
+  background: #282a36;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #0002;
+  border: 1.5px solid #44475a;
+}
+section.instructions h2 {
+  color: #50fa7b;
+  margin-bottom: 0.7em;
+}
+section.instructions ul {
+  font-size: 1.08em;
+  color: #f8f8f2;
+  text-align: left;
+  margin: 0 auto 0.5em auto;
+  padding-left: 1.2em;
+}
+section.instructions li {
+  margin-bottom: 0.5em;
+}
+section.instructions p {
+  color: #8be9fd;
+  font-size: 0.98em;
+  margin-top: 1em;
+}
