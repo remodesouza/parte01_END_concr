@@ -1,5 +1,9 @@
 .venv/
 .quarto/
 *_files/
+!Parte01-END-concreto/princ01_files/
+!Parte01-END-concreto/princ01_files/**
+!Parte02-Instrumentacao/princ02_files/
+!Parte02-Instrumentacao/princ02_files/**
 
 /.luarc.json

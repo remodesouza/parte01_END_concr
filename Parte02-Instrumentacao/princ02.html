@@ -166,16 +166,16 @@ Prof.&nbsp;Remo Magalhães de Souza, Eng. Civil, M.Sc., Ph.D.
 <!-- Extensômetros - Slide 0 - divider -->
 </section>
 <section>
-<section id="b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206d65746120657874656e736f6d6574726f732e6974656d203e7d7d-b58fc729-690b-4000-b19f-365a4093b2ff7b7b3c206d65746120657874656e736f6d6574726f732e746f706963203e7d7d" class="title-slide slide level1 center">
+<section id="extensômetros-elétricos-de-resistência-para-medição-de-deformações-em-estruturas-e-fundações" class="title-slide slide level1 center">
 <h1>1. Extensômetros elétricos de resistência para medição de deformações em estruturas e fundações</h1>
 
 </section>
-<section class="slide level2">
-
+<section id="princípio-de-funcionamento" class="slide level2">
+<h2>1.1 Princípio de funcionamento</h2>
 <!-- Extensômetros - Slide 1 -->
 <div class="tpl-slide tpl-text-carousel tpl-has-carousel">
   <h2>1. Extensômetros elétricos de resistência para medição de deformações em estruturas e fundações</h2>
-  <h3>1.1. Princípio de funcionamento</h3>
+  <h3>1. Princípio de funcionamento</h3>
   <div class="columns">
     <div class="column tpl-text-carousel-body">
       <ul>
@@ -334,12 +334,12 @@ comercialmente têm resistências típicas de 120Ω ou 350Ω.</li>
 </script>
 
 </section>
-<section class="slide level2">
-
+<section id="ponte-de-wheatstone" class="slide level2">
+<h2>1.2 Ponte de Wheatstone</h2>
 <!-- Extensômetros - Slide 2 -->
 <div class="tpl-slide tpl-text-carousel tpl-has-carousel">
   <h2>1. Extensômetros elétricos de resistência para medição de deformações em estruturas e fundações</h2>
-  <h3>1.2. Ponte de Wheatstone</h3>
+  <h3>2. Ponte de Wheatstone</h3>
   <div class="columns">
     <div class="column tpl-text-carousel-body">
       <ul>
@@ -497,12 +497,12 @@ elétrico proporcional à deformação.</li>
 </script>
 
 </section>
-<section class="slide level2">
-
+<section id="instalação-dos-sensores" class="slide level2">
+<h2>1.3 Instalação dos sensores</h2>
 <!-- Extensômetros - Slide 2 -->
 <div class="tpl-slide tpl-text-carousel tpl-has-carousel">
   <h2>1. Extensômetros elétricos de resistência para medição de deformações em estruturas e fundações</h2>
-  <h3>1.3. Instalação dos sensores</h3>
+  <h3>3. Instalação dos sensores</h3>
   <div class="columns">
     <div class="column tpl-text-carousel-body">
       <ul>
@@ -566,6 +566,338 @@ graute;</li>
     <span class="tpl-carousel-dot" data-carousel-dot="2"></span>
     <span class="tpl-carousel-dot" data-carousel-dot="3"></span>
     <span class="tpl-carousel-dot" data-carousel-dot="4"></span>
+  </div>
+</div>
+    </div></div>
+</div>
+<script>
+    (function () {
+        if (window.__tplRevealCarouselInit) {
+            return;
+        }
+        window.__tplRevealCarouselInit = true;
+
+        function getCarousel(carousel) {
+            return carousel && carousel.querySelectorAll('.tpl-carousel-item').length ? carousel : null;
+        }
+
+        function getActiveIndex(carousel) {
+            var activeItem = carousel.querySelector('.tpl-carousel-item.is-active');
+            if (!activeItem) {
+                return 0;
+            }
+
+            var items = Array.from(carousel.querySelectorAll('.tpl-carousel-item'));
+            var index = items.indexOf(activeItem);
+            return index < 0 ? 0 : index;
+        }
+
+        function setActiveIndex(carousel, newIndex) {
+            carousel = getCarousel(carousel);
+            if (!carousel) {
+                return;
+            }
+
+            var items = carousel.querySelectorAll('.tpl-carousel-item');
+            var captions = carousel.querySelectorAll('.tpl-carousel-caption');
+            var dots = carousel.querySelectorAll('.tpl-carousel-dot');
+
+            for (var i = 0; i < items.length; i++) {
+                var active = i === newIndex;
+                items[i].classList.toggle('is-active', active);
+                items[i].classList.toggle('is-hidden', !active);
+            }
+
+            for (var j = 0; j < captions.length; j++) {
+                var captionActive = j === newIndex;
+                captions[j].classList.toggle('is-active', captionActive);
+                captions[j].classList.toggle('is-hidden', !captionActive);
+            }
+
+            for (var k = 0; k < dots.length; k++) {
+                dots[k].classList.toggle('is-active', k === newIndex);
+            }
+        }
+
+        function moveCarousel(carousel, direction) {
+            carousel = getCarousel(carousel);
+            if (!carousel) {
+                return false;
+            }
+
+            var items = carousel.querySelectorAll('.tpl-carousel-item');
+            var currentIndex = getActiveIndex(carousel);
+            var newIndex = currentIndex;
+
+            if (direction === 'prev') {
+                newIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
+            }
+            else if (direction === 'next') {
+                newIndex = currentIndex === items.length - 1 ? 0 : currentIndex + 1;
+            }
+
+            setActiveIndex(carousel, newIndex);
+            return true;
+        }
+
+        document.addEventListener('click', function (event) {
+            var target = event.target;
+            if (target && target.nodeType !== 1) {
+                target = target.parentElement;
+            }
+
+            var button = target ? target.closest('[data-carousel-nav]') : null;
+            if (!button) {
+                return;
+            }
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            moveCarousel(button.closest('.tpl-carousel'), button.getAttribute('data-carousel-nav'));
+        });
+
+        document.addEventListener('slidechanged', function (event) {
+            var slide = event.currentSlide || document;
+            slide.querySelectorAll('.tpl-carousel[data-carousel]').forEach(function (carousel) {
+                setActiveIndex(carousel, 0);
+            });
+        });
+
+        document.querySelectorAll('.tpl-carousel[data-carousel]').forEach(function (carousel) {
+            setActiveIndex(carousel, 0);
+        });
+    })();
+</script>
+
+<!-- Acelerômetros - Slide 0 - divider -->
+</section></section>
+<section>
+<section id="acelerômetros-piezoelétricos-para-medição-de-vibrações-em-estruturas" class="title-slide slide level1 center">
+<h1>3. Acelerômetros piezoelétricos para medição de vibrações em estruturas</h1>
+
+</section>
+<section id="princípio-de-funcionamento-1" class="slide level2">
+<h2>3.1 Princípio de funcionamento</h2>
+<!-- Acelerômetros - Slide 1 -->
+<div class="tpl-slide tpl-text-carousel tpl-has-carousel">
+  <h2>3. Acelerômetros piezoelétricos para medição de vibrações em estruturas</h2>
+  <h3>1. Princípio de funcionamento</h3>
+  <div class="columns">
+    <div class="column tpl-text-carousel-body">
+      <ul>
+<li class="fragment"><strong>Efeito piezoelétrico</strong> – o
+funcionamento de um acelerômetro deste tipo baseia-se no seguinte
+efeito: certos materiais cristalinos (quartzo, cerâmica PZT) geram uma
+carga elétrica proporcional à força mecânica aplicada.
+<ul>
+<li class="fragment">No interior do sensor, uma <em>massa sísmica</em>
+está acoplada ao elemento piezoelétrico.</li>
+<li class="fragment">Quando o sensor é submetido a uma aceleração, a
+força de inércia <span class="math inline"><em>F</em> = <em>m</em> ⋅ <em>a</em></span> comprime
+ou traciona o cristal, gerando uma carga elétrica proporcional à
+aceleração.</li>
+<li class="fragment">A carga gerada é convertida em tensão por um
+amplificador interno ou externo.</li>
+</ul></li>
+<li class="fragment"><strong>Sensibilidade</strong> – expressa em mV/g
+(milivolts por g, onde <span class="math inline"><em>g</em> = 9.81&nbsp;m/s<sup>2</sup></span>), é a
+constante que relaciona a saída elétrica do sensor à aceleração
+medida.</li>
+<li class="fragment"><strong>Faixa de frequência</strong> – os
+acelerômetros piezoelétricos tem faixa de frequência de 0,1 Hz a vários
+kHz, tornando-os adequados para monitoração de vibrações em pontes
+ferroviárias, edificações e fundações.</li>
+</ul>
+    </div><div class="column tpl-text-carousel-media">
+      <div class="tpl-carousel tpl-carousel-reveal" data-carousel="">
+  <button type="button" class="tpl-carousel-nav tpl-carousel-prev" data-carousel-nav="prev" aria-label="Previous image">❮</button>
+  <button type="button" class="tpl-carousel-nav tpl-carousel-next" data-carousel-nav="next" aria-label="Next image">❯</button>
+  <div class="tpl-carousel-viewport">
+    <figure class="tpl-carousel-item is-active" data-carousel-index="0">
+      <img src="media/acelerometros/acelerometro-Wilcoxon-793L.png" alt="Acelerômetro piezoelétrico uniaxial marca Wilcoxon, modelo 793L." style="width: 100%;">
+    </figure>
+    <figure class="tpl-carousel-item is-hidden" data-carousel-index="1">
+      <img src="media/acelerometros/Schematic-of-a-piezoelectric-accelerometer.png" alt="Esquema do efeito piezoelétrico: carga elétrica gerada pela deformação mecânica do cristal." style="width: 100%;">
+    </figure>
+  </div>
+  <div class="tpl-carousel-caption-zone">
+    <p class="tpl-carousel-caption is-active" data-carousel-index="0">Acelerômetro piezoelétrico uniaxial marca Wilcoxon, modelo 793L.</p>
+    <p class="tpl-carousel-caption is-hidden" data-carousel-index="1">Esquema do efeito piezoelétrico: carga elétrica gerada pela deformação mecânica do cristal.</p>
+  </div>
+  <div class="tpl-carousel-dots" aria-hidden="true">
+    <span class="tpl-carousel-dot is-active" data-carousel-dot="0"></span>
+    <span class="tpl-carousel-dot" data-carousel-dot="1"></span>
+  </div>
+</div>
+    </div></div>
+</div>
+<script>
+    (function () {
+        if (window.__tplRevealCarouselInit) {
+            return;
+        }
+        window.__tplRevealCarouselInit = true;
+
+        function getCarousel(carousel) {
+            return carousel && carousel.querySelectorAll('.tpl-carousel-item').length ? carousel : null;
+        }
+
+        function getActiveIndex(carousel) {
+            var activeItem = carousel.querySelector('.tpl-carousel-item.is-active');
+            if (!activeItem) {
+                return 0;
+            }
+
+            var items = Array.from(carousel.querySelectorAll('.tpl-carousel-item'));
+            var index = items.indexOf(activeItem);
+            return index < 0 ? 0 : index;
+        }
+
+        function setActiveIndex(carousel, newIndex) {
+            carousel = getCarousel(carousel);
+            if (!carousel) {
+                return;
+            }
+
+            var items = carousel.querySelectorAll('.tpl-carousel-item');
+            var captions = carousel.querySelectorAll('.tpl-carousel-caption');
+            var dots = carousel.querySelectorAll('.tpl-carousel-dot');
+
+            for (var i = 0; i < items.length; i++) {
+                var active = i === newIndex;
+                items[i].classList.toggle('is-active', active);
+                items[i].classList.toggle('is-hidden', !active);
+            }
+
+            for (var j = 0; j < captions.length; j++) {
+                var captionActive = j === newIndex;
+                captions[j].classList.toggle('is-active', captionActive);
+                captions[j].classList.toggle('is-hidden', !captionActive);
+            }
+
+            for (var k = 0; k < dots.length; k++) {
+                dots[k].classList.toggle('is-active', k === newIndex);
+            }
+        }
+
+        function moveCarousel(carousel, direction) {
+            carousel = getCarousel(carousel);
+            if (!carousel) {
+                return false;
+            }
+
+            var items = carousel.querySelectorAll('.tpl-carousel-item');
+            var currentIndex = getActiveIndex(carousel);
+            var newIndex = currentIndex;
+
+            if (direction === 'prev') {
+                newIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
+            }
+            else if (direction === 'next') {
+                newIndex = currentIndex === items.length - 1 ? 0 : currentIndex + 1;
+            }
+
+            setActiveIndex(carousel, newIndex);
+            return true;
+        }
+
+        document.addEventListener('click', function (event) {
+            var target = event.target;
+            if (target && target.nodeType !== 1) {
+                target = target.parentElement;
+            }
+
+            var button = target ? target.closest('[data-carousel-nav]') : null;
+            if (!button) {
+                return;
+            }
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            moveCarousel(button.closest('.tpl-carousel'), button.getAttribute('data-carousel-nav'));
+        });
+
+        document.addEventListener('slidechanged', function (event) {
+            var slide = event.currentSlide || document;
+            slide.querySelectorAll('.tpl-carousel[data-carousel]').forEach(function (carousel) {
+                setActiveIndex(carousel, 0);
+            });
+        });
+
+        document.querySelectorAll('.tpl-carousel[data-carousel]').forEach(function (carousel) {
+            setActiveIndex(carousel, 0);
+        });
+    })();
+</script>
+
+</section>
+<section id="instalação-dos-sensores-1" class="slide level2">
+<h2>3.2 Instalação dos sensores</h2>
+<!-- Acelerômetros - Slide 3 -->
+<div class="tpl-slide tpl-text-carousel tpl-has-carousel">
+  <h2>3. Acelerômetros piezoelétricos para medição de vibrações em estruturas</h2>
+  <h3>2. Instalação dos sensores</h3>
+  <div class="columns">
+    <div class="column tpl-text-carousel-body">
+      <ul>
+<li class="fragment"><strong>Métodos de fixação</strong> – alguns
+métodos comuns para fixar os acelerômetros à estrutura incluem:
+<ol type="1">
+<li class="fragment"><strong>Parafuso roscado</strong> – fixação
+definitiva e de maior rigidez; preserva a faixa de frequência completa
+do sensor; requer superfície usinada ou plaqueta colada;</li>
+<li class="fragment"><strong>Base magnética</strong> – conveniente para
+medições temporárias em estruturas metálicas; limita a faixa de
+frequência utilizável;</li>
+<li class="fragment"><strong>Cera de abelha</strong> (<em>beeswax</em>)
+– usada para fixação rápida em laboratório ou campanhas de campo de
+curta duração;</li>
+</ol></li>
+<li class="fragment"><strong>Direção de medição</strong> – posicionar o
+eixo sensível na direção de maior interesse (vertical, transversal ou
+longitudinal)</li>
+<li class="fragment"><strong>Arranjo triaxial</strong> – sensores em
+arranjo triaxial medem as acelerações nas três direções <span class="math inline">(<em>x</em>, <em>y</em>, <em>z</em>)</span>
+simultaneamente;</li>
+<li class="fragment"><strong>Passagem e proteção de cabos</strong> –
+usar cabo coaxial blindado; evitar laços e fixar o cabo à estrutura a
+cada 30–50 cm para não introduzir ruído por vibração do próprio cabo
+(<em>cable noise</em>);</li>
+<li class="fragment"><strong>Proteção ambiental</strong> – proteger o
+sensor com capa de borracha ou invólucro estanque em ambientes sujeitos
+a chuva, umidade ou poeira.</li>
+</ul>
+    </div><div class="column tpl-text-carousel-media">
+      <div class="tpl-carousel tpl-carousel-reveal" data-carousel="">
+  <button type="button" class="tpl-carousel-nav tpl-carousel-prev" data-carousel-nav="prev" aria-label="Previous image">❮</button>
+  <button type="button" class="tpl-carousel-nav tpl-carousel-next" data-carousel-nav="next" aria-label="Next image">❯</button>
+  <div class="tpl-carousel-viewport">
+    <figure class="tpl-carousel-item is-active" data-carousel-index="0">
+      <img src="media/acelerometros/acelerometrowilcoxxon.jpg" alt="acelerômetro piezoelétrico em arranjo uniaxial" style="width: 100%;">
+    </figure>
+    <figure class="tpl-carousel-item is-hidden" data-carousel-index="1">
+      <img src="media/acelerometros/acelerometros-arranjo-triaxial.jpeg" alt="Acelerômetros piezoelétricos em arranjo triaxial instalados em uma ponte ferroviária." style="width: 100%;">
+    </figure>
+    <figure class="tpl-carousel-item is-hidden" data-carousel-index="2">
+      <img src="media/acelerometros/acel2.webp" alt="Acelerômetros piezoelétricos em arranjo triaxial instalados em uma ponte rodoviária." style="width: 100%;">
+    </figure>
+    <figure class="tpl-carousel-item is-hidden" data-carousel-index="3">
+      <img src="media/acelerometros/acelerometros.webp" alt="Acelerômetro piezoelétrico em arranjo uniaxial e acelerômetros sísmicos em uma ponte rodoviária." style="width: 100%;">
+    </figure>
+  </div>
+  <div class="tpl-carousel-caption-zone">
+    <p class="tpl-carousel-caption is-active" data-carousel-index="0">acelerômetro piezoelétrico em arranjo uniaxial</p>
+    <p class="tpl-carousel-caption is-hidden" data-carousel-index="1">Acelerômetros piezoelétricos em arranjo triaxial instalados em uma ponte ferroviária.</p>
+    <p class="tpl-carousel-caption is-hidden" data-carousel-index="2">Acelerômetros piezoelétricos em arranjo triaxial instalados em uma ponte rodoviária.</p>
+    <p class="tpl-carousel-caption is-hidden" data-carousel-index="3">Acelerômetro piezoelétrico em arranjo uniaxial e acelerômetros sísmicos em uma ponte rodoviária.</p>
+  </div>
+  <div class="tpl-carousel-dots" aria-hidden="true">
+    <span class="tpl-carousel-dot is-active" data-carousel-dot="0"></span>
+    <span class="tpl-carousel-dot" data-carousel-dot="1"></span>
+    <span class="tpl-carousel-dot" data-carousel-dot="2"></span>
+    <span class="tpl-carousel-dot" data-carousel-dot="3"></span>
   </div>
 </div>
     </div></div>
@@ -833,7 +1165,7 @@ graute;</li>
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'slide',
+        transition: 'convex',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',

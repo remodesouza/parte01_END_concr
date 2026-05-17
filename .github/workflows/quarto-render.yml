@@ -60,7 +60,7 @@ jobs:
         with:
           commit_message: "chore(ci): render Quarto slides [skip ci]"
           file_pattern: |
-            Parte01-END-concreto/*.html
-            Parte01-END-concreto/*_files/**
-            Parte02-Instrumentacao/*.html
-            Parte02-Instrumentacao/*_files/**
+            Parte01-END-concreto/princ01.html
+            Parte01-END-concreto/princ01_files/**
+            Parte02-Instrumentacao/princ02.html
+            Parte02-Instrumentacao/princ02_files/**
