@@ -58,7 +58,7 @@ jobs:
       - name: Commit rendered output
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore(ci): render Quarto slides [skip ci]"
+          commit_message: "chore(ci): render Quarto slides"
           file_pattern: |
             Parte01-END-concreto/princ01.html
             Parte01-END-concreto/princ01_files/**
