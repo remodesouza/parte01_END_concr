@@ -6,7 +6,7 @@ author: "Prof. Remo Magalhães de Souza, Eng. Civil, M.Sc., Ph.D."
 format:
   revealjs:
     theme: dracula 
-    transition: convex
+    transition: slide
     slide-level: 2
     width: 2000
     height: 1125

@@ -1,9 +1,11 @@
-title: Curso de Especialização em Engenharia Ferroviária - Módulo 8 - Infraestrutura ferroviária
+﻿title: "Curso de Especialização em Engenharia Ferroviária - Módulo 8 - Infraestrutura Ferroviária"
 subtitle: "Instrumentação e Monitoração de Estruturas e Fundações"
-author: "Prof. Remo Magalhães de Souza, Eng. Civil, M.Sc., Ph.D."
+author: "Prof. Remo Magalhaes de Souza, Eng. Civil, M.Sc., Ph.D."
 
 format:
   revealjs:
+    theme: dracula
+    transition: slide
     slide-level: 2
     width: 2000
     height: 1125
@@ -12,16 +14,16 @@ format:
     filters:
       - slides/filters/normalize_carousel_attrs.lua
       - slides/filters/slide_templates.py
-    include-in-header:
-      - text: |
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
-          <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-          <script>
-            document.addEventListener('DOMContentLoaded', function() {
-              GLightbox({
-                selector: 'img.zoomable, .tpl-text-carousel img',
-                openEffect: 'zoom',
-                closeEffect: 'zoom'
-              });
-            });
-          </script>
+
+extensometros:
+  item: "1."
+  topic: "Extensometros eletricos para medição de deformações em estruturas e fundações"
+  subtopic1: "1. Principio de funcionamento"
+  subtopic2: "2. Ponte de Wheatstone"
+  subtopic3: "3. Instalação dos sensores"
+
+acelerometros:
+  item: "2."
+  topic: "Acelerometros piezoeletricos para medição de vibrações em estruturas"
+  subtopic1: "1. Principio de funcionamento"
+  subtopic2: "2. Instalação dos sensores"

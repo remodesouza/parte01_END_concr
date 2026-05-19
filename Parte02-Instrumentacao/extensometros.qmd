@@ -1,12 +1,19 @@
 <!-- Extensômetros - Slide 0 - divider -->
-# 1. Extensômetros elétricos de resistência para medição de deformações em estruturas e fundações {.title-slide}
+# {{< meta extensometros.item >}} {{< meta extensometros.topic >}} {.title-slide}
 
 
-## 1.1 Princípio de funcionamento
+## 
 
 <!-- Extensômetros - Slide 1 -->
 
-::: {.tpl-text-carousel title="1. Extensômetros elétricos de resistência para medição de deformações em estruturas e fundações" subtitle="1. Princípio de funcionamento" img1="media/extensometros/Strain_gauge_-.jpg" alt1="Extensômetro elétrico de resistência (strain gage) marca HBM instalado." img2="media/extensometros/01-strain-gage-kyowa.png" alt2="Extensômetro elétrico de resistência (strain gage) marca Kyowa, modelo KFG-10-120-C1." img3="media/extensometros/extensometros-tipos-original.png" alt3="Tipos básicos de extensômetros elétricos de resistência. Fonte: Andolfato, Camacho e de Brito (2004)" carousel="true" }
+::: {.tpl-text-carousel title="{{< meta extensometros.item >}} {{< meta extensometros.topic >}}" subtitle="{{< meta extensometros.item >}}{{< meta extensometros.subtopic1 >}}"
+  img1="media/extensometros/Strain_gauge_-.jpg" 
+    alt1="Extensômetro elétrico de resistência (strain gage) marca HBM instalado." 
+  img2="media/extensometros/01-strain-gage-kyowa.png" 
+    alt2="Extensômetro elétrico de resistência (strain gage) marca Kyowa, modelo KFG-10-120-C1." 
+  img3="media/extensometros/extensometros-tipos-original.png" 
+    alt3="Tipos básicos de extensômetros elétricos de resistência. Fonte: Andolfato, Camacho e de Brito (2004)" 
+  carousel="true" }
 
 ::: {.incremental}
 - **Extensômetro elétrico de resistência** -- o funcionamento de um *strain gage* (extensômetro) baseia-se na propriedade física de que a resistência elétrica de um fio condutor muda quando ele é deformado. 
@@ -24,11 +31,16 @@
 :::
 
 
-## 1.2 Ponte de Wheatstone
+##
 
 <!-- Extensômetros - Slide 2 -->
 
-::: {.tpl-text-carousel title="1. Extensômetros elétricos de resistência para medição de deformações em estruturas e fundações" subtitle="2. Ponte de Wheatstone" img1="media/extensometros/ponteDeWheatstone.png" alt1="Circuito em Ponte de Wheatstone" img2="media/extensometros/extensometro-ponte.png" alt2="Extensômetro conectado em Ponte de Wheatstone. Fonte: Unifei EME505P" carousel="true" }
+::: {.tpl-text-carousel title="{{< meta extensometros.item >}} {{< meta extensometros.topic >}}" subtitle="{{< meta extensometros.item >}}{{< meta extensometros.subtopic2 >}}"
+  img1="media/extensometros/ponteDeWheatstone.png" 
+    alt1="Circuito em Ponte de Wheatstone"   
+  img2="media/extensometros/extensometro-ponte.png" 
+    alt2="Extensômetro conectado em Ponte de Wheatstone. Fonte: Unifei EME505P"   
+  carousel="true" }
 
 
 
@@ -47,10 +59,21 @@
 
 :::
 
-## 1.3 Instalação dos sensores
+## 
 <!-- Extensômetros - Slide 2 -->
 
-::: {.tpl-text-carousel title="1. Extensômetros elétricos de resistência para medição de deformações em estruturas e fundações" subtitle="3. Instalação dos sensores" img1="media/extensometros/armadura.jpeg" alt1="Armadura de aço exposta em um pilar para instalação de extensômetros" img2="media/extensometros/armadura-com-strain-gage.jpeg" alt2="Armadura de aço com extensômetro instalado em pilar" img3="media/extensometros/armadura-com-strain-gage-zoom-brilho.jpeg" alt3="Armadura de aço com extensômetro instalado em um pilar" img4="media/extensometros/extensometro-laje-outeiro.jpeg" alt4="Armadura de aço com extensômetro instalado em uma laje" img5="media/extensometros/instalacao-pilar-ponte.jpeg" alt5="Extensômetro instalado na superfícide de um pilar de ponte" carousel="true" }
+::: {.tpl-text-carousel title="{{< meta extensometros.item >}} {{< meta extensometros.topic >}}" subtitle="{{< meta extensometros.item >}}{{< meta extensometros.subtopic3 >}}"
+  img1="media/extensometros/armadura.jpeg" 
+    alt1="Armadura de aço exposta em um pilar para instalação de extensômetros" 
+  img2="media/extensometros/armadura-com-strain-gage.jpeg" 
+    alt2="Armadura de aço com extensômetro instalado em pilar"   
+  img3="media/extensometros/armadura-com-strain-gage-zoom-brilho.jpeg" 
+    alt3="Armadura de aço com extensômetro instalado em um pilar"    
+  img4="media/extensometros/extensometro-laje-outeiro.jpeg" 
+    alt4="Armadura de aço com extensômetro instalado em uma laje"       
+  img5="media/extensometros/instalacao-pilar-ponte.jpeg" 
+    alt5="Extensômetro instalado na superfícide de um pilar de ponte"      
+  carousel="true" }
 
 - **Etapas de instalação de um sensor em armadura de aço** - a instalação de um extensômetro elétrico de resistência em uma barra de aço para medição de deformações envolve várias etapas
 
@@ -69,5 +92,3 @@
 :::
 
 :::
-
-

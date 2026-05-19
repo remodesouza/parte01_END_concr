@@ -1,11 +1,4 @@
----
-format:
-  revealjs:
-    theme: dracula
-    transition: convex
 
-
----
 
 ## Principais tipos de sensores utilizados na instrumentação e monitoração de estruturas e fundações
 
@@ -17,9 +10,8 @@ format:
 5. **Células de carga** -- para medição de forças aplicadas.
 
 :::
-
-
 {{< include extensometros.qmd >}}
 
 {{< include acelerometros.qmd >}}
+
 
