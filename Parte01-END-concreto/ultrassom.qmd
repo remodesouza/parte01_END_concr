@@ -1,39 +1,10 @@
----
-title: Curso de Especialização em Engenharia Ferroviária - Módulo 8 - Infraestrutura ferroviária
-subtitle: "Ensaios Não Destrutivos para Avaliação de Estruturas e Fundações em Concreto"
-author: "Prof. Remo Magalhães de Souza, Eng. Civil, M.Sc , Ph.D."
-
-ultrassom:
-  item: "3."
-  topic: "Ensaio de ultrassom para avaliação da integridade e resistência do concreto"
-  subtopic1: "1. Procedimento normativo e descrição do ensaio de ultrassom"
-  subtopic2: "2. Arranjos e execução dos ensaios"
-  subtopic3: "2. Análise dos resultados"
-
-format:
-  revealjs:
-    theme: dracula 
-    transition: slide
-    slide-level: 2
-    width: 2000
-    height: 1125
-    margin: 0.02
-    css: slides/includes/slides-layout.css
-    filters:
-      - slides/filters/normalize_carousel_attrs.lua
-      - slides/filters/slide_templates.py
-
-
----
 
 <!-- Ultrassom - Slide 0 - divider -->
 # {{< meta ultrassom.item >}} {{< meta ultrassom.topic >}} {.title-slide}
 
 
----
-
 <!-- ultrassom - Slide 1 -->
-
+##
 ::: {.tpl-text-carousel title="{{< meta ultrassom.item >}} {{< meta ultrassom.topic >}}" subtitle="{{< meta ultrassom.item >}}{{< meta ultrassom.subtopic1 >}}"
   img_05b="media/ultrassom/01-equipamento-ultrassom-pundit.jpeg" 
     alt_05b="Equipamento de ultrassom PUNDIT (Portable Ultrasonic Non Destructive Indicating Tester) PL-200, com transdutores de onda P com frequência de 54kHz e comprimento de onda de 68,5mm." 
@@ -53,10 +24,8 @@ format:
 
 :::
 
----
-
 <!-- ultrassom - Slide 2 -->
-
+##
 ::: {.tpl-text-carousel title="{{< meta ultrassom.item >}} {{< meta ultrassom.topic >}}" subtitle="{{< meta ultrassom.item >}}{{< meta ultrassom.subtopic2 >}}"
   img_direta="media/ultrassom/03-transmissao-direta.png"
     alt_direta="Arranjo de ensaio de ultrassom em transmissão direta, com transdutores posicionados em lados opostos do elemento estrutural" 
@@ -83,10 +52,9 @@ format:
 
 :::
 
----
 
 <!-- ultrassom - Slide 2 -->
-
+##
 ::: {.tpl-text-carousel title="{{< meta ultrassom.item >}} {{< meta ultrassom.topic >}}" subtitle="{{< meta ultrassom.item >}}{{< meta ultrassom.subtopic3 >}}"
   img_direta="media/ultrassom/09-resultados-ultrassom-direto.png"
     alt_direta="Resultados do ensaio de ultrassom em transmissão direta" 

@@ -9,10 +9,10 @@ format:
     width: 1600
     height: 900
     margin: 0.02
-    css: slides/includes/slides-layout.css
+    css: ../../slides/includes/slides-layout.css
     filters:
-      - slides/filters/normalize_carousel_attrs.lua
-      - slides/filters/slide_templates.py
+      - ../../slides/filters/normalize_carousel_attrs.lua
+      - ../../slides/filters/slide_templates.py
 ---
 
 ::: {.tpl-divider title="Roteiro Complementar" subtitle="Apoio a tomada de decisao" text="Slides adicionais para detalhar criterios tecnicos e plano de campanha de END."}

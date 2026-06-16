@@ -1,38 +1,9 @@
----
-title: Curso de Especialização em Engenharia Ferroviária - Módulo 8 - Infraestrutura ferroviária
-subtitle: "Ensaios Não Destrutivos para Avaliação de Estruturas e Fundações em Concreto"
-author: "Prof. Remo Magalhães de Souza, Eng. Civil, M.Sc., Ph.D."
-
-pacometria:
-  item: "4."
-  topic: "Ensaio com pacômetro para identificação das armaduras e cobrimentos"
-  subtopic1: "1. Procedimento normativo e descrição do ensaio de pacometria"
-  subtopic2: "2. Execução dos ensaios e resultados"
-
-format:
-  revealjs:
-    theme: dracula 
-    transition: slide
-    slide-level: 2
-    width: 2000
-    height: 1125
-    margin: 0.02
-    css: slides/includes/slides-layout.css
-    filters:
-      - slides/filters/normalize_carousel_attrs.lua
-      - slides/filters/slide_templates.py
-
-
----
 
 <!-- pacometria - Slide 0 - divider -->
 # {{< meta pacometria.item >}} {{< meta pacometria.topic >}} {.title-slide}
 
-
----
-
 <!-- pacometria - Slide 1 -->
-
+##
 ::: {.tpl-text-carousel title="{{< meta pacometria.item >}} {{< meta pacometria.topic >}}" subtitle="{{< meta pacometria.item >}}{{< meta pacometria.subtopic1 >}}"
   img="media/pacometria/01-pacometro-profometer.jpg" 
     alt="Equipamento de pacometria Proceq Profometer 630." 
@@ -57,10 +28,8 @@ concrete. Recommendations on the use of electromagnetic covermeters* (Ensaios em
 
 :::
 
----
-
 <!-- pacometria - Slide 2 -->
-
+##
 ::: {.tpl-text-carousel title="{{< meta pacometria.item >}} {{< meta pacometria.topic >}}" subtitle="{{< meta pacometria.item >}}{{< meta pacometria.subtopic2 >}}"
  img_resParVertical="media/pacometria/04-resultado-armadura-vertical-parede.png"
     alt_resParVertical="Resultado do ensaio de pacometria referente à armadura vertical na parede em concreto armado"      

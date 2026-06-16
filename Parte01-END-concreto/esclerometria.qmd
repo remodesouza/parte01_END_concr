@@ -1,41 +1,9 @@
----
-title: Curso de Especialização em Engenharia Ferroviária - Módulo 8 - Infraestrutura ferroviária
-subtitle: "Ensaios Não Destrutivos para Avaliação de Estruturas e Fundações em Concreto"
-author: "Prof. Remo Magalhães de Souza, Eng. Civil, M.Sc., Ph.D."
-
-esclerometria:
-  item: "2."
-  topic: "Ensaio de esclerometria para estimativa da resistência do concreto"
-  subtopic1: "1. Equipamento, procedimento normativo e execução do ensaio"
-  subtopic2: "2. Tratamento estatístico dos resultados"
-  subtopic3: "3. Curva de conversão entre índice esclerométrico e resistência à compressão do concreto"
-  subtopic4: "4. Fatores que influenciam os resultados do ensaio de esclerometria (Anexo C - ABNt NBR 7584:2012)"  
-  subtopic5: "5. Efeito da carbonatação na dureza superficial do concreto"
-  
-
-format:
-  revealjs:
-    theme: dracula 
-    transition: slide
-    slide-level: 2
-    width: 2000
-    height: 1125
-    margin: 0.02
-    css: slides/includes/slides-layout.css
-    filters:
-      - slides/filters/normalize_carousel_attrs.lua
-      - slides/filters/slide_templates.py
-
----
 
 <!-- Esclerometria - Slide 0 - divider -->
 # {{< meta esclerometria.item >}} {{< meta esclerometria.topic >}} {.title-slide}
 
-
----
-
 <!-- Esclerometria - Slide 1 -->
-
+##
 ::: {.tpl-text-carousel title="{{< meta esclerometria.item >}} {{< meta esclerometria.topic >}}" subtitle="{{< meta esclerometria.item >}}{{< meta esclerometria.subtopic1 >}}"
         img_Schimdt="media/esclerometria/esclerometro-Original-Schmidt.png" 
           alt_Schimdt="Esclerômetro analógico original Schmidt"  
@@ -80,9 +48,9 @@ format:
 :::
 
 
----
 
 <!-- Esclerometria - Slide 2 -->
+##
 ::: {.tpl-text title="{{< meta esclerometria.item >}} {{< meta esclerometria.topic >}}" subtitle="{{< meta esclerometria.item >}}{{< meta esclerometria.subtopic2 >}}"}
 ::: {.incremental}
 
@@ -99,19 +67,17 @@ format:
 
 :::
 
----
 
 <!-- Esclerometria - Slide 3 -->
+##
 ::: {.tpl-wide-image title="{{< meta esclerometria.item >}}{{< meta esclerometria.topic >}}" subtitle="{{< meta esclerometria.item >}}{{< meta esclerometria.subtopic2 >}}"
   img="media/esclerometria/esclerometriaTabela.png" 
     caption="Tabela com análise dos resultados do ensaio de esclerometria, incluindo os índices individuais, médias e valores espúrios." }
 :::
 
 
----
-
 <!-- Esclerometria - Slide 4 -->
-
+##
 ::: {.tpl-text-carousel title="{{< meta esclerometria.item >}} {{< meta esclerometria.topic >}}" subtitle="{{< meta esclerometria.item >}}{{< meta esclerometria.subtopic3 >}}"
   img="media/esclerometria/rebound-hammer-concrete-strength.png" 
     alt="Curva de conversão baseado na média de resistências à compressão do concreto, e o índice esclerométrico R, para o esclerômetro original Schimdt"   
@@ -141,10 +107,8 @@ format:
 :::
 
 
-
----
-
 <!-- Esclerometria - Slide 5 -->
+##
 ::: {.tpl-text title="{{< meta esclerometria.item >}} {{< meta esclerometria.topic >}}" subtitle="{{< meta esclerometria.item >}}{{< meta esclerometria.subtopic4 >}}"}
 ::: {.incremental}
 
@@ -167,10 +131,8 @@ format:
 :::
 
 
----
-
 <!-- Esclerometria - Slide 6 -->
-
+##
 ::: {.tpl-text-carousel title="{{< meta esclerometria.item >}} {{< meta esclerometria.topic >}}" subtitle="{{< meta esclerometria.item >}}{{< meta esclerometria.subtopic5 >}}"
   img="media/esclerometria/curva-Proceq-correcao-carbonatacao.png" 
     alt="Curva de correção do índice esclerométrico R, levando em conta o efeito da carbonatação, para o esclerômetro Proceq"   

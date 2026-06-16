@@ -19,14 +19,13 @@
   - Quando o sensor é submetido a uma aceleração, a força de inércia $F = m \cdot a$ comprime ou traciona o cristal, gerando uma carga elétrica proporcional à aceleração.
   - A carga gerada é convertida em tensão por um amplificador interno ou externo.
 - **Sensibilidade** -- expressa em mV/g (milivolts por g, onde $g = 9.81\ \text{m/s}^2$), é a constante que relaciona a saída elétrica do sensor à aceleração medida.
-- **Faixa de frequência** -- os acelerômetros piezoelétricos tem faixa de frequência de 0,1 Hz a vários kHz, tornando-os adequados para monitoração de vibrações em pontes ferroviárias, edificações e fundações.
+- **Faixa de frequência** -- os acelerômetros piezoelétricos tem faixa de frequência de 0,1 Hz a vários kHz, sendo adequados para monitoração de vibrações em estruturas civis diversas, tais como pontes e edifícios.
 :::
 
 :::
 
 
 ##
-
 
 <!-- Acelerômetros - Slide 3 -->
 

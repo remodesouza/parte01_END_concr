@@ -1,0 +1,50 @@
+﻿title: 31º Encontro Regional IBRACON Pará - 16, 17 e 18 de junho de 2024
+subtitle: "Ensaios de caracterização do concreto e provas de carga instrumentadas em pontes rodoviárias e ferroviárias."
+author: "Prof. Remo Magalhães de Souza, Eng. Civil, M.Sc., Ph.D."
+
+format:
+  revealjs:
+    theme: dracula
+    transition: slide
+    slide-level: 2
+    width: 2000
+    height: 1125
+    margin: 0.02
+    css: ../../slides/includes/slides-layout.css
+    filters:
+      - ../../slides/filters/normalize_carousel_attrs.lua
+      - ../../slides/filters/slide_templates.py
+
+carbonatacao:
+  item: "1."
+  topic: "Ensaio de carbonatação do concreto"
+  subtopic1: "1. Procedimento normativo e materiais necessários"
+  subtopic2: "2. Etapas do ensaio de carbonatação"
+
+esclerometria:
+  item: "2."
+  topic: "Ensaio de esclerometria para estimativa da resistência do concreto"
+  subtopic1: "1. Equipamento, procedimento normativo e execução do ensaio"
+  subtopic2: "2. Tratamento estatístico dos resultados"
+  subtopic3: "3. Curva de conversão entre índice esclerométrico e resistência à compressão do concreto"
+  subtopic4: "4. Fatores que influenciam os resultados do ensaio de esclerometria (Anexo C - ABNt NBR 7584:2012)"  
+  subtopic5: "5. Efeito da carbonatação na dureza superficial do concreto"
+  
+ultrassom:
+  item: "3."
+  topic: "Ensaio de ultrassom para avaliação da integridade e resistência do concreto"
+  subtopic1: "1. Procedimento normativo e descrição do ensaio de ultrassom"
+  subtopic2: "2. Arranjos e execução dos ensaios"
+  subtopic3: "3. Análise dos resultados"
+
+pacometria:
+  item: "4."
+  topic: "Ensaio com pacômetro para identificação das armaduras e cobrimentos"
+  subtopic1: "1. Procedimento normativo e descrição do ensaio de pacometria"
+  subtopic2: "2. Execução dos ensaios e resultados"
+
+potenCorr:
+  item: "5."
+  topic: "Ensaio de potencial de corrosão"
+  subtopic1: "1. Procedimento normativo e descrição do ensaio de potencial de corrosão"
+  subtopic2: "2. Execução dos ensaios e resultados"
